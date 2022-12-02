@@ -1,0 +1,466 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: nav-font;
+  src: url(/assets/fonts/FredokaOne-Regular.ttf);
+}
+
+#nav-area {
+  .navbar-nav {
+    width: 100%;
+    gap: 10px;
+
+    li {
+      margin-left: 20px;
+      font-size: 20px;
+      font-family: nav-font;
+      &:hover a {
+        color: white;
+        background-color: red;
+        border-radius: 10px;
+      }
+
+      a {
+        transition: 0.3s;
+      }
+    }
+  }
+
+  .logo {
+    img {
+      width: 100px;
+      height: 80px;
+      margin-left: 30px;
+    }
+  }
+
+  .basket {
+    i {
+      font-size: 30px;
+      margin-right: 20px;
+      color: rgb(199, 33, 33);
+      sup {
+        font-size: 15px;
+      }
+    }
+  }
+
+  .account {
+    display: flex;
+    a {
+      font-size: 20px;
+      font-family: nav-font;
+      text-decoration: none;
+      transition: 0.3s;
+      color: black;
+
+      &:hover {
+        border-radius: 10px;
+        background-color: red;
+        color: white;
+      }
+
+      &:nth-child(3):hover {
+        color: white;
+      }
+
+      &:nth-child(3) {
+        color: red;
+      }
+    }
+  }
+
+  .search {
+    width: 400px;
+    margin-right: 10px;
+    input {
+      font-size: 20px;
+      border-radius: 15px;
+      border: none;
+      border-bottom: 3px solid red;
+      outline: none;
+      padding-left: 10px;
+    }
+  }
+
+  .line {
+    width: 100%;
+    height: 1px;
+    box-shadow: 0 0 10px;
+  }
+}
+
+@media (max-width: 992px) {
+  .basket {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .search {
+    width: 200px !important;
+  }
+  .account {
+    font-size: 10px !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .search {
+    display: none !important;
+  }
+}
+
+#shop-bg {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: white;
+  height: 144px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h2 {
+    font-family: nav-font;
+  }
+}
+
+#shop-product {
+  .tab-menu {
+    width: 100%;
+    margin: 130px auto;
+    padding: 25px 30px 30px 30px;
+    border-radius: 5px;
+
+    input[type="radio"] {
+      display: none;
+    }
+
+    #all:checked ~ nav label.all,
+    #clothing:checked ~ nav label.clothing,
+    #shoes:checked ~ nav label.shoes,
+    #accessories:checked ~ nav label.accessories {
+      color: white;
+    }
+
+    #clothing:checked ~ nav .slider {
+      left: 26%;
+    }
+
+    #shoes:checked ~ nav .slider {
+      left: 50%;
+    }
+
+    #accessories:checked ~ nav .slider {
+      left: 75%;
+    }
+
+    nav {
+      height: 50px;
+      width: 80%;
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      label {
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        line-height: 50px;
+        cursor: pointer;
+        color: #17a2b8;
+        font-size: 17px;
+        position: relative;
+        z-index: 1;
+
+        i {
+          padding-right: 7px;
+        }
+      }
+
+      .slider {
+        position: absolute;
+        width: 25%;
+        height: 100%;
+        background-color: #17a2b8;
+        border-radius: 5px;
+        z-index: 0;
+        left: 0;
+        bottom: 0;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .products {
+    margin-top: 40px;
+    background-color: #fff;
+    text-align: center;
+    width: 100%;
+
+    &:hover {
+      bottom: 0px;
+    }
+
+    .product-image {
+      overflow: hidden;
+      position: relative;
+
+      &:hover .links {
+        opacity: 1;
+        right: 60px;
+      }
+
+      &:hover .image .img-1 {
+        opacity: 0;
+      }
+
+      &:hover .image .img-2 {
+        opacity: 1;
+      }
+
+      &:hover .cart {
+        opacity: 1;
+      }
+
+      .image {
+        display: block;
+        width: 250px;
+
+        img {
+          width: 250px;
+          height: auto;
+        }
+
+        .img-1 {
+          transition: 0.5s;
+        }
+
+        .img-2 {
+          backface-visibility: hidden;
+          opacity: 0;
+          position: absolute;
+          top: 0;
+          left: 0;
+          transition: 0.5s;
+        }
+      }
+
+      .discount {
+        color: #fff;
+        background: #c66;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        line-height: 30px;
+        width: 50px;
+        height: 30px;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+      }
+
+      .cart {
+        color: #fff;
+        background: red;
+        font-size: 14px;
+        font-weight: 500;
+        text-transform: uppercase;
+        width: 250px;
+        height: 50px;
+        padding: 4px 14px;
+        opacity: 0.85;
+        transform: translateX(-50%);
+        padding-top: 15px;
+        position: absolute;
+        bottom: 110px;
+        left: 41%;
+        transition: 0.5s;
+        opacity: 0;
+
+        &:hover {
+          background: rgb(93, 93, 235);
+        }
+      }
+
+      .links {
+        padding: 0;
+        margin: 0;
+        opacity: 0;
+        position: absolute;
+        top: 10px;
+        right: 60px;
+        transition: 0.5s;
+        margin-bottom: 5px;
+
+        li {
+          list-style: none;
+
+          a {
+            color: #fff;
+            font-size: 12px;
+            line-height: 30px;
+            width: 30px;
+            height: 30px;
+            border-radius: 30px;
+            display: block;
+            background: red;
+            transition: 0.5s;
+            margin-bottom: 5px;
+
+            &:hover {
+              color: #fff;
+              background: blue;
+            }
+          }
+        }
+      }
+
+      .content {
+        padding: 12px;
+        margin-right: 40px;
+
+        .category {
+          font-size: 17px;
+          margin: 0 0 5px;
+          display: block;
+
+          a {
+            color: #999;
+            transition: 0.5s;
+            font-size: 14px;
+
+            &:hover {
+              color: #555;
+            }
+          }
+        }
+
+        .title {
+          font-size: 18px;
+          font-weight: 500;
+          margin: 0 0 8px;
+
+          a {
+            color: #444;
+            transition: 0.5s;
+
+            &:hover {
+              color: red;
+            }
+          }
+        }
+
+        .price {
+          color: red;
+          font-size: 17px;
+          font-weight: 700;
+
+          span {
+            color: #888;
+            margin: 0 5px 0 0;
+            font-weight: 300;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+#footer-part {
+  background-color: black;
+  padding: 70px 0;
+  height: 300px;
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      a {
+        font-size: 17px;
+        text-transform: capitalize;
+        text-decoration: none;
+        font-weight: 300;
+        transition: all 0.3s ease;
+        color: #bbbbbb;
+
+        &:hover {
+          color: white;
+          padding-left: 5px;
+        }
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  h4 {
+    position: relative;
+    font-size: 17px;
+    color: white;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-family: nav-font;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      background-color: red;
+      width: 50px;
+      height: 2px;
+    }
+  }
+
+  .social-links {
+    a {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.2);
+      margin: 0 10px 10px 0;
+      text-align: center;
+      line-height: 40px;
+      border-radius: 50%;
+      transition: all 0.5s ease;
+      color: white;
+
+      &:hover {
+        color: #24262b;
+        background-color: white;
+      }
+    }
+  }
+
+  span {
+    color: rgb(202, 193, 193);
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .col-3 {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 574px) {
+  .col-3 {
+    width: 100%;
+  }
+}

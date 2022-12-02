@@ -8,7 +8,7 @@ $(function () {
     pagination: false,
     navigation: true,
     navigationText: ["", ""],
-    autoPlay: true,
+    autoPlay: true
   });
 
   $("#product-slider-2").owlCarousel({
@@ -19,6 +19,6 @@ $(function () {
     pagination: false,
     navigation: true,
     navigationText: ["", ""],
-    autoPlay: true,
+    autoPlay: true
   });
 });

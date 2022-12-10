@@ -60,6 +60,11 @@
                       >
                     </li>
                     <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="blog.html"
+                        >Blog</a
+                      >
+                    </li>
+                    <li class="nav-item">
                       <a
                         class="nav-link active"
                         aria-current="page"
@@ -103,7 +108,7 @@
     </header>
 
     <main>
-      <section id="login-register">
+      <section id="login-register" style="background-image:url(./assets/images/login-register/output-onlinejpgtools\ \(2\).jpg)">
         <div class="container">
           <div class="row">
             <div class="col-12">
@@ -123,20 +128,13 @@
                       <input type="password" placeholder="Password" />
                       <input type="submit" value="Login" />
                       <p class="sign-up">
-                        Don't have an account?<a href="#">Sign Up</a>
+                        Don't have an account?<a href="#" onclick="toggleForm();">Sign Up</a>
                       </p>
                     </form>
                   </div>
                 </div>
 
                 <div class="user register">
-                  <div class="login-img">
-                    <img
-                      style="width: 390px; height: 500px"
-                      src="./assets/images/login-register/register.jpg"
-                      alt=""
-                    />
-                  </div>
                   <div class="login-form">
                     <form>
                       <h2>Sign Up</h2>
@@ -147,9 +145,16 @@
                       <input type="password" placeholder="Password" />
                       <input type="submit" value="Register" />
                       <p class="sign-up">
-                        Already have an account?<a href="#">Sign In</a>
+                        Already have an account?<a href="#" onclick="toggleForm();">Sign In</a>
                       </p>
                     </form>
+                  </div>
+                  <div class="login-img">
+                    <img
+                      style="width: 390px; height: 500px"
+                      src="./assets/images/login-register/register.jpg"
+                      alt=""
+                    />
                   </div>
                 </div>
               </div>
@@ -175,7 +180,7 @@
             <div class="col-3">
               <h4>Get Help</h4>
               <ul>
-                <li><a href="">FAQ</a></li>
+                <li><a href="faq.html">FAQ</a></li>
                 <li><a href="contact.html">Contact</a></li>
               </ul>
             </div>
@@ -206,6 +211,13 @@
         </div>
       </section>
     </footer>
+
+    <script>
+      function toggleForm(){
+        area = document.querySelector("#login-register .col-12");
+        area.classList.toggle("active");
+      }
+    </script>
 
     <script
       src="https://kit.fontawesome.com/b39b112ecb.js"

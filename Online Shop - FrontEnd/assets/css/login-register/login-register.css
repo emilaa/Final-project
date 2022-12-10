@@ -95,9 +95,15 @@
     display: none !important;
   }
 }
+#login-register {
+  height: 650px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 #login-register .col-12 {
+  margin-top: 20px;
   position: relative;
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -109,6 +115,7 @@
   width: 800px;
   height: 500px;
   background: #fff;
+  overflow: hidden;
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
 }
 #login-register .col-12 .login-register .user {
@@ -198,6 +205,7 @@
 }
 #login-register .col-12 .login-register .register .login-img {
   top: -100%;
+  transition: 0.5s;
 }
 #login-register .col-12 .login-register .register .login-form {
   top: 100%;
@@ -205,11 +213,47 @@
 #login-register .col-12 .login-register .register .login-form input[type=submit] {
   background: #e73e49;
 }
+#login-register .col-12 .login-register .login .login-form {
+  top: 0;
+}
+#login-register .col-12 .login-register .login .login-img {
+  top: 0;
+  transition: 0.5s;
+}
+#login-register .active .register {
+  pointer-events: initial !important;
+}
+#login-register .active .register .login-form {
+  top: 0 !important;
+}
+#login-register .active .register .login-img {
+  top: 0 !important;
+}
+#login-register .active .login .login-form {
+  top: 100% !important;
+}
+#login-register .active .login .login-img {
+  top: -100% !important;
+}
 
+@media (max-width: 991px) {
+  #login-register .col-12 {
+    max-width: 400px;
+    margin-left: 150px;
+  }
+  #login-register .col-12 .login-img {
+    display: none;
+  }
+  #login-register .col-12 .login-img img {
+    width: 200px !important;
+  }
+  #login-register .col-12 .user .login-form {
+    width: 100% !important;
+  }
+}
 #footer-part {
   background-color: black;
   padding: 70px 0;
-  margin-top: 50px;
 }
 #footer-part ul {
   list-style: none;

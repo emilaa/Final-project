@@ -127,6 +127,21 @@
   }
 }
 
+#about-bg {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: white;
+  height: 144px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h2 {
+    font-size: 40px;
+    font-family: nav-font;
+  }
+}
+
 #about {
   margin-top: 50px;
 

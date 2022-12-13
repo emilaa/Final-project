@@ -12,6 +12,9 @@
   font-family: pro-font;
   src: url(/assets/fonts/Solway-Regular.ttf);
 }
+#nav-area .navbar {
+  padding: 0 30px 0 30px;
+}
 #nav-area .navbar-nav {
   width: 100%;
   gap: 10px;
@@ -46,7 +49,7 @@
   display: flex;
 }
 #nav-area .account a {
-  font-size: 20px;
+  font-size: 18px;
   font-family: nav-font;
   text-decoration: none;
   transition: 0.3s;
@@ -62,6 +65,23 @@
 }
 #nav-area .account a:nth-child(3) {
   color: red;
+}
+#nav-area .account .nav-link {
+  width: 155px;
+  margin-right: 10px;
+}
+#nav-area .account .log-out {
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#nav-area .account .log-out i {
+  font-size: 30px;
+  transition: 0.3s;
+}
+#nav-area .account .log-out i:hover {
+  color: white;
 }
 #nav-area .search {
   width: 400px;
@@ -99,6 +119,117 @@
     display: none !important;
   }
 }
+#scroll-section {
+  width: 100%;
+  position: fixed;
+  transition: 0.5s;
+  z-index: 2;
+}
+#scroll-section .inActive {
+  visibility: hidden;
+}
+#scroll-section .navbar {
+  background-color: white;
+  border-radius: 10px;
+  padding: 0 30px 0 30px;
+}
+#scroll-section .navbar-nav {
+  width: 100%;
+  gap: 10px;
+}
+#scroll-section .navbar-nav li {
+  margin-left: 20px;
+  font-size: 20px;
+  font-family: nav-font;
+}
+#scroll-section .navbar-nav li:hover a {
+  color: white;
+  background-color: red;
+  border-radius: 10px;
+}
+#scroll-section .navbar-nav li a {
+  transition: 0.3s;
+}
+#scroll-section .logo img {
+  width: 100px;
+  height: 80px;
+}
+#scroll-section .basket i {
+  font-size: 30px;
+  margin-right: 20px;
+  color: rgb(199, 33, 33);
+}
+#scroll-section .basket i sup {
+  font-size: 15px;
+}
+#scroll-section .account {
+  display: flex;
+}
+#scroll-section .account a {
+  font-size: 18px;
+  font-family: nav-font;
+  text-decoration: none;
+  transition: 0.3s;
+  color: black;
+}
+#scroll-section .account a:hover {
+  border-radius: 10px;
+  background-color: red;
+  color: white;
+}
+#scroll-section .account .nav-link {
+  width: 155px;
+  margin-right: 10px;
+}
+#scroll-section .account .log-out {
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#scroll-section .account .log-out i {
+  font-size: 30px;
+  transition: 0.3s;
+}
+#scroll-section .account .log-out i:hover {
+  color: white;
+}
+#scroll-section .search {
+  width: 400px;
+  margin-right: 10px;
+}
+#scroll-section .search input {
+  font-size: 20px;
+  border-radius: 15px;
+  border: none;
+  border-bottom: 3px solid red;
+  outline: none;
+  padding-left: 10px;
+}
+#scroll-section .line {
+  width: 100%;
+  height: 1px;
+  box-shadow: 0 0 10px;
+}
+
+@media (max-width: 992px) {
+  .basket {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 1400px) {
+  .search {
+    width: 200px !important;
+  }
+  .account {
+    font-size: 10px !important;
+  }
+}
+@media (max-width: 1200px) {
+  .search {
+    display: none !important;
+  }
+}
 #shop-bg {
   background-size: cover;
   background-repeat: no-repeat;
@@ -113,7 +244,7 @@
 }
 
 #shop-product .filter-product {
-  width: 100%;
+  width: 300px;
   height: auto;
   border-radius: 10px;
   margin-top: 50px;

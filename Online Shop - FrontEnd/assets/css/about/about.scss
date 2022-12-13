@@ -20,6 +20,10 @@
 }
 
 #nav-area {
+  .navbar{
+    padding: 0 30px 0 30px;
+  }
+
   .navbar-nav {
     width: 100%;
     gap: 10px;
@@ -62,7 +66,7 @@
   .account {
     display: flex;
     a {
-      font-size: 20px;
+      font-size: 18px;
       font-family: nav-font;
       text-decoration: none;
       transition: 0.3s;
@@ -80,6 +84,27 @@
 
       &:nth-child(3) {
         color: red;
+      }
+    }
+
+    .nav-link {
+      width: 155px;
+      margin-right: 10px;
+    }
+
+    .log-out {
+      width: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      i {
+        font-size: 30px;
+        transition: 0.3s;
+
+        &:hover {
+          color: white;
+        }
       }
     }
   }
@@ -124,6 +149,139 @@
     .search {
       display: none !important;
     }
+  }
+}
+
+#scroll-section {
+  width: 100%;
+  position: fixed;
+  transition: 0.5s;
+  z-index: 2;
+
+  .inActive {
+    visibility: hidden;
+  }
+
+  .navbar{
+    background-color: white;
+    border-radius: 10px;
+    padding: 0 30px 0 30px;
+  }
+
+  .navbar-nav {
+    width: 100%;
+    gap: 10px;
+
+    li {
+      margin-left: 20px;
+      font-size: 20px;
+      font-family: nav-font;
+      &:hover a {
+        color: white;
+        background-color: red;
+        border-radius: 10px;
+      }
+
+      a {
+        transition: 0.3s;
+      }
+    }
+  }
+
+  .logo {
+    img {
+      width: 100px;
+      height: 80px;
+    }
+  }
+
+  .basket {
+    i {
+      font-size: 30px;
+      margin-right: 20px;
+      color: rgb(199, 33, 33);
+      sup {
+        font-size: 15px;
+      }
+    }
+  }
+
+  .account {
+    display: flex;
+    a {  
+      font-size: 18px;
+      font-family: nav-font;
+      text-decoration: none;
+      transition: 0.3s;
+      color: black;
+
+      &:hover {
+        border-radius: 10px;
+        background-color: red;
+        color: white;
+      }
+    }
+
+    .nav-link {
+      width: 155px;
+      margin-right: 10px;
+    }
+
+    .log-out {
+      width: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      i {
+        font-size: 30px;
+        transition: 0.3s;
+
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
+
+  .search {
+    width: 400px;
+    margin-right: 10px;
+    input {
+      font-size: 20px;
+      border-radius: 15px;
+      border: none;
+      border-bottom: 3px solid red;
+      outline: none;
+      padding-left: 10px;
+    }
+  }
+
+  .line {
+    width: 100%;
+    height: 1px;
+    box-shadow: 0 0 10px;
+  }
+}
+
+@media (max-width: 992px) {
+  .basket {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .search {
+    width: 200px !important;
+  }
+  .account {
+    font-size: 10px !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .search {
+    display: none !important;
   }
 }
 
@@ -185,16 +343,16 @@
   }
 }
 
-@media(max-width: 1200px){
+@media (max-width: 1200px) {
   .about-img-1,
-  .about-img-2{
+  .about-img-2 {
     background-position: -12rem 1rem;
   }
 }
 
-@media(max-width: 992px){
+@media (max-width: 992px) {
   .about-img-1,
-  .about-img-2{
+  .about-img-2 {
     background-position: -20rem 1rem;
   }
 }

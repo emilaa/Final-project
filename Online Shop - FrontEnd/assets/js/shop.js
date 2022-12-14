@@ -61,3 +61,41 @@ rangeInput.forEach((input) => {
     }
   });
 });
+
+let addHeart = document.querySelectorAll("#shop-product .categories .fa-heart");
+
+let products = [];
+
+if (localStorage.getItem("products") != null) {
+  products = JSON.parse(localStorage.getItem("products"));
+}
+
+addHeart.forEach((heartBtn) => {
+  heartBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    let productImg =
+      this.parentNode.parentNode.parentNode.parentNode.parentNode.firstElementChild.firstElementChild.getAttribute(
+        "src"
+      );
+    let categoryName =
+      this.parentNode.parentNode.parentNode.parentNode.nextElementSibling
+        .firstElementChild.firstElementChild.innerText;
+    let productName =
+      this.parentNode.parentNode.parentNode.parentNode.nextElementSibling
+        .firstElementChild.nextElementSibling.firstElementChild.innerText;
+    let productPrice =
+      this.parentNode.parentNode.parentNode.parentNode.nextElementSibling
+        .lastElementChild.innerText;
+
+    products.push({
+      image: productImg,
+      category: categoryName,
+      name: productName,
+      price: productPrice,
+      count: 1,
+    });
+
+    localStorage.setItem("products", JSON.stringify(products));
+  });
+});

@@ -8,6 +8,13 @@ body {
   overflow-x: hidden;
 }
 
+:root {
+  --container-color: #1a1e21;
+  --second-color: #fd8f44;
+  --text-color: #172317;
+  --bg-color: #fff;
+}
+
 @font-face {
   font-family: nav-font;
   src: url(/assets/fonts/FredokaOne-Regular.ttf);
@@ -211,9 +218,57 @@ body {
   box-shadow: 0 0 10px;
 }
 
+#blog-detail {
+  width: 100%;
+  margin-top: 30px;
+}
+#blog-detail .post-container {
+  max-width: 600px;
+  width: 100%;
+  margin: auto;
+}
+#blog-detail .header-content {
+  border-radius: 5px;
+  padding: 0;
+  flex-direction: column;
+  overflow: hidden;
+}
+#blog-detail .header-content:hover img {
+  transform: scale(1.1);
+}
+#blog-detail .header-content .blog {
+  text-decoration: none;
+  color: var(--second-color);
+  font-size: 0.9rem;
+}
+#blog-detail .header-content .title {
+  width: 90%;
+  font-size: 2.6rem;
+  color: var(--bg-color);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+#blog-detail .header-content .image {
+  width: 100%;
+  transition: 0.2s linear;
+}
+#blog-detail .post-content {
+  margin-top: 1rem !important;
+}
+#blog-detail .post-content .sub-heading {
+  font-size: 1.2rem;
+}
+#blog-detail .post-content .post-text {
+  font-size: 1rem;
+  line-height: 1.7rem;
+  margin: 1rem 0;
+  text-align: justify;
+}
+
 #footer-part {
   background-color: black;
   padding: 70px 0;
+  margin-top: 50px;
 }
 #footer-part ul {
   list-style: none;

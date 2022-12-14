@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 @font-face {
   font-family: nav-font;
   src: url(/assets/fonts/FredokaOne-Regular.ttf);
@@ -11,9 +15,6 @@
 @font-face {
   font-family: pro-font;
   src: url(/assets/fonts/Solway-Regular.ttf);
-}
-#nav-area .navbar {
-  padding: 0 30px 0 30px;
 }
 #nav-area .navbar-nav {
   width: 100%;
@@ -35,7 +36,6 @@
 #nav-area .logo img {
   width: 100px;
   height: 80px;
-  margin-left: 30px;
 }
 #nav-area .basket i {
   font-size: 30px;
@@ -44,6 +44,16 @@
 }
 #nav-area .basket i sup {
   font-size: 15px;
+  margin-left: 3px;
+}
+#nav-area .heart i {
+  font-size: 30px;
+  margin-right: 20px;
+  color: rgb(199, 33, 33);
+}
+#nav-area .heart i sup {
+  font-size: 15px;
+  margin-left: 3px;
 }
 #nav-area .account {
   display: flex;
@@ -161,6 +171,16 @@
 }
 #scroll-section .basket i sup {
   font-size: 15px;
+  margin-left: 3px;
+}
+#scroll-section .heart i {
+  font-size: 30px;
+  margin-right: 20px;
+  color: rgb(199, 33, 33);
+}
+#scroll-section .heart i sup {
+  font-size: 15px;
+  margin-left: 3px;
 }
 #scroll-section .account {
   display: flex;

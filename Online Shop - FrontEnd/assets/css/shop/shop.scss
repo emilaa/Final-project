@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 @font-face {
   font-family: nav-font;
   src: url(/assets/fonts/FredokaOne-Regular.ttf);
@@ -15,10 +19,6 @@
 }
 
 #nav-area {
-  .navbar{
-    padding: 0 30px 0 30px;
-  }
-
   .navbar-nav {
     width: 100%;
     gap: 10px;
@@ -43,7 +43,6 @@
     img {
       width: 100px;
       height: 80px;
-      margin-left: 30px;
     }
   }
 
@@ -54,6 +53,19 @@
       color: rgb(199, 33, 33);
       sup {
         font-size: 15px;
+        margin-left: 3px;
+      }
+    }
+  }
+
+  .heart {
+    i {
+      font-size: 30px;
+      margin-right: 20px;
+      color: rgb(199, 33, 33);
+      sup {
+        font-size: 15px;
+        margin-left: 3px;
       }
     }
   }
@@ -157,7 +169,7 @@
     visibility: hidden;
   }
 
-  .navbar{
+  .navbar {
     background-color: white;
     border-radius: 10px;
     padding: 0 30px 0 30px;
@@ -197,13 +209,26 @@
       color: rgb(199, 33, 33);
       sup {
         font-size: 15px;
+        margin-left: 3px;
+      }
+    }
+  }
+
+  .heart {
+    i {
+      font-size: 30px;
+      margin-right: 20px;
+      color: rgb(199, 33, 33);
+      sup {
+        font-size: 15px;
+        margin-left: 3px;
       }
     }
   }
 
   .account {
     display: flex;
-    a {  
+    a {
       font-size: 18px;
       font-family: nav-font;
       text-decoration: none;

@@ -665,7 +665,6 @@ body{
 
     &:hover .product-image .links li a:hover {
       color: #fff;
-      background: blue;
     }
 
     .product-image {
@@ -753,18 +752,22 @@ body{
         transition: 0.5s;
         margin-bottom: 5px;
 
+        .my-active{
+          color: red;
+        }
+
         li {
           list-style: none;
 
           a {
             color: #fff;
-            font-size: 12px;
+            font-size: 15px;
             line-height: 30px;
             width: 30px;
             height: 30px;
             border-radius: 30px;
             display: block;
-            background: red;
+            background: rgb(200, 193, 193);
             transition: 0.5s;
             margin-bottom: 5px;
           }

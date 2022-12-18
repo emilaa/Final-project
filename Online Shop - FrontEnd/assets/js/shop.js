@@ -48,6 +48,8 @@ $(function () {
 
   addHeart.forEach((heartBtn) => {
     heartBtn.addEventListener("click", function (e) {
+      heartBtn.classList.toggle("my-active");
+
       e.preventDefault();
 
       let productImg =
@@ -67,7 +69,7 @@ $(function () {
 
       let existProduct = products.find((m) => m.id == productId);
 
-      if ((existProduct = undefined)) {
+      if ((existProduct != undefined)) {
         existProduct.count += 0;
       } else {
         products.push({

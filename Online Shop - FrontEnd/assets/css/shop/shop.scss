@@ -1089,16 +1089,17 @@ body {
           width: 35px;
           height: 35px;
           border-radius: 50%;
-          background-color: red;
+          background: rgb(200, 193, 193);
           color: white;
           display: flex;
           justify-content: center;
           align-items: center;
           transition: 0.3s;
+          font-size: 20px;
           cursor: pointer;
 
-          &:hover {
-            background-color: blue;
+          .my-active{
+            color: red;
           }
         }
       }

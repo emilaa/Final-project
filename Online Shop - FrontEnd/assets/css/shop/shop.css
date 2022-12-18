@@ -749,16 +749,17 @@ body {
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  background-color: red;
+  background: rgb(200, 193, 193);
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: 0.3s;
+  font-size: 20px;
   cursor: pointer;
 }
-#shop-product .post .post-box .links .heart:hover {
-  background-color: blue;
+#shop-product .post .post-box .links .heart .my-active {
+  color: red;
 }
 #shop-product .post .post-box .post-image {
   position: relative;

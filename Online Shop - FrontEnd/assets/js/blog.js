@@ -32,4 +32,24 @@ $(function () {
   $(".filter-item").click(function () {
     $(this).addClass("active-filter").siblings().removeClass("active-filter");
   });
+
+  let products = [];
+
+  if (localStorage.getItem("products") != null) {
+    products = JSON.parse(localStorage.getItem("products"));
+  }
+
+  let heartCount = document.querySelector(".heart sup");
+  let heartCount2 = document.querySelector("#scroll-section .heart sup");
+
+  heartCount.innerText = getHeartCount(products);
+  heartCount2.innerText = getHeartCount(products);
+
+  function getHeartCount(heartCount) {
+    let count = 0;
+    for (const heart of heartCount) {
+      count += heart.count;
+    }
+    return count;
+  }
 });

@@ -22,16 +22,81 @@ $(function () {
     const value = $(this).attr("data-filter");
     if (value == "all") {
       $(".post-box").show("1000");
-    }
-    else{
-      $(".post-box").not("." + value).hide("1000");
-      $(".post-box").filter("." + value).show("1000");
+    } else {
+      $(".post-box")
+        .not("." + value)
+        .hide("1000");
+      $(".post-box")
+        .filter("." + value)
+        .show("1000");
     }
   });
 
   $(".filter-item").click(function () {
     $(this).addClass("active-filter").siblings().removeClass("active-filter");
   });
+
+  let addHeart = document.querySelectorAll("#shop-product .post-box .fa-heart");
+  let heartCount = document.querySelector(".heart sup");
+  let heartCount2 = document.querySelector("#scroll-section .heart sup");
+
+  let products = [];
+
+  if (localStorage.getItem("products") != null) {
+    products = JSON.parse(localStorage.getItem("products"));
+  }
+
+  addHeart.forEach((heartBtn) => {
+    heartBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      let productImg =
+        this.parentNode.parentNode.parentNode.firstElementChild.firstElementChild.firstElementChild.getAttribute(
+          "src"
+        );
+      let brandName = this.parentNode.parentNode.nextElementSibling.innerText;
+      let productName =
+        this.parentNode.parentNode.nextElementSibling.nextElementSibling
+          .innerText;
+      let productPrice =
+        this.parentNode.parentNode.nextElementSibling.nextElementSibling
+          .nextElementSibling.innerText;
+      let productId = parseInt(
+        this.parentNode.parentNode.parentNode.getAttribute("product-id")
+      );
+
+      let existProduct = products.find((m) => m.id == productId);
+
+      if ((existProduct = undefined)) {
+        existProduct.count += 0;
+      } else {
+        products.push({
+          id: productId,
+          image: productImg,
+          brand: brandName,
+          name: productName,
+          price: productPrice,
+          count: 1,
+        });
+      }
+
+      localStorage.setItem("products", JSON.stringify(products));
+
+      heartCount.innerText = getHeartCount(products);
+      heartCount2.innerText = getHeartCount(products);
+    });
+  });
+
+  heartCount.innerText = getHeartCount(products);
+  heartCount2.innerText = getHeartCount(products);
+
+  function getHeartCount(heartCount) {
+    let count = 0;
+    for (const heart of heartCount) {
+      count += heart.count;
+    }
+    return count;
+  }
 });
 
 const rangeInput = document.querySelectorAll(".range-input input"),
@@ -76,42 +141,3 @@ rangeInput.forEach((input) => {
     }
   });
 });
-
-let addHeart = document.querySelectorAll("#shop-product .categories .fa-heart");
-
-let products = [];
-
-if (localStorage.getItem("products") != null) {
-  products = JSON.parse(localStorage.getItem("products"));
-}
-
-addHeart.forEach((heartBtn) => {
-  heartBtn.addEventListener("click", function (e) {
-    e.preventDefault();
-
-    let productImg =
-      this.parentNode.parentNode.parentNode.parentNode.parentNode.firstElementChild.firstElementChild.getAttribute(
-        "src"
-      );
-    let categoryName =
-      this.parentNode.parentNode.parentNode.parentNode.nextElementSibling
-        .firstElementChild.firstElementChild.innerText;
-    let productName =
-      this.parentNode.parentNode.parentNode.parentNode.nextElementSibling
-        .firstElementChild.nextElementSibling.firstElementChild.innerText;
-    let productPrice =
-      this.parentNode.parentNode.parentNode.parentNode.nextElementSibling
-        .lastElementChild.innerText;
-
-    products.push({
-      image: productImg,
-      category: categoryName,
-      name: productName,
-      price: productPrice,
-      count: 1,
-    });
-
-    localStorage.setItem("products", JSON.stringify(products));
-  });
-});
-

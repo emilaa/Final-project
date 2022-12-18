@@ -69,7 +69,7 @@
                         class="nav-link active"
                         aria-current="page"
                         href="contact.html"
-                        >Contact Us</a
+                        >Contact</a
                       >
                     </li>
                     <li class="nav-item">
@@ -81,8 +81,13 @@
                       >
                     </li>
                   </ul>
-                  <form class="search">
-                    <input type="search" placeholder="Search" />
+                  <form class="searchh">
+                    <div class="search">
+                      <input  class="search-txt" type="text" name="" placeholder="Search">         
+                      <a class="search-btn" href="#" >
+                         <i class="fas fa-search"></i>
+                      </a>
+                     </div>
                   </form>
                   <div class="basket">
                     <a href=""
@@ -163,7 +168,7 @@
                       class="nav-link active"
                       aria-current="page"
                       href="contact.html"
-                      >Contact Us</a
+                      >Contact</a
                     >
                   </li>
                   <li class="nav-item">
@@ -175,8 +180,13 @@
                     >
                   </li>
                 </ul>
-                <form class="search">
-                  <input type="search" placeholder="Search" />
+                <form class="searchh">
+                  <div class="search">
+                    <input  class="search-txt" type="text" name="" placeholder="Search">
+                    <a class="search-btn" href="#" >
+                       <i class="fas fa-search"></i>
+                    </a>
+                   </div>
                 </form>
                 <div class="basket">
                   <a href=""
@@ -347,7 +357,7 @@
                 </div>
               </div>
               <div class="post container">
-                <div class="post-box mobile">
+                <div class="post-box design" product-id="1">
                   <div class="post-image">
                     <a href="product-detail.html" class="image">
                       <img
@@ -372,7 +382,7 @@
                   <span class="post-date">$249</span>
                   <a href="" class="cart">Add to Cart</a>
                 </div>
-                <div class="post-box tech">
+                <div class="post-box tech" product-id="2">
                   <div class="post-image">
                     <a href="product-detail.html" class="image">
                       <img
@@ -399,7 +409,7 @@
                   <span class="post-date">$52</span>
                   <a href="" class="cart">Add to Cart</a>
                 </div>
-                <div class="post-box design">
+                <div class="post-box design mobile" product-id="3">
                   <div class="post-image">
                     <a href="product-detail.html" class="image">
                       <img
@@ -426,7 +436,7 @@
                   <span class="post-date">$147</span>
                   <a href="" class="cart">Add to Cart</a>
                 </div>
-                <div class="post-box tech">
+                <div class="post-box tech" product-id="4">
                   <div class="post-image">
                     <a href="product-detail.html" class="image">
                       <img
@@ -453,7 +463,7 @@
                   <span class="post-date">$254</span>
                   <a href="" class="cart">Add to Cart</a>
                 </div>
-                <div class="post-box mobile">
+                <div class="post-box design" product-id="5">
                   <div class="post-image">
                     <a href="product-detail.html" class="image">
                       <img
@@ -480,7 +490,7 @@
                   <span class="post-date">$78</span>
                   <a href="" class="cart">Add to Cart</a>
                 </div>
-                <div class="post-box design">
+                <div class="post-box tech" product-id="6">
                   <div class="post-image">
                     <a href="product-detail.html" class="image">
                       <img
@@ -507,7 +517,7 @@
                   <span class="post-date">$159</span>
                   <a href="" class="cart">Add to Cart</a>
                 </div>
-                <div class="post-box mobile">
+                <div class="post-box tech mobile" product-id="7">
                   <div class="post-image">
                     <a href="product-detail.html" class="image">
                       <img
@@ -534,7 +544,7 @@
                   <span class="post-date">$89</span>
                   <a href="" class="cart">Add to Cart</a>
                 </div>
-                <div class="post-box tech">
+                <div class="post-box design" product-id="8">
                   <div class="post-image">
                     <a href="product-detail.html" class="image">
                       <img
@@ -561,7 +571,7 @@
                   <span class="post-date">$76</span>
                   <a href="" class="cart">Add to Cart</a>
                 </div>
-                <div class="post-box design">
+                <div class="post-box design" product-id="9">
                   <div class="post-image">
                     <a href="product-detail.html" class="image">
                       <img
@@ -586,6 +596,33 @@
                     Men's Basic Oversize Fit Hooded Soft Fluffy
                   </a>
                   <span class="post-date">$165</span>
+                  <a href="" class="cart">Add to Cart</a>
+                </div>
+                <div class="post-box design mobile" product-id="10">
+                  <div class="post-image">
+                    <a href="product-detail.html" class="image">
+                      <img
+                        src="./assets/images/home/men/accessories/acs-2.jpg"
+                        alt=""
+                        class="post-img"
+                      />
+                      <img
+                        src="./assets/images/home/men/accessories/acs-22.jpg"
+                        alt=""
+                        class="post-img-2"
+                      />
+                    </a>
+                  </div>
+                  <div class="links">
+                    <div class="heart">
+                      <i class="fa-regular fa-heart heart"></i>
+                    </div>
+                  </div>
+                  <h2 class="category">Lc Waikiki</h2>
+                  <a href="product-detail.html" class="post-title">
+                    Black Gray Tie Handkerchief Set
+                  </a>
+                  <span class="post-date">$147</span>
                   <a href="" class="cart">Add to Cart</a>
                 </div>
               </div>
@@ -4167,6 +4204,12 @@
       </section>
     </footer>
 
+    <script>
+      $(".btn").on("click", function() {
+        $(".input").toggleClass("inclicked");
+        $(".btn").toggleClass("close");
+      });
+    </script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
       crossorigin="anonymous"

@@ -25,9 +25,6 @@ body {
   font-family: pro-font;
   src: url(/assets/fonts/Solway-Regular.ttf);
 }
-#nav-area .navbar {
-  padding: 0 30px 0 30px;
-}
 #nav-area .navbar-nav {
   width: 100%;
   gap: 10px;
@@ -48,7 +45,6 @@ body {
 #nav-area .logo img {
   width: 100px;
   height: 80px;
-  margin-left: 30px;
 }
 #nav-area .basket i {
   font-size: 30px;
@@ -57,6 +53,16 @@ body {
 }
 #nav-area .basket i sup {
   font-size: 15px;
+  margin-left: 3px;
+}
+#nav-area .heart i {
+  font-size: 30px;
+  margin-right: 20px;
+  color: rgb(199, 33, 33);
+}
+#nav-area .heart i sup {
+  font-size: 15px;
+  margin-left: 3px;
 }
 #nav-area .account {
   display: flex;
@@ -76,6 +82,9 @@ body {
 #nav-area .account a:nth-child(3):hover {
   color: white;
 }
+#nav-area .account a:nth-child(3) {
+  color: red;
+}
 #nav-area .account .nav-link {
   width: 155px;
   margin-right: 10px;
@@ -93,17 +102,52 @@ body {
 #nav-area .account .log-out i:hover {
   color: white;
 }
-#nav-area .search {
-  width: 400px;
-  margin-right: 10px;
+#nav-area .searchh {
+  width: 100%;
+  height: 50px;
 }
-#nav-area .search input {
-  font-size: 20px;
-  border-radius: 15px;
+#nav-area .searchh .search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  border: 1px solid red;
+  top: 50%;
+  left: 66%;
+  transform: translate(-50%, -50%);
+  background: white;
+  height: 40px;
+  border-radius: 40px;
+  padding: 10px;
+}
+#nav-area .searchh .search:hover > .search-txt {
+  width: 180px;
+  padding: 0 10px;
+  font-family: "Pangolin", cursive;
+}
+#nav-area .searchh .search-btn {
+  color: red;
+  position: absolute;
+  right: 0;
+  width: 39px;
+  height: 39px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#nav-area .searchh .search-txt {
   border: none;
-  border-bottom: 3px solid red;
+  background: none;
   outline: none;
-  padding-left: 10px;
+  float: left;
+  padding: 0;
+  font-size: 13px;
+  transition: ease-in 0.4s;
+  line-height: 40px;
+  width: 110px;
+  font-family: "Pangolin", cursive;
 }
 #nav-area .line {
   width: 100%;
@@ -113,27 +157,49 @@ body {
 
 @media (max-width: 992px) {
   .basket {
-    margin-top: 20px;
+    position: absolute;
+    margin-left: 20px;
+    bottom: 100px;
+  }
+  .heart {
+    margin-left: 20px;
+  }
+  #scroll-section {
+    opacity: 0;
+  }
+  #nav-area .searchh {
+    opacity: 1 !important;
+  }
+  .post-filter.container {
+    width: 540px !important;
   }
 }
 @media (max-width: 1400px) {
-  .search {
-    width: 200px !important;
+  .navbar-nav {
+    gap: 0 !important;
+  }
+  .searchh {
+    position: relative;
+  }
+  .searchh .search {
+    position: absolute;
+    left: 110px !important;
+    width: 180px !important;
   }
   .account {
     font-size: 10px !important;
   }
 }
 @media (max-width: 1200px) {
-  .search {
-    display: none !important;
+  #nav-area .searchh {
+    opacity: 0 !important;
   }
 }
 #scroll-section {
   width: 100%;
   position: fixed;
   transition: 0.5s;
-  z-index: 2;
+  z-index: 4;
 }
 #scroll-section .inActive {
   visibility: hidden;
@@ -171,6 +237,16 @@ body {
 }
 #scroll-section .basket i sup {
   font-size: 15px;
+  margin-left: 3px;
+}
+#scroll-section .heart i {
+  font-size: 30px;
+  margin-right: 20px;
+  color: rgb(199, 33, 33);
+}
+#scroll-section .heart i sup {
+  font-size: 15px;
+  margin-left: 3px;
 }
 #scroll-section .account {
   display: flex;
@@ -204,17 +280,52 @@ body {
 #scroll-section .account .log-out i:hover {
   color: white;
 }
-#scroll-section .search {
-  width: 400px;
-  margin-right: 10px;
+#scroll-section .searchh {
+  width: 100%;
+  height: 50px;
 }
-#scroll-section .search input {
-  font-size: 20px;
-  border-radius: 15px;
+#scroll-section .searchh .search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  border: 1px solid red;
+  top: 50%;
+  left: 66%;
+  transform: translate(-50%, -50%);
+  background: white;
+  height: 40px;
+  border-radius: 40px;
+  padding: 10px;
+}
+#scroll-section .searchh .search:hover > .search-txt {
+  width: 180px;
+  padding: 0 10px;
+  font-family: "Pangolin", cursive;
+}
+#scroll-section .searchh .search-btn {
+  color: red;
+  position: absolute;
+  right: 0;
+  width: 39px;
+  height: 39px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#scroll-section .searchh .search-txt {
   border: none;
-  border-bottom: 3px solid red;
+  background: none;
   outline: none;
-  padding-left: 10px;
+  float: left;
+  padding: 0;
+  font-size: 13px;
+  transition: ease-in 0.4s;
+  line-height: 40px;
+  width: 110px;
+  font-family: "Pangolin", cursive;
 }
 #scroll-section .line {
   width: 100%;
@@ -255,6 +366,7 @@ body {
 }
 
 #blog .post-filter {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -272,6 +384,53 @@ body {
   color: var(--bg-color);
   padding: 4px 10px;
   border-radius: 4px;
+}
+#blog .post-filter .searchh {
+  height: 50px;
+}
+#blog .post-filter .searchh .search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  border: 1px solid red;
+  left: 120px;
+  top: 18px;
+  transform: translate(-50%, -50%);
+  background: white;
+  width: 200px;
+  height: 40px;
+  border-radius: 40px;
+  padding: 10px;
+}
+#blog .post-filter .searchh .search:hover > .search-txt {
+  width: 180px;
+  padding: 0 10px;
+  font-family: "Pangolin", cursive;
+}
+#blog .post-filter .searchh .search-btn {
+  color: red;
+  position: absolute;
+  right: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#blog .post-filter .searchh .search-txt {
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  font-size: 13px;
+  transition: ease-in 0.4s;
+  line-height: 40px;
+  width: 110px;
+  font-family: "Pangolin", cursive;
 }
 #blog .post {
   margin-top: 20px;
@@ -331,6 +490,11 @@ body {
   overflow: hidden;
 }
 
+@media (max-width: 1400px) {
+  .post-filter .search {
+    left: -300px !important;
+  }
+}
 #footer-part {
   background-color: black;
   padding: 70px 0;

@@ -28,10 +28,6 @@ body {
 }
 
 #nav-area {
-  .navbar {
-    padding: 0 30px 0 30px;
-  }
-
   .navbar-nav {
     width: 100%;
     gap: 10px;
@@ -56,7 +52,6 @@ body {
     img {
       width: 100px;
       height: 80px;
-      margin-left: 30px;
     }
   }
 
@@ -67,6 +62,19 @@ body {
       color: rgb(199, 33, 33);
       sup {
         font-size: 15px;
+        margin-left: 3px;
+      }
+    }
+  }
+
+  .heart {
+    i {
+      font-size: 30px;
+      margin-right: 20px;
+      color: rgb(199, 33, 33);
+      sup {
+        font-size: 15px;
+        margin-left: 3px;
       }
     }
   }
@@ -88,6 +96,10 @@ body {
 
       &:nth-child(3):hover {
         color: white;
+      }
+
+      &:nth-child(3) {
+        color: red;
       }
     }
 
@@ -113,16 +125,54 @@ body {
     }
   }
 
-  .search {
-    width: 400px;
-    margin-right: 10px;
-    input {
-      font-size: 20px;
-      border-radius: 15px;
+  .searchh {
+    width: 100%;
+    height: 50px;
+    .search {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      border: 1px solid red;
+      top: 50%;
+      left: 66%;
+      transform: translate(-50%, -50%);
+      background: white;
+      height: 40px;
+      border-radius: 40px;
+      padding: 10px;
+    }
+
+    .search:hover > .search-txt {
+      width: 180px;
+      padding: 0 10px;
+      font-family: "Pangolin", cursive;
+    }
+
+    .search-btn {
+      color: red;
+      position: absolute;
+      right: 0;
+      width: 39px;
+      height: 39px;
+      border-radius: 50%;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .search-txt {
       border: none;
-      border-bottom: 3px solid red;
+      background: none;
       outline: none;
-      padding-left: 10px;
+      float: left;
+      padding: 0;
+      font-size: 13px;
+      transition: ease-in 0.4s;
+      line-height: 40px;
+      width: 110px;
+      font-family: "Pangolin", cursive;
     }
   }
 
@@ -134,23 +184,56 @@ body {
 }
 
 @media (max-width: 992px) {
+
   .basket {
-    margin-top: 20px;
+    position: absolute;
+    margin-left: 20px;
+    bottom: 100px;
+  }
+
+  .heart{
+    margin-left: 20px;
+  }
+
+  #scroll-section{
+    opacity: 0;
+  }
+
+  #nav-area{
+    .searchh{
+      opacity: 1 !important;
+    }
+  }
+
+  .post-filter.container{
+    width: 540px !important;
   }
 }
 
 @media (max-width: 1400px) {
-  .search {
-    width: 200px !important;
+  .navbar-nav{
+    gap: 0 !important;
   }
+
+  .searchh {
+    position: relative;
+    .search {
+      position: absolute;
+      left: 110px !important;
+      width: 180px !important;
+    }
+  }
+
   .account {
     font-size: 10px !important;
   }
 }
 
 @media (max-width: 1200px) {
-  .search {
-    display: none !important;
+  #nav-area {
+    .searchh {
+      opacity: 0 !important;
+    }
   }
 }
 
@@ -158,7 +241,7 @@ body {
   width: 100%;
   position: fixed;
   transition: 0.5s;
-  z-index: 2;
+  z-index: 4;
 
   .inActive {
     visibility: hidden;
@@ -204,6 +287,19 @@ body {
       color: rgb(199, 33, 33);
       sup {
         font-size: 15px;
+        margin-left: 3px;
+      }
+    }
+  }
+
+  .heart {
+    i {
+      font-size: 30px;
+      margin-right: 20px;
+      color: rgb(199, 33, 33);
+      sup {
+        font-size: 15px;
+        margin-left: 3px;
       }
     }
   }
@@ -246,16 +342,54 @@ body {
     }
   }
 
-  .search {
-    width: 400px;
-    margin-right: 10px;
-    input {
-      font-size: 20px;
-      border-radius: 15px;
+  .searchh {
+    width: 100%;
+    height: 50px;
+    .search {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      border: 1px solid red;
+      top: 50%;
+      left: 66%;
+      transform: translate(-50%, -50%);
+      background: white;
+      height: 40px;
+      border-radius: 40px;
+      padding: 10px;
+    }
+
+    .search:hover > .search-txt {
+      width: 180px;
+      padding: 0 10px;
+      font-family: "Pangolin", cursive;
+    }
+
+    .search-btn {
+      color: red;
+      position: absolute;
+      right: 0;
+      width: 39px;
+      height: 39px;
+      border-radius: 50%;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .search-txt {
       border: none;
-      border-bottom: 3px solid red;
+      background: none;
       outline: none;
-      padding-left: 10px;
+      float: left;
+      padding: 0;
+      font-size: 13px;
+      transition: ease-in 0.4s;
+      line-height: 40px;
+      width: 110px;
+      font-family: "Pangolin", cursive;
     }
   }
 
@@ -304,6 +438,7 @@ body {
 
 #blog {
   .post-filter {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -321,6 +456,57 @@ body {
       color: var(--bg-color);
       padding: 4px 10px;
       border-radius: 4px;
+    }
+
+    .searchh {
+      height: 50px;
+      .search {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        border: 1px solid red;
+        left: 120px;
+        top: 18px;
+        transform: translate(-50%, -50%);
+        background: white;
+        width: 200px;
+        height: 40px;
+        border-radius: 40px;
+        padding: 10px;
+      }
+  
+      .search:hover > .search-txt {
+        width: 180px;
+        padding: 0 10px;
+        font-family: "Pangolin", cursive;
+      }
+  
+      .search-btn {
+        color: red;
+        position: absolute;
+        right: 0;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+  
+      .search-txt {
+        border: none;
+        background: none;
+        outline: none;
+        float: left;
+        padding: 0;
+        font-size: 13px;
+        transition: ease-in 0.4s;
+        line-height: 40px;
+        width: 110px;
+        font-family: "Pangolin", cursive;
+      }
     }
   }
 
@@ -384,6 +570,14 @@ body {
         -webkit-box-orient: vertical;
         overflow: hidden;
       }
+    }
+  }
+}
+
+@media (max-width: 1400px){
+  .post-filter{
+    .search{
+      left: -300px !important;
     }
   }
 }

@@ -386,6 +386,20 @@
   }
 }
 
+#favorite-bg {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: white;
+  height: 144px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h2 {
+    font-family: nav-font;
+  }
+}
+
 #favorite-table {
   .card-title {
     font-family: font9;

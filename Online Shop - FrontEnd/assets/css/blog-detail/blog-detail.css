@@ -331,6 +331,48 @@ body {
   width: 100%;
   margin-top: 30px;
 }
+#blog-detail .user-comment img {
+  width: 50px;
+  height: 50px;
+}
+#blog-detail .user-comment textarea {
+  margin-left: 10px;
+  resize: none;
+}
+#blog-detail .user-comment .user {
+  background: white;
+  padding: 2;
+}
+#blog-detail .user-comment .user .user-info {
+  display: flex;
+  flex: row;
+}
+#blog-detail .user-comment .user .user-info .user-about {
+  margin-left: 2px;
+}
+#blog-detail .user-comment .user .user-info .user-about .full-name {
+  display: block;
+  font-weight: bold;
+}
+#blog-detail .user-comment .user .user-info .user-about .date {
+  color: grey;
+}
+#blog-detail .user-comment .user .comment {
+  margin-top: 2px;
+}
+#blog-detail .user-comment .user .user-like {
+  background: white;
+}
+#blog-detail .user-comment .user .user-like .like-area {
+  display: flex;
+}
+#blog-detail .user-comment .user .user-like .like-area .like {
+  padding: 2px;
+  cursor: pointer;
+}
+#blog-detail .user-comment .user .user-like .like-area .like span {
+  margin-left: 1px;
+}
 #blog-detail .post-container {
   max-width: 600px;
   width: 100%;

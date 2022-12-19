@@ -397,6 +397,62 @@ body {
   width: 100%;
   margin-top: 30px;
 
+  .user-comment{
+    img{
+      width: 50px;
+      height: 50px;
+    }
+
+    textarea{
+      margin-left: 10px;
+      resize: none;
+    }
+
+    .user{
+      background: white;
+      padding: 2;
+
+      .user-info{
+        display: flex;
+        flex: row;
+
+        .user-about{
+          margin-left: 2px;
+
+          .full-name{
+            display: block;
+            font-weight: bold;
+          }
+
+          .date{
+            color: grey;
+          }
+        }
+      }
+
+      .comment{
+        margin-top: 2px;
+      }
+
+      .user-like{
+        background: white;
+
+        .like-area{
+          display: flex;
+
+          .like{
+            padding: 2px;
+            cursor: pointer;
+  
+            span{
+              margin-left: 1px
+            };
+          }
+        }
+      }
+    }
+  }
+
   .post-container {
     max-width: 600px;
     width: 100%;

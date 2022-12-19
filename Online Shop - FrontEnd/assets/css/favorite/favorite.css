@@ -320,6 +320,19 @@
   box-shadow: 0 0 10px;
 }
 
+#favorite-bg {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: white;
+  height: 144px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#favorite-bg h2 {
+  font-family: nav-font;
+}
+
 #favorite-table .card-title {
   font-family: font9;
 }

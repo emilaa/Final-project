@@ -1,0 +1,154 @@
+﻿@model HeaderVM
+
+<header>
+    <section id="nav-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <div class="logo">
+                            <a href="home.html">
+                                <img src="~/assets/images/home/@Model.Settings["Logo"]" alt="" />
+                            </a>
+                        </div>
+                        <button class="navbar-toggler"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent"
+                                aria-controls="navbarSupportedContent"
+                                aria-expanded="false"
+                                aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse"
+                             id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active"
+                                       aria-current="page"
+                                       href="home.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active"
+                                       aria-current="page"
+                                       href="shop.html">Shop</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active"
+                                       aria-current="page"
+                                       href="blog.html">Blog</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active"
+                                       aria-current="page"
+                                       href="contact.html">Contact</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active"
+                                       aria-current="page"
+                                       href="about.html">About</a>
+                                </li>
+                            </ul>
+                            <form class="searchh">
+                                <div class="search">
+                                    <input class="search-txt" type="text" name="" placeholder="Search">
+                                    <a class="search-btn" href="#">
+                                        <i class="fas fa-search"></i>
+                                    </a>
+                                </div>
+                            </form>
+                            <div class="basket">
+                                <a href="basket.html">
+                                    <i class="fa-solid fa-basket-shopping"><sup>0</sup></i>
+                                </a>
+                            </div>
+                            <div class="heart">
+                                <a href="favorite.html"><i class="fa-solid fa-heart"><sup>0</sup></i></a>
+                            </div>
+                            <div class="account">
+                                <a class="nav-link" href="login-register.html">Login/Register</a>
+                                <a href="" class="log-out">
+                                    <i class="fa-solid fa-right-from-bracket"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </nav>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="scroll-section">
+        <div class="row inActive">
+            <div class="col-12">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="logo">
+                        <a href="home.html">
+                            <img src="./assets/images/home/logo.png" alt="" />
+                        </a>
+                    </div>
+                    <button class="navbar-toggler"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active"
+                                   aria-current="page"
+                                   href="home.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active"
+                                   aria-current="page"
+                                   href="shop.html">Shop</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active"
+                                   aria-current="page"
+                                   href="blog.html">Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active"
+                                   aria-current="page"
+                                   href="contact.html">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active"
+                                   aria-current="page"
+                                   href="about.html">About</a>
+                            </li>
+                        </ul>
+                        <form class="searchh">
+                            <div class="search">
+                                <input class="search-txt" type="text" name="" placeholder="Search">
+                                <a class="search-btn" href="#">
+                                    <i class="fas fa-search"></i>
+                                </a>
+                            </div>
+                        </form>
+                        <div class="basket">
+                            <a href="basket.html"><i class="fa-solid fa-basket-shopping"><sup>0</sup></i></a>
+                        </div>
+                        <div class="heart">
+                            <a href="favorite.html"><i class="fa-solid fa-heart"><sup>0</sup></i></a>
+                        </div>
+                        <div class="account">
+                            <a class="nav-link" href="login-register.html">Login/Register</a>
+                            <a href="" class="log-out">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+                <div class="line"></div>
+            </div>
+        </div>
+    </section>
+</header>

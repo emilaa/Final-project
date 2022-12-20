@@ -1,0 +1,17 @@
+﻿
+using Microsoft.EntityFrameworkCore;
+using Online_Shop___BackEnd.Models;
+
+namespace Online_Shop___BackEnd.Data
+{
+    public class AppDbContext : DbContext
+    {
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+        {
+
+        }
+
+        public DbSet<Setting> Settings { get; set; }
+        public DbSet<Banner> Banners { get; set; }
+    }
+}

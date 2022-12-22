@@ -13,5 +13,12 @@ namespace Online_Shop___BackEnd.Data
 
         public DbSet<Setting> Settings { get; set; }
         public DbSet<Banner> Banners { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<ProductSubCategory> ProductSubCategories { get; set; }
+        public DbSet<SubCategory> SubCategories { get; set; }
+        public DbSet<ProductImage> ProductImages { get; set; }
+
+
     }
 }

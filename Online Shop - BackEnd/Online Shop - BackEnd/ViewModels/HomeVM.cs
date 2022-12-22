@@ -1,10 +1,12 @@
 ﻿
 using Online_Shop___BackEnd.Models;
+using System.Collections.Generic;
 
 namespace Online_Shop___BackEnd.ViewModels
 {
     public class HomeVM
     {
-        public Banner Banner { get; set; }
+        public IEnumerable<Banner> Banners { get; set; }
+        public IEnumerable<Product> Products { get; set; }
     }
 }

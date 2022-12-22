@@ -6,6 +6,90 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20221221104842_CreateCategoryAndProducttable.cs" />
+    <Compile Remove="Migrations\20221221104842_CreateCategoryAndProducttable.Designer.cs" />
+    <Compile Remove="Migrations\20221221110424_AddColumnInProductTable.cs" />
+    <Compile Remove="Migrations\20221221110424_AddColumnInProductTable.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\assets\css\about\about.css.map" />
+    <None Include="wwwroot\assets\css\about\about.scss" />
+    <None Include="wwwroot\assets\css\blog-detail\blog-detail.css.map" />
+    <None Include="wwwroot\assets\css\blog-detail\blog-detail.scss" />
+    <None Include="wwwroot\assets\css\blog\blog.css.map" />
+    <None Include="wwwroot\assets\css\blog\blog.scss" />
+    <None Include="wwwroot\assets\css\contact\contact.css.map" />
+    <None Include="wwwroot\assets\css\contact\contact.scss" />
+    <None Include="wwwroot\assets\css\favorite\favorite.css.map" />
+    <None Include="wwwroot\assets\css\favorite\favorite.scss" />
+    <None Include="wwwroot\assets\css\home\home.css.map" />
+    <None Include="wwwroot\assets\css\home\home.scss" />
+    <None Include="wwwroot\assets\css\login-register\login-register.css.map" />
+    <None Include="wwwroot\assets\css\login-register\login-register.scss" />
+    <None Include="wwwroot\assets\css\product-detail\product-detail.css.map" />
+    <None Include="wwwroot\assets\css\product-detail\product-detail.scss" />
+    <None Include="wwwroot\assets\css\shop\shop.css.map" />
+    <None Include="wwwroot\assets\css\shop\shop.scss" />
+    <None Include="wwwroot\assets\images\about\about1.png.webp" />
+    <None Include="wwwroot\assets\images\about\about2.png.webp" />
+    <None Include="wwwroot\assets\images\home\bg-2.jpg.webp" />
+    <None Include="wwwroot\assets\images\home\bg-3.jpg.webp" />
+    <None Include="wwwroot\assets\images\home\bg-4.jpg.webp" />
+    <None Include="wwwroot\assets\images\home\bg-5.jpg.webp" />
+    <None Include="wwwroot\assets\images\home\men\accessories\acs-3.webp" />
+    <None Include="wwwroot\assets\images\home\men\accessories\acs-5.webp" />
+    <None Include="wwwroot\assets\images\home\men\accessories\acs-55.webp" />
+    <None Include="wwwroot\assets\images\home\men\accessories\acs-77.webp" />
+    <None Include="wwwroot\assets\images\home\men\accessories\acs-8.webp" />
+    <None Include="wwwroot\assets\images\home\men\accessories\acs-88.webp" />
+    <None Include="wwwroot\assets\images\home\men\accessories\acs-9.webp" />
+    <None Include="wwwroot\assets\images\home\men\bere\bere-1.webp" />
+    <None Include="wwwroot\assets\images\home\men\bere\bere-11.webp" />
+    <None Include="wwwroot\assets\images\home\men\bere\bere-2.webp" />
+    <None Include="wwwroot\assets\images\home\men\bere\bere-22.webp" />
+    <None Include="wwwroot\assets\images\home\men\bere\bere-33.webp" />
+    <None Include="wwwroot\assets\images\home\men\bere\bere-4.webp" />
+    <None Include="wwwroot\assets\images\home\men\bere\bere-44.webp" />
+    <None Include="wwwroot\assets\images\home\men\clothing\men-22.webp" />
+    <None Include="wwwroot\assets\images\home\men\clothing\men-55.webp" />
+    <None Include="wwwroot\assets\images\home\men\clothing\men-66.webp" />
+    <None Include="wwwroot\assets\images\home\men\shoes\shoes-11.webp" />
+    <None Include="wwwroot\assets\images\home\men\shoes\shoes-22.webp" />
+    <None Include="wwwroot\assets\images\home\men\shoes\shoes-3.webp" />
+    <None Include="wwwroot\assets\images\home\men\shoes\shoes-33.webp" />
+    <None Include="wwwroot\assets\images\home\men\shoes\shoes-4.webp" />
+    <None Include="wwwroot\assets\images\home\men\shoes\shoes-6.webp" />
+    <None Include="wwwroot\assets\images\home\men\shoes\shoes-66.webp" />
+    <None Include="wwwroot\assets\images\home\women\accessories\acs-2.webp" />
+    <None Include="wwwroot\assets\images\home\women\accessories\acs-22.webp" />
+    <None Include="wwwroot\assets\images\home\women\accessories\acs-3.webp" />
+    <None Include="wwwroot\assets\images\home\women\accessories\acs-44.webp" />
+    <None Include="wwwroot\assets\images\home\women\accessories\acs-5.webp" />
+    <None Include="wwwroot\assets\images\home\women\accessories\acs-6.webp" />
+    <None Include="wwwroot\assets\images\home\women\accessories\acs-66.webp" />
+    <None Include="wwwroot\assets\images\home\women\accessories\acs-8.webp" />
+    <None Include="wwwroot\assets\images\home\women\accessories\acs-88.webp" />
+    <None Include="wwwroot\assets\images\home\women\accessories\acs-9.webp" />
+    <None Include="wwwroot\assets\images\home\women\bere\wbere-22.webp" />
+    <None Include="wwwroot\assets\images\home\women\bere\wbere-33.webp" />
+    <None Include="wwwroot\assets\images\home\women\bere\wbere-44.webp" />
+    <None Include="wwwroot\assets\images\home\women\bere\wbere-55.webp" />
+    <None Include="wwwroot\assets\images\home\women\bere\wbere-66.webp" />
+    <None Include="wwwroot\assets\images\home\women\shoes\wshoes-44.webp" />
+    <None Include="wwwroot\assets\images\home\women\shoes\wshoes-55.webp" />
+    <None Include="wwwroot\assets\js\about.js" />
+    <None Include="wwwroot\assets\js\blog-detail.js" />
+    <None Include="wwwroot\assets\js\blog.js" />
+    <None Include="wwwroot\assets\js\contact.js" />
+    <None Include="wwwroot\assets\js\favorite.js" />
+    <None Include="wwwroot\assets\js\home.js" />
+    <None Include="wwwroot\assets\js\login-register.js" />
+    <None Include="wwwroot\assets\js\product-detail.js" />
+    <None Include="wwwroot\assets\js\shop.js" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MailKit" Version="3.4.3" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.32" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.32" />

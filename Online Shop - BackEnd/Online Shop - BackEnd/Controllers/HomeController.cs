@@ -5,9 +5,7 @@ using Online_Shop___BackEnd.Data;
 using Online_Shop___BackEnd.Models;
 using Online_Shop___BackEnd.Services;
 using Online_Shop___BackEnd.ViewModels;
-using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -26,11 +24,19 @@ namespace Online_Shop___BackEnd.Controllers
 
         public async Task<IActionResult> Index()
         {
-            Banner banner = await _context.Banners.Where(m => !m.IsDeleted).FirstOrDefaultAsync();
+            IEnumerable<Banner> banners = await _context.Banners.Where(m => !m.IsDeleted).ToListAsync();
+            IEnumerable<Product> products = await _context.Products
+                .Where(m => !m.IsDeleted)
+                .Include(m => m.ProductImages)
+                .Include(m => m.ProductSubCategories)
+                .ThenInclude(m => m.SubCategory)
+                .Take(7)
+                .ToListAsync();
 
             HomeVM model = new HomeVM
             {
-                Banner = banner
+                Banners = banners,
+                Products = products
             };
 
             return View(model);

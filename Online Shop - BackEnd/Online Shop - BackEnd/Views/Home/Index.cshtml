@@ -6,12 +6,12 @@
 
 <main>
     <section id="banner"
-             style="background-image: url(./assets/images/home/@Model.Banner.Image)">
+             style="background-image: url(./assets/images/home/@Model.Banners.FirstOrDefault(m => !m.IsDeleted)?.Image">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="banner-detail">
-                        <h1>@Model.Banner.Title</h1>
+                        <h1>@Model.Banners.FirstOrDefault(m => !m.IsDeleted)?.Title</h1>
                         <button><a href="shop.html">Shop Now</a></button>
                     </div>
                 </div>
@@ -50,11 +50,10 @@
                 <div class="col-12">
                     <div class="global-sale-about"
                          style="
-                  background-image: url(./assets/images/home/bg-5.jpg.webp);
+                  background-image: url(./assets/images/home/@Model.Banners.FirstOrDefault(m => !m.IsDeleted)?.Image);
                 ">
                         <div class="global-sale-detail">
-                            <h4>-60%</h4>
-                            <h1>Global Sale</h1>
+                            <h1>@Model.Banners.FirstOrDefault(m => !m.IsDeleted)?.Title</h1>
                             <button><a href="shop.html">Shop Now</a></button>
                         </div>
                     </div>
@@ -72,202 +71,208 @@
                     </div>
                 </div>
                 <div id="product-slider" class="owl-carousel">
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="product">
-                            <div class="product-image" product-id="1">
-                                <a href="product-detail.html" class="image">
-                                    <img src="./assets/images/home//women/clothing/product-1.jpg"
+                    @foreach (var product in Model.Products)
+                    {
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <div class="product">
+                                <div class="product-image" product-id="1">
+                                    <a href="product-detail.html" class="image">
+                                        <img src="./assets/images/home/products/@product.ProductImages.FirstOrDefault(m => m.IsMain)?.Name"
                                          class="img-1" />
-                                    <img src="./assets/images/home/women/clothing/product-11.jpg"
+                                        <img src="./assets/images/home/products/@product.ProductImages.FirstOrDefault(m => !m.IsMain)?.Name"
                                          class="img-2" />
-                                </a>
-                                <span class="discount">Sale</span>
-                                <a href="" class="cart">Add to Cart</a>
-                                <div class="links">
-                                    <ul>
-                                        <li>
-                                            <a href=""><i class="fa-solid fa-heart"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="content">
-                                    <span class="category"><a href="">Pull & Bear</a></span>
-                                    <h3 class="title">
-                                        <a href="">Knot Front Mini Dress</a>
-                                    </h3>
-                                    <div class="price">$500</div>
+                                    </a>
+                                    <span class="discount">Sale</span>
+                                    <a href="" class="cart">Add to Cart</a>
+                                    <div class="links">
+                                        <ul>
+                                            <li>
+                                                <a href=""><i class="fa-solid fa-heart"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="content">
+                                        @foreach (var category in product.ProductSubCategories)
+                                        {
+                                            <span class="category"><a href="">@category.SubCategory.Name</a></span>
+                                        }
+                                        <h3 class="title">
+                                            <a href="">@product.Name</a>
+                                        </h3>
+                                        <div class="price">$@product.Price</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                    }
+                    @*<div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="product">
+                    <div class="product-image" product-id="2">
+                    <a href="product-detail.html" class="image">
+                    <img src="./assets/images/home/products/men-1.jpg"
+                    class="img-1" />
+                    <img src="./assets/images/home/products/men-11.jpg"
+                    class="img-2" />
+                    </a>
+                    <span class="discount">Sale</span>
+                    <a href="" class="cart">Add to Cart</a>
+                    <div class="links">
+                    <ul>
+                    <li>
+                    <a href=""><i class="fa-solid fa-heart"></i></a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="content">
+                    <span class="category"><a href="">Bershka</a></span>
+                    <h3 class="title">
+                    <a href="">Poplin Displaced Wrap Dress</a>
+                    </h3>
+                    <div class="price">$500</div>
+                    </div>
+                    </div>
+                    </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="product">
-                            <div class="product-image" product-id="2">
-                                <a href="product-detail.html" class="image">
-                                    <img src="./assets/images/home/men/clothing/men-1.jpg"
-                                         class="img-1" />
-                                    <img src="./assets/images/home/men/clothing/men-11.jpg"
-                                         class="img-2" />
-                                </a>
-                                <span class="discount">Sale</span>
-                                <a href="" class="cart">Add to Cart</a>
-                                <div class="links">
-                                    <ul>
-                                        <li>
-                                            <a href=""><i class="fa-solid fa-heart"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="content">
-                                    <span class="category"><a href="">Bershka</a></span>
-                                    <h3 class="title">
-                                        <a href="">Poplin Displaced Wrap Dress</a>
-                                    </h3>
-                                    <div class="price">$500</div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="product">
+                    <div class="product-image" product-id="3">
+                    <a href="product-detail.html" class="image">
+                    <img src="./assets/images/home/products/acs-1.jpg"
+                    class="img-1" />
+                    <img src="./assets/images/home/products/acs-11.jpg"
+                    class="img-2" />
+                    </a>
+                    <span class="discount">Sale</span>
+                    <a href="" class="cart">Add to Cart</a>
+                    <div class="links">
+                    <ul>
+                    <li>
+                    <a href=""><i class="fa-solid fa-heart"></i></a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="content">
+                    <span class="category"><a href="">Zara</a></span>
+                    <h3 class="title">
+                    <a href="">PETITE Crepe Wrap Mini Dress</a>
+                    </h3>
+                    <div class="price">$500</div>
+                    </div>
+                    </div>
+                    </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="product">
-                            <div class="product-image" product-id="3">
-                                <a href="product-detail.html" class="image">
-                                    <img src="./assets/images/home/women/accessories/acs-1.jpg"
-                                         class="img-1" />
-                                    <img src="./assets/images/home/women/accessories/acs-11.jpg"
-                                         class="img-2" />
-                                </a>
-                                <span class="discount">Sale</span>
-                                <a href="" class="cart">Add to Cart</a>
-                                <div class="links">
-                                    <ul>
-                                        <li>
-                                            <a href=""><i class="fa-solid fa-heart"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="content">
-                                    <span class="category"><a href="">Zara</a></span>
-                                    <h3 class="title">
-                                        <a href="">PETITE Crepe Wrap Mini Dress</a>
-                                    </h3>
-                                    <div class="price">$500</div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="product">
+                    <div class="product-image" product-id="4">
+                    <a href="product-detail.html" class="image">
+                    <img src="./assets/images/home/products/wshoess-1.jpg"
+                    class="img-1" />
+                    <img src="./assets/images/home/products/wshoess-11.jpg"
+                    class="img-2" />
+                    </a>
+                    <span class="discount">Sale</span>
+                    <a href="" class="cart">Add to Cart</a>
+                    <div class="links">
+                    <ul>
+                    <li>
+                    <a href=""><i class="fa-solid fa-heart"></i></a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="content">
+                    <span class="category"><a href="">Mango</a></span>
+                    <h3 class="title">
+                    <a href="">PETITE Belted Jumper Dress</a>
+                    </h3>
+                    <div class="price">$500</div>
+                    </div>
+                    </div>
+                    </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="product">
-                            <div class="product-image" product-id="4">
-                                <a href="product-detail.html" class="image">
-                                    <img src="./assets/images/home/women/shoes/wshoes-1.jpg"
-                                         class="img-1" />
-                                    <img src="./assets/images/home/women/shoes/wshoes-11.jpg"
-                                         class="img-2" />
-                                </a>
-                                <span class="discount">Sale</span>
-                                <a href="" class="cart">Add to Cart</a>
-                                <div class="links">
-                                    <ul>
-                                        <li>
-                                            <a href=""><i class="fa-solid fa-heart"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="content">
-                                    <span class="category"><a href="">Mango</a></span>
-                                    <h3 class="title">
-                                        <a href="">PETITE Belted Jumper Dress</a>
-                                    </h3>
-                                    <div class="price">$500</div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="product">
+                    <div class="product-image" product-id="5">
+                    <a href="product-detail.html" class="image">
+                    <img src="./assets/images/home/products/bere-1.webp"
+                    class="img-1" />
+                    <img src="./assets/images/home/products/bere-11.webp"
+                    class="img-2" />
+                    </a>
+                    <span class="discount">Sale</span>
+                    <a href="" class="cart">Add to Cart</a>
+                    <div class="links">
+                    <ul>
+                    <li>
+                    <a href=""><i class="fa-solid fa-heart"></i></a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="content">
+                    <span class="category"><a href="">Mango</a></span>
+                    <h3 class="title">
+                    <a href="">Knot Front Mini Dress</a>
+                    </h3>
+                    <div class="price">$500</div>
+                    </div>
+                    </div>
+                    </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="product">
-                            <div class="product-image" product-id="5">
-                                <a href="product-detail.html" class="image">
-                                    <img src="./assets/images/home/men/bere/bere-1.webp"
-                                         class="img-1" />
-                                    <img src="./assets/images/home/men/bere/bere-11.webp"
-                                         class="img-2" />
-                                </a>
-                                <span class="discount">Sale</span>
-                                <a href="" class="cart">Add to Cart</a>
-                                <div class="links">
-                                    <ul>
-                                        <li>
-                                            <a href=""><i class="fa-solid fa-heart"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="content">
-                                    <span class="category"><a href="">Mango</a></span>
-                                    <h3 class="title">
-                                        <a href="">Knot Front Mini Dress</a>
-                                    </h3>
-                                    <div class="price">$500</div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="product">
+                    <div class="product-image" product-id="6">
+                    <a href="product-detail.html" class="image">
+                    <img src="./assets/images/home/products/men-2.jpg"
+                    class="img-1" />
+                    <img src="./assets/images/home/products/men-22.webp"
+                    class="img-2" />
+                    </a>
+                    <span class="discount">Sale</span>
+                    <a href="" class="cart">Add to Cart</a>
+                    <div class="links">
+                    <ul>
+                    <li>
+                    <a href=""><i class="fa-solid fa-heart"></i></a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="content">
+                    <span class="category"><a href="">Mango</a></span>
+                    <h3 class="title">
+                    <a href="">Poplin Displaced Wrap Dress</a>
+                    </h3>
+                    <div class="price">$500</div>
+                    </div>
+                    </div>
+                    </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="product">
-                            <div class="product-image" product-id="6">
-                                <a href="product-detail.html" class="image">
-                                    <img src="./assets/images/home/men/clothing/men-2.jpg"
-                                         class="img-1" />
-                                    <img src="./assets/images/home/men/clothing/men-22.webp"
-                                         class="img-2" />
-                                </a>
-                                <span class="discount">Sale</span>
-                                <a href="" class="cart">Add to Cart</a>
-                                <div class="links">
-                                    <ul>
-                                        <li>
-                                            <a href=""><i class="fa-solid fa-heart"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="content">
-                                    <span class="category"><a href="">Mango</a></span>
-                                    <h3 class="title">
-                                        <a href="">Poplin Displaced Wrap Dress</a>
-                                    </h3>
-                                    <div class="price">$500</div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="product">
+                    <div class="product-image" product-id="7">
+                    <a href="product-detail.html" class="image">
+                    <img src="./assets/images/home/products/product-2.jpg"
+                    class="img-1" />
+                    <img src="./assets/images/home/products/product-22.jpg"
+                    class="img-2" />
+                    </a>
+                    <span class="discount">Sale</span>
+                    <a href="" class="cart">Add to Cart</a>
+                    <div class="links">
+                    <ul>
+                    <li>
+                    <a href=""><i class="fa-solid fa-heart"></i></a>
+                    </li>
+                    </ul>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="product">
-                            <div class="product-image" product-id="7">
-                                <a href="product-detail.html" class="image">
-                                    <img src="./assets/images/home/women/clothing/product-2.jpg"
-                                         class="img-1" />
-                                    <img src="./assets/images/home/women/clothing/product-22.jpg"
-                                         class="img-2" />
-                                </a>
-                                <span class="discount">Sale</span>
-                                <a href="" class="cart">Add to Cart</a>
-                                <div class="links">
-                                    <ul>
-                                        <li>
-                                            <a href=""><i class="fa-solid fa-heart"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="content">
-                                    <span class="category"><a href="">Mango</a></span>
-                                    <h3 class="title">
-                                        <a href="">PETITE Crepe Wrap Mini Dress</a>
-                                    </h3>
-                                    <div class="price">$500</div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="content">
+                    <span class="category"><a href="">Mango</a></span>
+                    <h3 class="title">
+                    <a href="">PETITE Crepe Wrap Mini Dress</a>
+                    </h3>
+                    <div class="price">$500</div>
                     </div>
+                    </div>
+                    </div>
+                    </div>*@
                 </div>
             </div>
         </div>

@@ -18,7 +18,10 @@ namespace Online_Shop___BackEnd.Data
         public DbSet<ProductSubCategory> ProductSubCategories { get; set; }
         public DbSet<SubCategory> SubCategories { get; set; }
         public DbSet<ProductImage> ProductImages { get; set; }
-
-
+        public DbSet<PageHeader> PageHeaders { get; set; }
+        public DbSet<About> Abouts { get; set; }
+        public DbSet<Brand> Brands { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Login_Register> Login_Registers { get; set; }
     }
 }

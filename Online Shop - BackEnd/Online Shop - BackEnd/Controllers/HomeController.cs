@@ -14,12 +14,10 @@ namespace Online_Shop___BackEnd.Controllers
     public class HomeController : Controller
     {
         private readonly AppDbContext _context;
-        private readonly LayoutService _layoutService;
 
-        public HomeController(AppDbContext context, LayoutService layoutService)
+        public HomeController(AppDbContext context)
         {
             _context = context;
-            _layoutService = layoutService;
         }
 
         public async Task<IActionResult> Index()

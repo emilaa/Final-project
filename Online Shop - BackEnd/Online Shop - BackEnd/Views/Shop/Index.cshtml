@@ -136,260 +136,413 @@
                     </div>
                 </div>
                 <div class="col-9">
-                    <div class="col-12">
-                        <div class="post-filter container">
-                            @foreach (var subCategory in @Model.SubCategories)
-                            {
-                                if (subCategory.Name == "All")
-                                {
-                                    <span class="filter-item active-filter" data-filter="@subCategory.Name.ToLower()">@subCategory.Name</span>
-
-                                }
-                                else
-                                {
-                                    <span class="filter-item" data-filter="@subCategory.Name.ToLower()">@subCategory.Name</span>
-                                }
-                            }
-                        </div>
-                    </div>
-                    <div class="post container">
-                        @foreach (var productSubCategory in Model.ProductSubCategories)
-                        {
-                            <div class="post-box @productSubCategory.SubCategory.Name.ToLower()" data-id="1" product-id="1">
-                                <div class="post-image">
-                                    <a href="product-detail.html" class="image">
-                                        <img src="~/assets/images/home/products/@productSubCategory.Product.ProductImages.FirstOrDefault(m => m.IsMain)?.Name"
-                                         alt=""
-                                         class="post-img" />
-                                        <img src="~/assets/images/home/products/@productSubCategory.Product.ProductImages.FirstOrDefault(m => !m.IsMain)?.Name"
-                                         alt=""
-                                         class="post-img-2" />
-                                    </a>
+                    <section id="products">
+                        <div class="container">
+                            <div class="row pt-5">
+                                <div class="col-12"
+                                     style="
+                        display: flex !important;
+                        justify-content: center !important;
+                      ">
+                                    <ul class="category-mobile d-md-none list-unstyled">
+                                        <li>
+                                            <a href="" class="categories mr-2">Categories</a>
+                                            <i class="fas fa-caret-down"></i>
+                                            <ul class="category list-unstyled"
+                                                style="display: none">
+                                                <li><a href="" data-id="all">All</a></li>
+                                                <li><a href="" data-id="men">Men</a></li>
+                                                <li><a href="" data-id="women">Women</a></li>
+                                                <li>
+                                                    <a href="" data-id="accessories">Accessories</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <ul class="category d-none d-md-flex list-unstyled">
+                                        <li><a href="" data-id="all">All</a></li>
+                                        <li><a href="" data-id="men">Men</a></li>
+                                        <li><a href="" data-id="women">Women</a></li>
+                                        <li><a href="" data-id="accessories">Accessories</a></li>
+                                    </ul>
                                 </div>
-                                <div class="links">
-                                    <div class="heart">
-                                        <i class="fa-solid fa-heart"></i>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+                                    <div class="product-item text-center"
+                                         data-id="women"
+                                         product-id="1">
+                                        <div class="img">
+                                            <a href="product-detail.html">
+                                                <img src="./assets/images/home/products/product-7.jpg"
+                                                     class="img-fluid"
+                                                     alt="" />
+                                                <img src="./assets/images/home/products/product-77.jpg"
+                                                     class="img-fluid"
+                                                     alt="" />
+                                            </a>
+                                            <div class="links">
+                                                <div class="heart">
+                                                    <i class="fa-solid fa-heart"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="title mt-3" style="color: grey">
+                                            <h6>De Facto</h6>
+                                        </div>
+                                        <div class="title mt-3">
+                                            <h6>MAJESTY PALM</h6>
+                                        </div>
+                                        <div class="price">
+                                            <button>Add To Cart</button>
+                                            <span class="text-black-50">$259</span>
+                                        </div>
                                     </div>
                                 </div>
-                                @if (productSubCategory.SubCategory.CategoryId == 2)
-                                {
-                                    <h2 class="category">@productSubCategory.SubCategory.Name</h2>
-                                }
-                                <a href="product-detail.html" class="post-title">
-                                    @productSubCategory.Product.Name
-                                </a>
-                                <span class="post-date">$@productSubCategory.Product.Price</span>
-                                <a href="" class="cart">Add to Cart</a>
+                                <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+                                    <div class="product-item text-center"
+                                         data-id="accessories"
+                                         product-id="2">
+                                        <div class="img">
+                                            <a href="product-detail.html">
+                                                <img src="./assets/images/home/products/acss-8.webp"
+                                                     class="img-fluid"
+                                                     alt="" />
+                                                <img src="./assets/images/home/products/acss-88.webp"
+                                                     class="img-fluid"
+                                                     alt="" />
+                                            </a>
+                                            <div class="links">
+                                                <div class="heart">
+                                                    <i class="fa-solid fa-heart"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="title mt-3" style="color: grey">
+                                            <h6>De Facto</h6>
+                                        </div>
+                                        <div class="title mt-3">
+                                            <h6>MAJESTY PALM</h6>
+                                        </div>
+                                        <div class="price">
+                                            <button>Add To Cart</button>
+                                            <span class="text-black-50">$259</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+                                    <div class="product-item text-center"
+                                         data-id="men"
+                                         product-id="3">
+                                        <div class="img">
+                                            <a href="product-detail.html">
+                                                <img src="./assets/images/home/products/men-1.jpg"
+                                                     class="img-fluid"
+                                                     alt="" />
+                                                <img src="./assets/images/home/products/men-11.jpg"
+                                                     class="img-fluid"
+                                                     alt="" />
+                                            </a>
+                                            <div class="links">
+                                                <div class="heart">
+                                                    <i class="fa-solid fa-heart"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="title mt-3" style="color: grey">
+                                            <h6>Zara</h6>
+                                        </div>
+                                        <div class="title mt-3">
+                                            <h6>MAJESTY PALM</h6>
+                                        </div>
+                                        <div class="price">
+                                            <button>Add To Cart</button>
+                                            <span class="text-black-50">$124</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+                                    <div class="product-item text-center"
+                                         data-id="men"
+                                         product-id="4">
+                                        <div class="img">
+                                            <a href="product-detail.html">
+                                                <img src="./assets/images/home/products/bere-1.webp"
+                                                     class="img-fluid"
+                                                     alt="" />
+                                                <img src="./assets/images/home/products/bere-11.webp"
+                                                     class="img-fluid"
+                                                     alt="" />
+                                            </a>
+                                            <div class="links">
+                                                <div class="heart">
+                                                    <i class="fa-solid fa-heart"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="title mt-3" style="color: grey">
+                                            <h6>Terranova</h6>
+                                        </div>
+                                        <div class="title mt-3">
+                                            <h6>MAJESTY PALM</h6>
+                                        </div>
+                                        <div class="price">
+                                            <button>Add To Cart</button>
+                                            <span class="text-black-50">$259</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+                                    <div class="product-item text-center"
+                                         data-id="men"
+                                         product-id="5">
+                                        <div class="img">
+                                            <a href="product-detail.html">
+                                                <img src="./assets/images/home/products/men-2.jpg"
+                                                     class="img-fluid"
+                                                     alt="" />
+                                                <img src="./assets/images/home/products/men-22.webp"
+                                                     class="img-fluid"
+                                                     alt="" />
+                                            </a>
+                                            <div class="links">
+                                                <div class="heart">
+                                                    <i class="fa-solid fa-heart"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="title mt-3" style="color: grey">
+                                            <h6>De Facto</h6>
+                                        </div>
+                                        <div class="title mt-3">
+                                            <h6>MAJESTY PALM</h6>
+                                        </div>
+                                        <div class="price">
+                                            <button>Add To Cart</button>
+                                            <span class="text-black-50">$259</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+                                    <div class="product-item text-center"
+                                         data-id="women"
+                                         product-id="6">
+                                        <div class="img">
+                                            <a href="product-detail.html">
+                                                <img src="./assets/images/home/products/wberee-1.jpg"
+                                                     class="img-fluid"
+                                                     alt="" />
+                                                <img src="./assets/images/home/products/wberee-11.jpg"
+                                                     class="img-fluid"
+                                                     alt="" />
+                                            </a>
+                                            <div class="links">
+                                                <div class="heart">
+                                                    <i class="fa-solid fa-heart"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="title mt-3" style="color: grey">
+                                            <h6>De Facto</h6>
+                                        </div>
+                                        <div class="title mt-3">
+                                            <h6>MAJESTY PALM</h6>
+                                        </div>
+                                        <div class="price">
+                                            <button>Add To Cart</button>
+                                            <span class="text-black-50">$259</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+                                    <div class="product-item text-center"
+                                         data-id="women"
+                                         product-id="7">
+                                        <div class="img">
+                                            <a href="product-detail.html">
+                                                <img src="./assets/images/home/products/product-2.jpg"
+                                                     class="img-fluid"
+                                                     alt="" />
+                                                <img src="./assets/images/home/products/product-22.jpg"
+                                                     class="img-fluid"
+                                                     alt="" />
+                                            </a>
+                                            <div class="links">
+                                                <div class="heart">
+                                                    <i class="fa-solid fa-heart"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="title mt-3" style="color: grey">
+                                            <h6>De Facto</h6>
+                                        </div>
+                                        <div class="title mt-3">
+                                            <h6>MAJESTY PALM</h6>
+                                        </div>
+                                        <div class="price">
+                                            <button>Add To Cart</button>
+                                            <span class="text-black-50">$259</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+                                    <div class="product-item text-center"
+                                         data-id="accessories"
+                                         product-id="8">
+                                        <div class="img">
+                                            <a href="product-detail.html">
+                                                <img src="./assets/images/home/products/acs-8.webp"
+                                                     class="img-fluid"
+                                                     alt="" />
+                                                <img src="./assets/images/home/products/acs-88.webp"
+                                                     class="img-fluid"
+                                                     alt="" />
+                                            </a>
+                                            <div class="links">
+                                                <div class="heart">
+                                                    <i class="fa-solid fa-heart"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="title mt-3" style="color: grey">
+                                            <h6>De Facto</h6>
+                                        </div>
+                                        <div class="title mt-3">
+                                            <h6>MAJESTY PALM</h6>
+                                        </div>
+                                        <div class="price">
+                                            <button>Add To Cart</button>
+                                            <span class="text-black-50">$259</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+                                    <div class="product-item text-center"
+                                         data-id="women"
+                                         product-id="9">
+                                        <div class="img">
+                                            <a href="product-detail.html">
+                                                <img src="./assets/images/home/products/product-3.jpg"
+                                                     class="img-fluid"
+                                                     alt="" />
+                                                <img src="./assets/images/home/products/product-33.jpg"
+                                                     class="img-fluid"
+                                                     alt="" />
+                                            </a>
+                                            <div class="links">
+                                                <div class="heart">
+                                                    <i class="fa-solid fa-heart"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="title mt-3" style="color: grey">
+                                            <h6>De Facto</h6>
+                                        </div>
+                                        <div class="title mt-3">
+                                            <h6>MAJESTY PALM</h6>
+                                        </div>
+                                        <div class="price">
+                                            <button>Add To Cart</button>
+                                            <span class="text-black-50">$259</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+                                    <div class="product-item text-center"
+                                         data-id="accessories"
+                                         product-id="10">
+                                        <div class="img">
+                                            <a href="product-detail.html">
+                                                <img src="./assets/images/home/products/acss-4.jpg"
+                                                     class="img-fluid"
+                                                     alt="" />
+                                                <img src="./assets/images/home/products/acs-44.webp"
+                                                     class="img-fluid"
+                                                     alt="" />
+                                            </a>
+                                            <div class="links">
+                                                <div class="heart">
+                                                    <i class="fa-solid fa-heart"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="title mt-3" style="color: grey">
+                                            <h6>De Facto</h6>
+                                        </div>
+                                        <div class="title mt-3">
+                                            <h6>MAJESTY PALM</h6>
+                                        </div>
+                                        <div class="price">
+                                            <button>Add To Cart</button>
+                                            <span class="text-black-50">$259</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+                                    <div class="product-item text-center"
+                                         data-id="men"
+                                         product-id="11">
+                                        <div class="img">
+                                            <a href="product-detail.html">
+                                                <img src="./assets/images/home/products/men-3.jpg"
+                                                     class="img-fluid"
+                                                     alt="" />
+                                                <img src="./assets/images/home/products/men-33.jpg"
+                                                     class="img-fluid"
+                                                     alt="" />
+                                            </a>
+                                            <div class="links">
+                                                <div class="heart">
+                                                    <i class="fa-solid fa-heart"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="title mt-3" style="color: grey">
+                                            <h6>De Facto</h6>
+                                        </div>
+                                        <div class="title mt-3">
+                                            <h6>MAJESTY PALM</h6>
+                                        </div>
+                                        <div class="price">
+                                            <button>Add To Cart</button>
+                                            <span class="text-black-50">$259</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+                                    <div class="product-item text-center"
+                                         data-id="men"
+                                         product-id="12">
+                                        <div class="img">
+                                            <a href="product-detail.html">
+                                                <img src="./assets/images/home/products/bere-3.jpg"
+                                                     class="img-fluid"
+                                                     alt="" />
+                                                <img src="./assets/images/home/products/bere-33.webp"
+                                                     class="img-fluid"
+                                                     alt="" />
+                                            </a>
+                                            <div class="links">
+                                                <div class="heart">
+                                                    <i class="fa-solid fa-heart"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="title mt-3" style="color: grey">
+                                            <h6>De Facto</h6>
+                                        </div>
+                                        <div class="title mt-3">
+                                            <h6>MAJESTY PALM</h6>
+                                        </div>
+                                        <div class="price">
+                                            <button>Add To Cart</button>
+                                            <span class="text-black-50">$259</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        }
-                        @* <div class="post-box women" data-id="2" product-id="2">
-                        <div class="post-image">
-                        <a href="product-detail.html" class="image">
-                        <img src="~/assets/images/home/products/product-1.jpg"
-                        alt=""
-                        class="post-img" />
-                        <img src="~/assets/images/home/products/product-11.jpg"
-                        alt=""
-                        class="post-img-2" />
-                        </a>
                         </div>
-                        <div class="links">
-                        <div class="heart">
-                        <i class="fa-solid fa-heart"></i>
-                        </div>
-                        </div>
-                        <h2 class="category">Zara</h2>
-                        <a href="product-detail.html" class="post-title">
-                        Blue Button Collar Long Belted
-                        </a>
-                        <span class="post-date">$52</span>
-                        <a href="" class="cart">Add to Cart</a>
-                        </div>
-                        <div class="post-box men accessories" data-id="3" product-id="3">
-                        <div class="post-image">
-                        <a href="product-detail.html" class="image">
-                        <img src="~/assets/images/home/products/acs-1.jpg"
-                        alt=""
-                        class="post-img" />
-                        <img src="~/assets/images/home/products/acs-11.jpg"
-                        alt=""
-                        class="post-img-2" />
-                        </a>
-                        </div>
-                        <div class="links">
-                        <div class="heart">
-                        <i class="fa-solid fa-heart"></i>
-                        </div>
-                        </div>
-                        <h2 class="category">Lc Waikiki</h2>
-                        <a href="product-detail.html" class="post-title">
-                        Black Gray Tie Handkerchief Set
-                        </a>
-                        <span class="post-date">$147</span>
-                        <a href="" class="cart">Add to Cart</a>
-                        </div>
-                        <div class="post-box women" data-id="4" product-id="4">
-                        <div class="post-image">
-                        <a href="product-detail.html" class="image">
-                        <img src="~/assets/images/home/products/wberee-1.jpg"
-                        alt=""
-                        class="post-img" />
-                        <img src="~/assets/images/home/products/wberee-11.jpg"
-                        alt=""
-                        class="post-img-2" />
-                        </a>
-                        </div>
-                        <div class="links">
-                        <div class="heart">
-                        <i class="fa-solid fa-heart"></i>
-                        </div>
-                        </div>
-                        <h2 class="category">Terranova</h2>
-                        <a href="product-detail.html" class="post-title">
-                        Mathilda Accessory French Painter Australian
-                        </a>
-                        <span class="post-date">$254</span>
-                        <a href="" class="cart">Add to Cart</a>
-                        </div>
-                        <div class="post-box men" data-id="5" product-id="5">
-                        <div class="post-image">
-                        <a href="product-detail.html" class="image">
-                        <img src="~/assets/images/home/products/men-2.jpg"
-                        alt=""
-                        class="post-img" />
-                        <img src="~/assets/images/home/products/men-22.webp"
-                        alt=""
-                        class="post-img-2" />
-                        </a>
-                        </div>
-                        <div class="links">
-                        <div class="heart">
-                        <i class="fa-solid fa-heart"></i>
-                        </div>
-                        </div>
-                        <h2 class="category">Mango</h2>
-                        <a href="product-detail.html" class="post-title">
-                        Navy Blue Crew Neck Raised 3 Thread Cotton
-                        </a>
-                        <span class="post-date">$78</span>
-                        <a href="" class="cart">Add to Cart</a>
-                        </div>
-                        <div class="post-box women" data-id="6" product-id="6">
-                        <div class="post-image">
-                        <a href="product-detail.html" class="image">
-                        <img src="~/assets/images/home/products/product-2.jpg"
-                        alt=""
-                        class="post-img" />
-                        <img src="~/assets/images/home/products/product-22.jpg"
-                        alt=""
-                        class="post-img-2" />
-                        </a>
-                        </div>
-                        <div class="links">
-                        <div class="heart">
-                        <i class="fa-solid fa-heart"></i>
-                        </div>
-                        </div>
-                        <h2 class="category">Ltb</h2>
-                        <a href="product-detail.html" class="post-title">
-                        Reverse Stitch Detail Mini Camisole Dress
-                        </a>
-                        <span class="post-date">$159</span>
-                        <a href="" class="cart">Add to Cart</a>
-                        </div>
-                        <div class="post-box men accessories" data-id="7" product-id="7">
-                        <div class="post-image">
-                        <a href="product-detail.html" class="image">
-                        <img src="~/assets/images/home/products/acs-2.jpg"
-                        alt=""
-                        class="post-img" />
-                        <img src="~/assets/images/home/products/acs-22.jpg"
-                        alt=""
-                        class="post-img-2" />
-                        </a>
-                        </div>
-                        <div class="links">
-                        <div class="heart">
-                        <i class="fa-solid fa-heart"></i>
-                        </div>
-                        </div>
-                        <h2 class="category">De Facto</h2>
-                        <a href="product-detail.html" class="post-title">
-                        Gold Medium Thick Sequin Aleppo Bracelet
-                        </a>
-                        <span class="post-date">$89</span>
-                        <a href="" class="cart">Add to Cart</a>
-                        </div>
-                        <div class="post-box men" data-id="8" product-id="8">
-                        <div class="post-image">
-                        <a href="product-detail.html" class="image">
-                        <img src="~/assets/images/home/products/shoes-1.jpg"
-                        alt=""
-                        class="post-img" />
-                        <img src="~/assets/images/home/products/shoes-11.webp"
-                        alt=""
-                        class="post-img-2" />
-                        </a>
-                        </div>
-                        <div class="links">
-                        <div class="heart">
-                        <i class="fa-solid fa-heart"></i>
-                        </div>
-                        </div>
-                        <h2 class="category">Zara</h2>
-                        <a href="product-detail.html" class="post-title">
-                        Unisex White Rebound Joy Jr Basket
-                        </a>
-                        <span class="post-date">$76</span>
-                        <a href="" class="cart">Add to Cart</a>
-                        </div>
-                        <div class="post-box men" data-id="9" product-id="9">
-                        <div class="post-image">
-                        <a href="product-detail.html" class="image">
-                        <img src="~/assets/images/home/products/men-3.jpg"
-                        alt=""
-                        class="post-img" />
-                        <img src="~/assets/images/home/products/men-33.jpg"
-                        alt=""
-                        class="post-img-2" />
-                        </a>
-                        </div>
-                        <div class="links">
-                        <div class="heart">
-                        <i class="fa-solid fa-heart"></i>
-                        </div>
-                        </div>
-                        <h2 class="category">Tech</h2>
-                        <a href="product-detail.html" class="post-title">
-                        Men's Basic Oversize Fit Hooded Soft Fluffy
-                        </a>
-                        <span class="post-date">$165</span>
-                        <a href="" class="cart">Add to Cart</a>
-                        </div>
-                        <div class="post-box women accessories" data-id="10" product-id="10">
-                        <div class="post-image">
-                        <a href="product-detail.html" class="image">
-                        <img src="~/assets/images/home/products/acss-5.webp"
-                        alt=""
-                        class="post-img" />
-                        <img src="~/assets/images/home/products/acs-55.jpg"
-                        alt=""
-                        class="post-img-2" />
-                        </a>
-                        </div>
-                        <div class="links">
-                        <div class="heart">
-                        <i class="fa-solid fa-heart"></i>
-                        </div>
-                        </div>
-                        <h2 class="category">Lc Waikiki</h2>
-                        <a href="product-detail.html" class="post-title">
-                        Black Gray Tie Handkerchief Set
-                        </a>
-                        <span class="post-date">$147</span>
-                        <a href="" class="cart">Add to Cart</a>
-                        </div>*@
-                    </div>
+                    </section>
                 </div>
             </div>
         </div>

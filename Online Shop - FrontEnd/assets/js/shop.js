@@ -18,25 +18,52 @@ $(function () {
     }
   }
 
-  $(".filter-item").click(function () {
-    const value = $(this).attr("data-filter");
-    if (value == "all") {
-      $(".post-box").show("1000");
-    } else {
-      $(".post-box")
-        .not("." + value)
-        .hide("1000");
-      $(".post-box")
-        .filter("." + value)
-        .show("1000");
-    }
-  });
+  // $(".filter-item").click(function () {
+  //   const value = $(this).attr("data-filter");
+  //   if (value == "all") {
+  //     $(".post-box").show("1000");
+  //   } else {
+  //     $(".post-box")
+  //       .not("." + value)
+  //       .hide("1000");
+  //     $(".post-box")
+  //       .filter("." + value)
+  //       .show("1000");
+  //   }
+  // });
 
-  $(".filter-item").click(function () {
-    $(this).addClass("active-filter").siblings().removeClass("active-filter");
-  });
+  // $(".filter-item").click(function () {
+  //   $(this).addClass("active-filter").siblings().removeClass("active-filter");
+  // });
 
-  let addHeart = document.querySelectorAll("#shop-product .post-box .fa-heart");
+  $(document).on('click', '.categories', function(e)
+    {
+        e.preventDefault();
+        $(this).next().next().slideToggle();
+    })
+
+    $(document).on('click', '.category li a', function (e) {
+        e.preventDefault();
+        let category = $(this).attr('data-id');
+        let products = $('.product-item');
+        
+        products.each(function () {
+            if(category == $(this).attr('data-id'))
+            {
+                $(this).parent().fadeIn();
+            }
+            else
+            {
+                $(this).parent().hide();
+            }
+        })
+        if(category == 'all')
+        {
+            products.parent().fadeIn();
+        }
+    })
+
+  let addHeart = document.querySelectorAll("#shop-product #products .product-item .fa-heart");
   let heartCount = document.querySelector(".heart sup");
   let heartCount2 = document.querySelector("#scroll-section .heart sup");
 
@@ -53,18 +80,17 @@ $(function () {
       e.preventDefault();
 
       let productImg =
-        this.parentNode.parentNode.parentNode.firstElementChild.firstElementChild.firstElementChild.getAttribute(
+        this.parentNode.parentNode.parentNode.firstElementChild.firstElementChild.getAttribute(
           "src"
         );
-      let brandName = this.parentNode.parentNode.nextElementSibling.innerText;
+      let brandName = this.parentNode.parentNode.parentNode.nextElementSibling.nextElementSibling.firstElementChild.innerText;
       let productName =
-        this.parentNode.parentNode.nextElementSibling.nextElementSibling
+        this.parentNode.parentNode.parentNode.nextElementSibling.firstElementChild
           .innerText;
       let productPrice =
-        this.parentNode.parentNode.nextElementSibling.nextElementSibling
-          .nextElementSibling.innerText;
+        this.parentNode.parentNode.parentNode.parentNode.lastElementChild.lastElementChild.innerText;
       let productId = parseInt(
-        this.parentNode.parentNode.parentNode.getAttribute("product-id")
+        this.parentNode.parentNode.parentNode.parentNode.getAttribute("product-id")
       );
 
       let existProduct = products.find((m) => m.id == productId);

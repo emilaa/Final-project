@@ -171,3 +171,4 @@ C:\Users\Emil Abdullayev\Desktop\Final project\Online Shop - BackEnd\Online Shop
 C:\Users\Emil Abdullayev\Desktop\Final project\Online Shop - BackEnd\Online Shop - BackEnd\obj\Debug\netcoreapp3.1\Razor\Views\About\Index.cshtml.g.cs
 C:\Users\Emil Abdullayev\Desktop\Final project\Online Shop - BackEnd\Online Shop - BackEnd\obj\Debug\netcoreapp3.1\Razor\Views\Contact\Index.cshtml.g.cs
 C:\Users\Emil Abdullayev\Desktop\Final project\Online Shop - BackEnd\Online Shop - BackEnd\obj\Debug\netcoreapp3.1\Razor\Views\Login_Register\Index.cshtml.g.cs
+C:\Users\Emil Abdullayev\Desktop\Final project\Online Shop - BackEnd\Online Shop - BackEnd\obj\Debug\netcoreapp3.1\Razor\Views\Favorite\Index.cshtml.g.cs

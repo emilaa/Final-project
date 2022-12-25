@@ -23,5 +23,6 @@ namespace Online_Shop___BackEnd.Data
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Login_Register> Login_Registers { get; set; }
+        public DbSet<Favorite> Favorites { get; set; }
     }
 }

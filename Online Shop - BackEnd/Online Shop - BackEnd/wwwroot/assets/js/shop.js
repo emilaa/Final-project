@@ -56,7 +56,6 @@ $(function () {
         })
         if (category == 'all') {
             products.parent().fadeIn();
-
         }
     })
 

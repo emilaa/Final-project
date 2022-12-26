@@ -28,12 +28,13 @@ namespace Online_Shop___BackEnd.Controllers
                 .ThenInclude(m => m.SubCategory)
                 .ToListAsync();
             IEnumerable<SubCategory> subCategories = await _context.SubCategories
-                .Where(m => m.CategoryId == 5 && !m.IsDeleted)
+                .Where(m => !m.IsDeleted)
                 .ToListAsync();
             IEnumerable<ProductSubCategory> productSubCategories = await _context.ProductSubCategories
-                .Where(n => n.SubCategoryId == 5)
-                .Include(n => n.Product)
-                .ThenInclude(n => n.ProductImages)
+                .Where(m => !m.IsDeleted)
+                .Include(m => m.SubCategory)
+                .Include(m => m.Product)
+                .ThenInclude(m => m.ProductImages)
                 .ToListAsync();
 
             ShopVM model = new ShopVM

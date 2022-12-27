@@ -30,19 +30,12 @@ namespace Online_Shop___BackEnd.Controllers
             IEnumerable<SubCategory> subCategories = await _context.SubCategories
                 .Where(m => !m.IsDeleted)
                 .ToListAsync();
-            IEnumerable<ProductSubCategory> productSubCategories = await _context.ProductSubCategories
-                .Where(m => !m.IsDeleted)
-                .Include(m => m.SubCategory)
-                .Include(m => m.Product)
-                .ThenInclude(m => m.ProductImages)
-                .ToListAsync();
 
             ShopVM model = new ShopVM
             {
                 Banners = banners,
                 Products = products,
                 SubCategories = subCategories,
-                ProductSubCategories = productSubCategories
             };
 
             return View(model);

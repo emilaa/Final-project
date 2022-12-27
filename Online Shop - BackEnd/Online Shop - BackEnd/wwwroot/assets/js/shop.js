@@ -39,6 +39,10 @@ $(function () {
     $(document).on('click', '.categories', function (e) {
         e.preventDefault();
         $(this).next().next().slideToggle();
+
+        if (category == 'All') {
+            products.parent().fadeIn();
+        }
     })
 
     $(document).on('click', '.category li a', function (e) {
@@ -54,7 +58,7 @@ $(function () {
                 $(this).parent().hide();
             }
         })
-        if (category == 'all') {
+        if (category == 'All') {
             products.parent().fadeIn();
         }
     })

@@ -7,6 +7,9 @@ namespace Online_Shop___BackEnd.ViewModels
     {
         public IEnumerable<Banner> Banners { get; set; }
         public IEnumerable<Product> Products { get; set; }
+        public Product Product { get; set; }
+        public SubCategory SubCategory { get; set; }
+        public IEnumerable<ProductImage> ProductImages { get; set; }
         public IEnumerable<SubCategory> SubCategories { get; set; }
         public IEnumerable<ProductSubCategory> ProductSubCategories { get; set; }
     }

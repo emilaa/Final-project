@@ -87,11 +87,16 @@
                   </ul>
                   <form class="searchh">
                     <div class="search">
-                      <input  class="search-txt" type="text" name="" placeholder="Search">         
-                      <a class="search-btn" href="#" >
-                         <i class="fas fa-search"></i>
+                      <input
+                        class="search-txt"
+                        type="text"
+                        name=""
+                        placeholder="Search"
+                      />
+                      <a class="search-btn" href="#">
+                        <i class="fas fa-search"></i>
                       </a>
-                     </div>
+                    </div>
                   </form>
                   <div class="basket">
                     <a href="basket.html"
@@ -186,11 +191,16 @@
                 </ul>
                 <form class="searchh">
                   <div class="search">
-                    <input  class="search-txt" type="text" name="" placeholder="Search">
-                    <a class="search-btn" href="#" >
-                       <i class="fas fa-search"></i>
+                    <input
+                      class="search-txt"
+                      type="text"
+                      name=""
+                      placeholder="Search"
+                    />
+                    <a class="search-btn" href="#">
+                      <i class="fas fa-search"></i>
                     </a>
-                   </div>
+                  </div>
                 </form>
                 <div class="basket">
                   <a href="basket.html"
@@ -219,208 +229,219 @@
     </header>
 
     <main>
+      <section
+        id="blog-bg"
+        style="background-image: url(./assets/images/shop/breadcumb.jpg)"
+      >
+        <h2>Blog's</h2>
+      </section>
+
       <section id="blog">
         <div class="container">
           <div class="row">
-            <div class="col-12">
-              <div class="post-filter container">
-                <form class="searchh">
-                  <div class="search">
-                    <input  class="search-txt" type="text" name="" placeholder="Search">         
-                    <a class="search-btn" href="#" >
-                       <i class="fas fa-search"></i>
-                    </a>
-                   </div>
-                </form>
-                <span class="filter-item active-filter" data-filter="all"
-                  >All</span
-                >
-                <span class="filter-item" data-filter="design">Design</span>
-                <span class="filter-item" data-filter="tech">Tech</span>
-                <span class="filter-item" data-filter="mobile">Mobile</span>
+            <section id="products">
+              <div class="container">
+                <div class="row pt-5">
+                  <div
+                    class="col-12"
+                    style="
+                      display: flex !important;
+                      justify-content: center !important;
+                    "
+                  >
+                  <form class="searchh">
+                    <div class="search">
+                      <input
+                        class="search-txt"
+                        type="text"
+                        name=""
+                        placeholder="Search"
+                      />
+                      <a class="search-btn" href="#">
+                        <i class="fas fa-search"></i>
+                      </a>
+                    </div>
+                  </form>
+                    <ul class="category-mobile d-md-none list-unstyled">
+                      <li>
+                        <a href="" class="categories mr-2">Categories</a>
+                        <i class="fas fa-caret-down"></i>
+                        <ul
+                          class="category list-unstyled"
+                          style="display: none"
+                        >
+                          <li><a href="" data-id="all">All</a></li>
+                          <li><a href="" data-id="mobile">Mobile</a></li>
+                          <li><a href="" data-id="tech">Tech</a></li>
+                          <li>
+                            <a href="" data-id="design">Design</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <ul class="category d-none d-md-flex list-unstyled">
+                      <li><a href="" data-id="all">All</a></li>
+                      <li><a href="" data-id="mobile">Mobile</a></li>
+                      <li><a href="" data-id="tech">Tech</a></li>
+                      <li><a href="" data-id="design">Design</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6 col-md-4 col-lg-6 mt-4">
+                    <div class="product-item text-center" data-id="mobile">
+                      <div class="img">
+                        <a href="blog-detail.html">
+                          <img
+                            src="./assets/images/blog/blog_1.jpg"
+                            class="img-fluid"
+                            alt=""
+                          />
+                        </a>
+                      </div>
+                      <div class="title mt-3" style="color: grey">
+                        <h6>Mobile</h6>
+                      </div>
+                      <div class="title mt-3">
+                        <h6>
+                          If you’ve ever read a blog post, you’ve consumed
+                          content from a thought leader that is an expert in
+                          their industry. Chances are if the blog post was
+                          written effectively, you came away with helpful
+                          knowledge and a positive opinion about the writer or
+                          brand that produced the content.
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-4 col-lg-6 mt-4">
+                    <div class="product-item text-center" data-id="tech">
+                      <div class="img">
+                        <a href="blog-detail.html">
+                          <img
+                            src="./assets/images/blog/blog_2.jpg"
+                            class="img-fluid"
+                            alt=""
+                          />
+                        </a>
+                      </div>
+                      <div class="title mt-3" style="color: grey">
+                        <h6>Tech</h6>
+                      </div>
+                      <div class="title mt-3">
+                        <h6>
+                          Anyone can connect with their audience through
+                          blogging and enjoy the myriad benefits that blogging
+                          provides: organic traffic from search engines,
+                          promotional content for social media, and recognition
+                          from a new audience you haven’t tapped into yet.
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-4 col-lg-6 mt-4">
+                    <div class="product-item text-center" data-id="design">
+                      <div class="img">
+                        <a href="blog-detail.html">
+                          <img
+                            src="./assets/images/blog/blog_3.jpg"
+                            class="img-fluid"
+                            alt=""
+                          />
+                        </a>
+                      </div>
+                      <div class="title mt-3" style="color: grey">
+                        <h6>Design</h6>
+                      </div>
+                      <div class="title mt-3">
+                        <h6>
+                          A blog post is any article, news piece, or guide
+                          that's published in the blog section of a website. A
+                          blog post typically covers a specific topic or query,
+                          is educational in nature, ranges from 600 to 2,000+
+                          words, and contains other media types such as images,
+                          videos, infographics, and interactive charts.
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-4 col-lg-6 mt-4">
+                    <div class="product-item text-center" data-id="mobile">
+                      <div class="img">
+                        <a href="blog-detail.html">
+                          <img
+                            src="./assets/images/blog/blog_4.jpg"
+                            class="img-fluid"
+                            alt=""
+                          />
+                        </a>
+                      </div>
+                      <div class="title mt-3" style="color: grey">
+                        <h6>Mobile</h6>
+                      </div>
+                      <div class="title mt-3">
+                        <h6>
+                          Blog posts allow you and your business to publish
+                          insights, thoughts, and stories on your website about
+                          any topic. They can help you boost brand awareness,
+                          credibility, conversions, and revenue. Most
+                          importantly, they can help you drive traffic to your
+                          website.
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-4 col-lg-6 mt-4">
+                    <div class="product-item text-center" data-id="tech">
+                      <div class="img">
+                        <a href="blog-detail.html">
+                          <img
+                            src="./assets/images/blog/blog_5.jpg"
+                            class="img-fluid"
+                            alt=""
+                          />
+                        </a>
+                      </div>
+                      <div class="title mt-3" style="color: grey">
+                        <h6>Tech</h6>
+                      </div>
+                      <div class="title mt-3">
+                        <h6>
+                          This is where the process of creating buyer personas
+                          comes in handy. Consider what you know about your
+                          buyer personas and their interests while you're coming
+                          up with a topic for your blog post.
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-4 col-lg-6 mt-4">
+                    <div class="product-item text-center" data-id="design">
+                      <div class="img">
+                        <a href="blog-detail.html">
+                          <img
+                            src="./assets/images/blog/blog_6.jpg"
+                            class="img-fluid"
+                            alt=""
+                          />
+                        </a>
+                      </div>
+                      <div class="title mt-3" style="color: grey">
+                        <h6>Design</h6>
+                      </div>
+                      <div class="title mt-3">
+                        <h6>
+                          For instance, if your readers are millennials looking
+                          to start a business, you probably don't need to
+                          provide them with information about getting started on
+                          social media — most of them already have that down.
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="post container">
-              <div class="post-box mobile">
-                <a href="blog-detail.html">
-                  <img
-                  src="./assets/images/blog/blog_1.jpg"
-                  alt=""
-                  class="post-img"
-                /></a>
-                <h2 class="category">Mobile</h2>
-                <a href="blog-detail.html" class="post-title">
-                  How To Create Best UX Design With Adobe XD
-                </a>
-                <span class="post-date">12 Feb 2022</span>
-                <p class="post-description">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. At
-                  recusandae, nihil commodi accusamus temporibus libero
-                  deleniti quaerat, nesciunt sunt fuga sapiente dolores cum
-                  quam illo.
-                </p>
-              </div>
-              <div class="post-box tech">
-                <a href="blog-detail.html">
-                  <img
-                  src="./assets/images/blog/blog_2.jpg"
-                  alt=""
-                  class="post-img"
-                />
-                </a>
-                <h2 class="category">Tech</h2>
-                <a href="blog-detail.html" class="post-title">
-                  How To Create Best UX Design With Adobe XD
-                </a>
-                <span class="post-date">12 Feb 2022</span>
-                <p class="post-description">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. At
-                  recusandae, nihil commodi accusamus temporibus libero
-                  deleniti quaerat, nesciunt sunt fuga sapiente dolores cum
-                  quam illo.
-                </p>
-              </div>
-              <div class="post-box design">
-                <a href="blog-detail.html">
-                  <img
-                  src="./assets/images/blog/blog_3.jpg"
-                  alt=""
-                  class="post-img"
-                />
-                </a>               
-                <h2 class="category">Design</h2>
-                <a href="blog-detail.html" class="post-title">
-                  How To Create Best UX Design With Adobe XD
-                </a>
-                <span class="post-date">12 Feb 2022</span>
-                <p class="post-description">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. At
-                  recusandae, nihil commodi accusamus temporibus libero
-                  deleniti quaerat, nesciunt sunt fuga sapiente dolores cum
-                  quam illo.
-                </p>
-              </div>
-              <div class="post-box tech">
-                <a href="blog-detail.html">
-                  <img
-                  src="./assets/images/blog/blog_4.jpg"
-                  alt=""
-                  class="post-img"
-                />
-                </a>               
-                <h2 class="category">Tech</h2>
-                <a href="blog-detail.html" class="post-title">
-                  How To Create Best UX Design With Adobe XD
-                </a>
-                <span class="post-date">12 Feb 2022</span>
-                <p class="post-description">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. At
-                  recusandae, nihil commodi accusamus temporibus libero
-                  deleniti quaerat, nesciunt sunt fuga sapiente dolores cum
-                  quam illo.
-                </p>
-              </div>
-              <div class="post-box mobile">
-                <a href="blog-detail.html">
-                  <img
-                  src="./assets/images/blog/blog_5.jpg"
-                  alt=""
-                  class="post-img"
-                />
-                </a>
-                <h2 class="category">Mobile</h2>
-                <a href="blog-detail.html" class="post-title">
-                  How To Create Best UX Design With Adobe XD
-                </a>
-                <span class="post-date">12 Feb 2022</span>
-                <p class="post-description">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. At
-                  recusandae, nihil commodi accusamus temporibus libero
-                  deleniti quaerat, nesciunt sunt fuga sapiente dolores cum
-                  quam illo.
-                </p>
-              </div>
-              <div class="post-box design">
-                <a href="blog-detail.html">
-                  <img
-                  src="./assets/images/blog/blog_6.jpg"
-                  alt=""
-                  class="post-img"
-                />
-                </a>
-                <h2 class="category">Design</h2>
-                <a href="blog-detail.html" class="post-title">
-                  How To Create Best UX Design With Adobe XD
-                </a>
-                <span class="post-date">12 Feb 2022</span>
-                <p class="post-description">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. At
-                  recusandae, nihil commodi accusamus temporibus libero
-                  deleniti quaerat, nesciunt sunt fuga sapiente dolores cum
-                  quam illo.
-                </p>
-              </div>
-              <div class="post-box mobile">
-                <a href="blog-detail.html">
-                  <img
-                  src="./assets/images/blog/blog_1.jpg"
-                  alt=""
-                  class="post-img"
-                />
-                </a>
-                <h2 class="category">Tech</h2>
-                <a href="blog-detail.html" class="post-title">
-                  How To Create Best UX Design With Adobe XD
-                </a>
-                <span class="post-date">12 Feb 2022</span>
-                <p class="post-description">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. At
-                  recusandae, nihil commodi accusamus temporibus libero
-                  deleniti quaerat, nesciunt sunt fuga sapiente dolores cum
-                  quam illo.
-                </p>
-              </div>
-              <div class="post-box tech">
-                <a href="blog-detail.html">
-                  <img
-                  src="./assets/images/blog/blog_2.jpg"
-                  alt=""
-                  class="post-img"
-                />
-                </a>
-                <h2 class="category">Mobile</h2>
-                <a href="blog-detail.html" class="post-title">
-                  How To Create Best UX Design With Adobe XD
-                </a>
-                <span class="post-date">12 Feb 2022</span>
-                <p class="post-description">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. At
-                  recusandae, nihil commodi accusamus temporibus libero
-                  deleniti quaerat, nesciunt sunt fuga sapiente dolores cum
-                  quam illo.
-                </p>
-              </div>
-              <div class="post-box design">
-                <a href="blog-detail.html">
-                  <img
-                  src="./assets/images/blog/blog_3.jpg"
-                  alt=""
-                  class="post-img"
-                />
-                </a>
-                <h2 class="category">Design</h2>
-                <a href="blog-detail.html" class="post-title">
-                  How To Create Best UX Design With Adobe XD
-                </a>
-                <span class="post-date">12 Feb 2022</span>
-                <p class="post-description">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. At
-                  recusandae, nihil commodi accusamus temporibus libero
-                  deleniti quaerat, nesciunt sunt fuga sapiente dolores cum
-                  quam illo.
-                </p>
-              </div>
-            </div>
+            </section>
           </div>
         </div>
       </section>

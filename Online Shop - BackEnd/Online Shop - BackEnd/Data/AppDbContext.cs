@@ -24,5 +24,8 @@ namespace Online_Shop___BackEnd.Data
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Login_Register> Login_Registers { get; set; }
         public DbSet<Favorite> Favorites { get; set; }
+        public DbSet<Blog> Blogs { get; set; }
+        public DbSet<BlogImage> BlogImages { get; set; }
+        public DbSet<BlogSubCategory> BlogSubCategories { get; set; }
     }
 }

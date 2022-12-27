@@ -63,75 +63,36 @@
                         </div>
                         <div class="size">
                             <h5>Size</h5>
-                            <input type="checkbox" id="_checkbox-1" />
-                            <label for="_checkbox-1">
-                                <p>XXS</p>
-                                <div class="tick-mark"></div>
-                            </label><br />
-                            <input type="checkbox" id="_checkbox-2" />
-                            <label for="_checkbox-2">
-                                <p>XS</p>
-                                <div class="tick-mark"></div>
-                            </label><br />
-                            <input type="checkbox" id="_checkbox-3" />
-                            <label for="_checkbox-3">
-                                <p>S</p>
-                                <div class="tick-mark"></div>
-                            </label><br />
-                            <input type="checkbox" id="_checkbox-4" />
-                            <label for="_checkbox-4">
-                                <p>M</p>
-                                <div class="tick-mark"></div>
-                            </label><br />
-                            <input type="checkbox" id="_checkbox-5" />
-                            <label for="_checkbox-5">
-                                <p>L</p>
-                                <div class="tick-mark"></div>
-                            </label><br />
-                            <input type="checkbox" id="_checkbox-6" />
-                            <label for="_checkbox-6">
-                                <p>XL</p>
-                                <div class="tick-mark"></div>
-                            </label><br />
-                            <input type="checkbox" id="_checkbox-7" />
-                            <label for="_checkbox-7">
-                                <p>XXL</p>
-                                <div class="tick-mark"></div>
-                            </label>
+                            @foreach (var size in Model.SubCategories)
+                            {
+                                if (size.CategoryId == 1)
+                                {
+                                    <input type="checkbox" id="_checkbox-1" />
+                                    <label for="_checkbox-1">
+                                        <p>@size.Name</p>
+                                        <div class="tick-mark"></div>
+                                    </label>
+
+                                    <br />
+                                }
+                            }
                         </div>
 
                         <div class="brand">
                             <h5>Brand</h5>
-                            <input type="checkbox" id="_checkbox-8" />
-                            <label for="_checkbox-8">
-                                <p>Zara</p>
-                                <div class="tick-mark"></div>
-                            </label><br />
-                            <input type="checkbox" id="_checkbox-9" />
-                            <label for="_checkbox-9">
-                                <p>Bershka</p>
-                                <div class="tick-mark"></div>
-                            </label><br />
-                            <input type="checkbox" id="_checkbox-10" />
-                            <label for="_checkbox-10">
-                                <p>Pull&Bear</p>
-                                <div class="tick-mark"></div>
-                            </label><br />
-                            <input type="checkbox" id="_checkbox-11" />
-                            <label for="_checkbox-11">
-                                <p>LTB</p>
-                                <div class="tick-mark"></div>
-                            </label><br />
-                            <input type="checkbox" id="_checkbox-12" />
-                            <label for="_checkbox-12">
-                                <p>Terranova</p>
-                                <div class="tick-mark"></div>
-                            </label><br />
-                            <input type="checkbox" id="_checkbox-13" />
-                            <label for="_checkbox-13">
-                                <p>Mango</p>
-                                <div class="tick-mark"></div>
-                            </label><br />
+                            @foreach (var brand in Model.SubCategories)
+                            {
+                                if (brand.CategoryId == 2)
+                                {
+                                    <input type="checkbox" id="_checkbox-8" />
+                                    <label for="_checkbox-8">
+                                        <p>@brand.Name</p>
+                                        <div class="tick-mark"></div>
+                                    </label>
+
+                                    <br />
+                                }
+                            }
                         </div>
                     </div>
                 </div>
@@ -144,7 +105,26 @@
                         display: flex !important;
                         justify-content: center !important;
                       ">
+                                    <ul class="category-mobile d-md-none list-unstyled">
+                                        <li>
+                                            <a href="" class="categories mr-2">Categories</a>
+                                            <i class="fas fa-caret-down"></i>
+                                            <ul class="category list-unstyled"
+                                                style="display: none">
+                                                <li><a href="" data-id="All">All</a></li>
+                                                @foreach (var category in Model.SubCategories)
+                                                {
+                                                    if (category.CategoryId == 5)
+                                                    {
+                                                        <li><a href="" data-id="@category.Id">@category.Name</a></li>
+                                                    }
+                                                }
+                                            </ul>
+                                        </li>
+                                    </ul>
+
                                     <ul class="category d-none d-md-flex list-unstyled">
+                                        <li><a href="" data-id="All">All</a></li>
                                         @foreach (var category in Model.SubCategories)
                                         {
                                             if (category.CategoryId == 5)
@@ -156,45 +136,45 @@
                                 </div>
                             </div>
                             <div class="row">
-                                @foreach (var product in Model.ProductSubCategories)
+                                @foreach (var product in Model.Products)
                                 {
-                                    if (product.SubCategory.CategoryId == 5)
-                                    {
-                                        <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
-                                            <div class="product-item text-center"
-                                         data-id="@product.SubCategoryId"
-                                         product-id="1">
-                                                <div class="img">
-                                                    <a href="product-detail.html">
-                                                        <img src="./assets/images/home/products/@product.Product.ProductImages.FirstOrDefault(m => m.IsMain)?.Name"
+                                    <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+                                        <div class="product-item text-center"
+                                         data-id="@product.ProductSubCategories.FirstOrDefault(m => m.SubCategory.CategoryId == 5)?.SubCategoryId"
+                                         product-id="@product.Id">
+                                            <div class="img">
+                                                <a asp-controller="ProductDetail" asp-action="Index" asp-route-id="@product.Id">
+                                                    <img src="./assets/images/home/products/@product.ProductImages.FirstOrDefault(m => m.IsMain)?.Name"
                                                      class="img-fluid"
                                                      alt="" />
-                                                        <img src="./assets/images/home/products/@product.Product.ProductImages.FirstOrDefault(m => !m.IsMain)?.Name"
+                                                    <img src="./assets/images/home/products/@product.ProductImages.FirstOrDefault(m => !m.IsMain)?.Name"
                                                      class="img-fluid"
                                                      alt="" />
-                                                    </a>
-                                                    <div class="links">
-                                                        <div class="heart">
-                                                            <i class="fa-solid fa-heart"></i>
-                                                        </div>
+                                                </a>
+                                                <div class="links">
+                                                    <div class="heart">
+                                                        <i class="fa-solid fa-heart"></i>
                                                     </div>
                                                 </div>
-                                                <div class="title mt-3" style="color: grey;">
-                                                    @if (product.SubCategory.CategoryId == 2)
+                                            </div>
+                                            <div class="title mt-3" style="color: grey;">
+                                                @foreach (var category in product.ProductSubCategories)
+                                                {
+                                                    @if (category.SubCategory.CategoryId == 2)
                                                     {
-                                                        <h6>@product.SubCategory.Name</h6>
+                                                        <h6>@category.SubCategory.Name</h6>
                                                     }
-                                                </div>
-                                                <div class="title mt-3">
-                                                    <h6>@product.Product.Name</h6>
-                                                </div>
-                                                <div class="price">
-                                                    <button>Add To Cart</button>
-                                                    <span class="text-black-50">$@product.Product.Price.ToString("N2")</span>
-                                                </div>
+                                                }
+                                            </div>
+                                            <div class="title mt-3">
+                                                <h6>@product.Name</h6>
+                                            </div>
+                                            <div class="price">
+                                                <button>Add To Cart</button>
+                                                <span class="text-black-50">$@product.Price.ToString("N2")</span>
                                             </div>
                                         </div>
-                                    }
+                                    </div>
                                 }
                             </div>
                         </div>

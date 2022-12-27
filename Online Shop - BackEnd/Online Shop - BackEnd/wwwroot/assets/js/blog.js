@@ -18,20 +18,27 @@ $(function () {
     }
   }
 
-  $(".filter-item").click(function () {
-    const value = $(this).attr("data-filter");
-    if (value == "all") {
-      $(".post-box").show("1000");
-    }
-    else{
-      $(".post-box").not("." + value).hide("1000");
-      $(".post-box").filter("." + value).show("1000");
-    }
-  });
+    $(document).on("click", ".categories", function (e) {
+        e.preventDefault();
+        $(this).next().next().slideToggle();
+    });
 
-  $(".filter-item").click(function () {
-    $(this).addClass("active-filter").siblings().removeClass("active-filter");
-  });
+    $(document).on("click", ".category li a", function (e) {
+        e.preventDefault();
+        let category = $(this).attr("data-id");
+        let products = $(".product-item");
+
+        products.each(function () {
+            if (category == $(this).attr("data-id")) {
+                $(this).parent().fadeIn();
+            } else {
+                $(this).parent().hide();
+            }
+        });
+        if (category == "all") {
+            products.parent().fadeIn();
+        }
+    });
 
   let products = [];
 

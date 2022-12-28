@@ -5,6 +5,7 @@ namespace Online_Shop___BackEnd.ViewModels
 {
     public class BlogVM
     {
+        public PageHeader PageHeader { get; set; }
         public IEnumerable<Blog> Blogs { get; set; }
         public IEnumerable<SubCategory> SubCategories { get; set; }
         public IEnumerable<BlogSubCategory> BlogSubCategories { get; set; }

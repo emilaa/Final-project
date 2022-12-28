@@ -11,10 +11,13 @@
 }
 
 <main>
-    <section id="blog-bg"
-             style="background-image: url(./assets/images/shop/breadcumb.jpg)">
-        <h2>Blog's</h2>
-    </section>
+    @if (Model.PageHeader.Id == 2)
+    {
+        <section id="blog-bg"
+             style="background-image: url(~/assets/images/shop/@Model.PageHeader.Image)">
+            <h2>@Model.PageHeader.Title</h2>
+        </section>
+    }
 
     <section id="blog">
         <div class="container">
@@ -71,9 +74,9 @@
                             @foreach (var blog in Model.Blogs)
                             {
                                 <div class="col-sm-6 col-md-4 col-lg-6 mt-4">
-                                    <div class="product-item text-center" data-id="mobile">
+                                    <div class="product-item text-center" data-id="@blog.BlogSubCategories.FirstOrDefault(m => m.SubCategory.CategoryId == 6)?.SubCategoryId">
                                         <div class="img">
-                                            <a href="blog-detail.html">
+                                            <a asp-controller="BlogDetail" asp-action="Index" asp-route-id="@blog.Id">
                                                 <img src="~/assets/images/blog/@blog.BlogImages.FirstOrDefault(m => !m.IsDeleted)?.Name"
                                                  class="img-fluid"
                                                  alt="" />

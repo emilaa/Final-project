@@ -20,6 +20,10 @@ namespace Online_Shop___BackEnd.Controllers
 
         public async Task<IActionResult> Index()
         {
+
+            PageHeader pageHeader = await _context.PageHeaders
+                .Where(m => !m.IsDeleted)
+                .FirstOrDefaultAsync();
             IEnumerable<Blog> blogs = await _context.Blogs
                 .Where(m => !m.IsDeleted)
                 .Include(m => m.BlogImages)
@@ -40,7 +44,8 @@ namespace Online_Shop___BackEnd.Controllers
             {
                 Blogs = blogs,
                 SubCategories = subCategories,
-                BlogSubCategories = blogSubCategories
+                BlogSubCategories = blogSubCategories,
+                PageHeader = pageHeader
             };
 
             return View(model);

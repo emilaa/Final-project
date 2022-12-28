@@ -31,9 +31,12 @@
                 </div>
 
                 <div class="col-lg-6 col-md-12 col-sm-12 detail">
-                    <h6>Category</h6>
-                    <h3 class="">Black Half Neck Ribbed Knitted Mini Dress</h3>
-                    <h2>$129.85</h2>
+                    @if (Model.SubCategory.CategoryId == 2)
+                    {
+                        <h6>@Model.SubCategory.Name</h6>
+                    }
+                    <h3 class="">@Model.Product.Name</h3>
+                    <h2>$@Model.Product.Price.ToString("N2")</h2>
                     <select class="my-3">
                         <option>Select Size</option>
                         @foreach (var size in Model.SubCategories)
@@ -48,14 +51,7 @@
                     <button class="add-btn">Add To Cart</button>
                     <h4 class="mt-3">Product Details</h4>
                     <span>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                        Aperiam culpa mollitia delectus dolorum nostrum temporibus sunt,
-                        veniam iste at quisquam accusantium voluptas perspiciatis quae
-                        doloribus! Unde illo velit quaerat ipsam dicta vitae dolorem
-                        accusamus iste, laborum nam, hic inventore ex sit doloremque
-                        exercitationem dolore libero expedita tempora ad minus maxime
-                        optio ullam! Voluptatem alias velit similique assumenda
-                        doloribus.
+                        @Model.Product.Description
                     </span>
                     <form>
                         <div class="user-comment mt-3">

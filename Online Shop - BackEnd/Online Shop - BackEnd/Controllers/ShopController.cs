@@ -26,6 +26,7 @@ namespace Online_Shop___BackEnd.Controllers
                 .Include(m => m.ProductImages)
                 .Include(m => m.ProductSubCategories)
                 .ThenInclude(m => m.SubCategory)
+                .Take(4)
                 .ToListAsync();
             IEnumerable<SubCategory> subCategories = await _context.SubCategories
                 .Where(m => !m.IsDeleted)

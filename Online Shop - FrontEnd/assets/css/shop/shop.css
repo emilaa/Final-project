@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -789,6 +790,48 @@ body {
 #shop-product #products .product-item:hover .price button {
   margin-left: 0px;
   opacity: 1;
+}
+#shop-product .show-more {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+}
+#shop-product .show-more .button {
+  width: 200px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+#shop-product .show-more .hover-btn {
+  background-color: #007b8c;
+}
+#shop-product .show-more .hover-btn span {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  transition: 0.5s;
+}
+#shop-product .show-more .hover-btn span::after {
+  position: absolute;
+  content: "»";
+  opacity: 0;
+  top: 0;
+  right: -25px;
+  transition: 0.5s;
+}
+#shop-product .show-more .hover-btn:hover span {
+  padding-right: 25px;
+}
+#shop-product .show-more .hover-btn:hover span::after {
+  opacity: 1;
+  right: 0;
 }
 
 @media (max-width: 1400px) {

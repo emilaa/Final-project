@@ -45,7 +45,6 @@ namespace Online_Shop___BackEnd.Controllers
                     ContactVM model = new ContactVM
                     {
                         Contact = contact,
-                        ContactUs = new ContactUs()
                     };
 
                     return View(model);
@@ -59,7 +58,7 @@ namespace Online_Shop___BackEnd.Controllers
 
                 if (isExist)
                 {
-                    ModelState.AddModelError("Fullname", "Subject already exist!");
+                    ModelState.AddModelError("FullName", "Subject already exist!");
                 }
 
                 await _context.ContactUs.AddAsync(contactUs);

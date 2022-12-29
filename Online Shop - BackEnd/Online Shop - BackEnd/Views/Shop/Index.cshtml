@@ -6,6 +6,57 @@
       crossorigin="anonymous" />
     <link rel="stylesheet" href="~/assets/css/shop/shop.css" />
     <title>Shop</title>
+
+    <style>
+        .show-more {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding-top: 30px;
+        }
+
+            .show-more .button {
+                width: 150px;
+                padding: 10px;
+                border: none;
+                outline: none;
+                border-radius: 5px;
+                text-align: center;
+                font-size: 15px;
+                color: #fff;
+                cursor: pointer;
+                transition: all 0.5s;
+            }
+
+        .hover-btn {
+            background-color: #C72121;
+        }
+
+            .hover-btn span {
+                position: relative;
+                display: inline-block;
+                cursor: pointer;
+                transition: 0.5s;
+            }
+
+                .hover-btn span::after {
+                    position: absolute;
+                    content: "\00bb";
+                    opacity: 0;
+                    top: 0;
+                    right: -25px;
+                    transition: 0.5s;
+                }
+
+            .hover-btn:hover span {
+                padding-right: 25px;
+            }
+
+                .hover-btn:hover span::after {
+                    opacity: 1;
+                    right: 0;
+                }
+    </style>
 }
 
 <main>
@@ -135,47 +186,9 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="row">
-                                @foreach (var product in Model.Products)
-                                {
-                                    <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
-                                        <div class="product-item text-center"
-                                         data-id="@product.ProductSubCategories.FirstOrDefault(m => m.SubCategory.CategoryId == 5)?.SubCategoryId"
-                                         product-id="@product.Id">
-                                            <div class="img">
-                                                <a asp-controller="ProductDetail" asp-action="Index" asp-route-id="@product.Id">
-                                                    <img src="./assets/images/home/products/@product.ProductImages.FirstOrDefault(m => m.IsMain)?.Name"
-                                                     class="img-fluid"
-                                                     alt="" />
-                                                    <img src="./assets/images/home/products/@product.ProductImages.FirstOrDefault(m => !m.IsMain)?.Name"
-                                                     class="img-fluid"
-                                                     alt="" />
-                                                </a>
-                                                <div class="links">
-                                                    <div class="heart">
-                                                        <i class="fa-solid fa-heart"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="title mt-3" style="color: grey;">
-                                                @foreach (var category in product.ProductSubCategories)
-                                                {
-                                                    @if (category.SubCategory.CategoryId == 2)
-                                                    {
-                                                        <h6>@category.SubCategory.Name</h6>
-                                                    }
-                                                }
-                                            </div>
-                                            <div class="title mt-3">
-                                                <h6>@product.Name</h6>
-                                            </div>
-                                            <div class="price">
-                                                <button>Add To Cart</button>
-                                                <span class="text-black-50">$@product.Price.ToString("N2")</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                }
+                            <input type="hidden" id="product-count" name="name" value="@ViewBag.count" />
+                            <div class="row" id="parent-products">
+                                <partial name="_ProductsPartial" />
                             </div>
                         </div>
                     </section>

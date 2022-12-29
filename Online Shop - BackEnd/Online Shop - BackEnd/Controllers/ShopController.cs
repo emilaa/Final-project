@@ -20,6 +20,8 @@ namespace Online_Shop___BackEnd.Controllers
 
         public async Task<IActionResult> Index()
         {
+            ViewBag.count = await _context.Products.Where(m => !m.IsDeleted).CountAsync();
+
             IEnumerable<Banner> banners = await _context.Banners.Where(m => !m.IsDeleted).ToListAsync();
             IEnumerable<Product> products = await _context.Products
                 .Where(m => !m.IsDeleted)
@@ -40,6 +42,25 @@ namespace Online_Shop___BackEnd.Controllers
             };
 
             return View(model);
+        }
+
+        public async Task<IActionResult> ShowMore(int skip)
+        {
+            IEnumerable<Product> products = await _context.Products
+                .Where(m => !m.IsDeleted)
+                .Include(m => m.ProductImages)
+                .Include(m => m.ProductSubCategories)
+                .ThenInclude(m => m.SubCategory)
+                .Skip(skip)
+                .Take(4)
+                .ToListAsync();
+
+            ShopVM model = new ShopVM
+            {
+                Products = products
+            };
+
+            return PartialView("_ProductsPartial", model);
         }
     }
 }

@@ -18,24 +18,6 @@ $(function () {
         }
     }
 
-    // $(".filter-item").click(function () {
-    //   const value = $(this).attr("data-filter");
-    //   if (value == "all") {
-    //     $(".post-box").show("1000");
-    //   } else {
-    //     $(".post-box")
-    //       .not("." + value)
-    //       .hide("1000");
-    //     $(".post-box")
-    //       .filter("." + value)
-    //       .show("1000");
-    //   }
-    // });
-
-    // $(".filter-item").click(function () {
-    //   $(this).addClass("active-filter").siblings().removeClass("active-filter");
-    // });
-
     $(document).on('click', '.categories', function (e) {
         e.preventDefault();
         $(this).next().next().slideToggle();
@@ -125,6 +107,32 @@ $(function () {
         }
         return count;
     }
+
+    $(document).on("click", ".show-more button", function () {
+
+        let parent = $("#parent-products");
+
+        let skipCount = $("#parent-products").children().length;
+
+        let productCount = $("#product-count").val();
+
+        console.log(productCount);
+
+        $.ajax({
+            url: `/shop/showmore?skip=${skipCount}`,
+            type: "Get",
+            success: function (response) {
+
+                $(parent).append(response);
+
+                skipCount = $("#parent-products").children().length;
+
+                if (skipCount >= productCount) {
+                    $(".show-more button").addClass("d-none");
+                }
+            }
+        });
+    });
 });
 
 const rangeInput = document.querySelectorAll(".range-input input"),

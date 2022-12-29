@@ -83,7 +83,7 @@ $(function () {
   function addProductTable(products) {
     for (const product of products) {
       tableBody.innerHTML += `<tr>
-            <td data-id = "${product.id}"><a href="product-detail.html"><img src="${product.image}" width = "150px" height = "150px" alt=""></a> </td>
+            <td data-id = "${product.id}"><a asp-controller="ProductDetail" asp-action="Index" data-id = "${product.id}"><img src="${product.image}" width = "150px" height = "150px" alt=""></a> </td>
             <td>${product.brand}</td>
             <td>${product.name}</td>
             <td>${product.price}</td>

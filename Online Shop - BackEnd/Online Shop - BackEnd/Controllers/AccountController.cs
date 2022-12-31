@@ -17,7 +17,8 @@ namespace Online_Shop___BackEnd.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Index()
+        [HttpGet]
+        public async Task<IActionResult> Register()
         {
             Login_Register login_Registers = await _context.Login_Registers.Where(m => !m.IsDeleted).FirstOrDefaultAsync();
 

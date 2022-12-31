@@ -176,3 +176,4 @@ C:\Users\Emil Abdullayev\Desktop\Final project\Online Shop - BackEnd\Online Shop
 C:\Users\Emil Abdullayev\Desktop\Final project\Online Shop - BackEnd\Online Shop - BackEnd\obj\Debug\netcoreapp3.1\Online Shop - BackEnd.pdb
 C:\Users\Emil Abdullayev\Desktop\Final project\Online Shop - BackEnd\Online Shop - BackEnd\obj\Debug\netcoreapp3.1\Online Shop - BackEnd.genruntimeconfig.cache
 C:\Users\Emil Abdullayev\Desktop\Final project\Online Shop - BackEnd\Online Shop - BackEnd\obj\Debug\netcoreapp3.1\Razor\Views\Account\Index.cshtml.g.cs
+C:\Users\Emil Abdullayev\Desktop\Final project\Online Shop - BackEnd\Online Shop - BackEnd\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs

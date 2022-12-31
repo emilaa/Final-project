@@ -495,15 +495,12 @@
       }
 
       .register {
-        pointer-events: none;
 
         .login-img {
-          top: -100%;
           transition: 0.5s;
         }
 
         .login-form {
-          top: 100%;
 
           input {
             &[type="submit"] {

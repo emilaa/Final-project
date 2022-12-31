@@ -36,7 +36,7 @@
 
                         <div class="user register">
                             <div class="login-form">
-                                <form>
+                                <form asp-controller="Account" asp-action="Index" method="post">
                                     <h2>Sign Up</h2>
                                     <input asp-for="Name" placeholder="Name" />
                                     <span asp-validation-for="Name" class="text-danger"></span>

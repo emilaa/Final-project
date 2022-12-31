@@ -421,15 +421,8 @@
   text-decoration: none;
   color: #577eff;
 }
-#login-register .col-12 .login-register .register {
-  pointer-events: none;
-}
 #login-register .col-12 .login-register .register .login-img {
-  top: -100%;
   transition: 0.5s;
-}
-#login-register .col-12 .login-register .register .login-form {
-  top: 100%;
 }
 #login-register .col-12 .login-register .register .login-form input[type=submit] {
   background: #e73e49;

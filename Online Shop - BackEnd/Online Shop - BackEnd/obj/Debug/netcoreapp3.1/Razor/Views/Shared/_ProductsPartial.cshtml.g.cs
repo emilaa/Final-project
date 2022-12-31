@@ -33,8 +33,15 @@ using Online_Shop___BackEnd.ViewModels;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "C:\Users\Emil Abdullayev\Desktop\Final project\Online Shop - BackEnd\Online Shop - BackEnd\Views\_ViewImports.cshtml"
+using Online_Shop___BackEnd.ViewModels.AccountViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"65fbc19e787f72015b8d1ba2a05cf685a0d24f04", @"/Views/Shared/_ProductsPartial.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c7d240782af508401c1907f21172f5e06d4378a2", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"88c66eac2c04fd3182928c1a3bfcb083ee1144c2", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Shared__ProductsPartial : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ShopVM>
     #nullable disable
@@ -93,7 +100,7 @@ WriteAttributeValue("", 297, product.Id, 297, 11, false);
 #nullable disable
             EndWriteAttribute();
             WriteLiteral(">\r\n            <div class=\"img\">\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "65fbc19e787f72015b8d1ba2a05cf685a0d24f045406", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "65fbc19e787f72015b8d1ba2a05cf685a0d24f045662", async() => {
                 WriteLiteral("\r\n                    <img");
                 BeginWriteAttribute("src", " src=\"", 465, "\"", 559, 2);
                 WriteAttributeValue("", 471, "./assets/images/home/products/", 471, 30, true);

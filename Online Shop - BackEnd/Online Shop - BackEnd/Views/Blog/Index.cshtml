@@ -11,12 +11,15 @@
 }
 
 <main>
-    @if (Model.PageHeader.Id == 2)
+    @foreach (var banner in Model.PageHeader)
     {
-        <section id="blog-bg"
-             style="background-image: url(~/assets/images/shop/@Model.PageHeader.Image)">
-            <h2>@Model.PageHeader.Title</h2>
-        </section>
+        @if (banner.Id == 2)
+        {
+            <section id="blog-bg"
+             style="background-image: url('/assets/images/shop/@banner.Image')">
+                <h2>@banner.Title</h2>
+            </section>
+        }
     }
 
     <section id="blog">

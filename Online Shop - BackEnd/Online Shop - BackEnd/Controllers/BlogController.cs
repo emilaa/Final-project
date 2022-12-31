@@ -21,9 +21,9 @@ namespace Online_Shop___BackEnd.Controllers
         public async Task<IActionResult> Index()
         {
 
-            PageHeader pageHeader = await _context.PageHeaders
+            IEnumerable<PageHeader> pageHeader = await _context.PageHeaders
                 .Where(m => !m.IsDeleted)
-                .FirstOrDefaultAsync();
+                .ToListAsync();
             IEnumerable<Blog> blogs = await _context.Blogs
                 .Where(m => !m.IsDeleted)
                 .Include(m => m.BlogImages)

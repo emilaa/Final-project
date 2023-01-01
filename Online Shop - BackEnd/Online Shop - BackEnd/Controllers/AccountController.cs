@@ -12,26 +12,19 @@ namespace Online_Shop___BackEnd.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly AppDbContext _context;
         private readonly UserManager<AppUser> _userManager;
+        private readonly SignInManager<AppUser> _signInManager;
 
-        public AccountController(AppDbContext context, UserManager<AppUser> userManager)
+        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
         {
-            _context = context;
             _userManager = userManager;
+            _signInManager = signInManager;
         }
 
         [HttpGet]
-        public async Task<IActionResult> Register()
+        public IActionResult Register()
         {
-            Login_Register login_Registers = await _context.Login_Registers.Where(m => !m.IsDeleted).FirstOrDefaultAsync();
-
-            RegisterVM model = new RegisterVM
-            {
-                Login_Registers = login_Registers
-            };
-
-            return View(model);
+            return View();
         }
 
         [HttpPost]
@@ -40,52 +33,45 @@ namespace Online_Shop___BackEnd.Controllers
         {
             if (!ModelState.IsValid)
             {
-                Login_Register login_Registers = await _context.Login_Registers.Where(m => !m.IsDeleted).FirstOrDefaultAsync();
-
-                RegisterVM model = new RegisterVM
-                {
-                    Login_Registers = login_Registers
-                };
-
-                return View(model);
+                return View(registerVM);
             }
 
-            if (ModelState.IsValid)
+            AppUser user = new AppUser
             {
-                Login_Register login_Registers = await _context.Login_Registers.Where(m => !m.IsDeleted).FirstOrDefaultAsync();
+                Name = registerVM.Name,
+                Surname = registerVM.Surname,
+                UserName = registerVM.Username,
+                Email = registerVM.Email
+            };
 
-                RegisterVM model = new RegisterVM
+            IdentityResult result = await _userManager.CreateAsync(user, registerVM.Password);
+
+            if (!result.Succeeded)
+            {
+                foreach (var error in result.Errors)
                 {
-                    Login_Registers = login_Registers
-                };
+                    ModelState.AddModelError("", error.Description);
+                }
 
-                AppUser user = new AppUser
-                {
-                    Name = registerVM.Name,
-                    Surname = registerVM.Surname,
-                    UserName = registerVM.Username,
-                    Email = registerVM.Email
-                };
-
-                IdentityResult result = await _userManager.CreateAsync(user, registerVM.Password);
-
-                return View(model);
+                return View();
             }
 
-            return View();
+            await _signInManager.SignInAsync(user, false);
+
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpGet]
-        public async Task<IActionResult> Login()
+        public IActionResult Login()
         {
-            Login_Register login_Registers = await _context.Login_Registers.Where(m => !m.IsDeleted).FirstOrDefaultAsync();
+            return View();
+        }
 
-            LoginVM model = new LoginVM
-            {
-                Login_Registers = login_Registers
-            };
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
 
-            return View(model);
+            return RedirectToAction("Index", "Home");
         }
     }
 }

@@ -995,6 +995,11 @@ body {
 
 @media (max-width: 1200px) {
     #shop-product {
+
+        #parent-products{
+            padding-left: 50px;
+        }
+
         .search {
             input {
                 width: 192px;

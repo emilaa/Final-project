@@ -36,10 +36,16 @@
                                      alt="" />
                             </div>
                             <div class="login-form">
-                                <form>
+                                <form asp-controller="Account" asp-action="Login" method="post" enctype="multipart/form-data">
                                     <h2>Sign In</h2>
-                                    <input type="text" placeholder="Username" />
-                                    <input type="password" placeholder="Password" />
+                                    <div class="text-danger" asp-validation-summary="All"></div>
+
+                                    <input asp-for="UsernameOrEmail" placeholder="Username or Email" />
+                                    <span asp-validation-for="UsernameOrEmail" class="text-danger"></span>
+
+                                    <input asp-for="Password" placeholder="Password" />
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+
                                     <input type="submit" value="Login" />
                                     <p class="sign-up">
                                         Don't have an account?<a asp-controller="Account" asp-action="Register">Sign Up</a>
@@ -55,12 +61,6 @@
 </main>
 
 @section Scripts{
-    <script>
-        function toggleForm() {
-            area = document.querySelector("#login-register .col-12");
-            area.classList.toggle("active");
-        }
-    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js" integrity="sha512-xq+Vm8jC94ynOikewaQXMEkJIOBp7iArs3IhFWSWdRT3Pq8wFz46p+ZDFAR7kHnSFf+zUv52B3prRYnbDRdgog==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://kit.fontawesome.com/b39b112ecb.js"

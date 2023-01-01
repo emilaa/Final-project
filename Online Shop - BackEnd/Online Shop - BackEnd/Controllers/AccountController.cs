@@ -1,11 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Online_Shop___BackEnd.Data;
 using Online_Shop___BackEnd.Models;
-using Online_Shop___BackEnd.ViewModels;
 using Online_Shop___BackEnd.ViewModels.AccountViewModels;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Online_Shop___BackEnd.Controllers
@@ -56,15 +52,48 @@ namespace Online_Shop___BackEnd.Controllers
                 return View();
             }
 
-            await _signInManager.SignInAsync(user, false);
-
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction(nameof(Login));
         }
 
         [HttpGet]
         public IActionResult Login()
         {
             return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login(LoginVM loginVM)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(loginVM);
+            }
+
+            AppUser user = await _userManager.FindByEmailAsync(loginVM.UsernameOrEmail);
+
+            if (user is null)
+            {
+                user = await _userManager.FindByNameAsync(loginVM.UsernameOrEmail);
+            }
+
+            if (user is null)
+            {
+                ModelState.AddModelError("", "Email or username is wrong!");
+
+                return View(loginVM);
+            }
+
+            var result = await _signInManager.PasswordSignInAsync(user, loginVM.Password, false, false);
+
+            if (!result.Succeeded)
+            {
+                ModelState.AddModelError("", "Email or username is wrong!");
+
+                return View(loginVM);
+            }
+
+            return RedirectToAction("Index", "Home");
         }
 
         public async Task<IActionResult> Logout()

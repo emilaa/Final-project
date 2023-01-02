@@ -1,8 +1,14 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using MailKit.Security;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using MimeKit.Text;
+using MimeKit;
 using Online_Shop___BackEnd.Models;
 using Online_Shop___BackEnd.ViewModels.AccountViewModels;
 using System.Threading.Tasks;
+using MailKit.Net.Smtp;
+using System.IO;
+using Online_Shop___BackEnd.Services.Interfaces;
 
 namespace Online_Shop___BackEnd.Controllers
 {
@@ -10,11 +16,19 @@ namespace Online_Shop___BackEnd.Controllers
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
+        private readonly IEmailService _emailService;
+        private readonly IFileService _fileService;
 
-        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
+        public AccountController
+            (UserManager<AppUser> userManager,
+            SignInManager<AppUser> signInManager,
+            IEmailService emailService,
+            IFileService fileService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _emailService = emailService;
+            _fileService = fileService;
         }
 
         [HttpGet]
@@ -49,10 +63,46 @@ namespace Online_Shop___BackEnd.Controllers
                     ModelState.AddModelError("", error.Description);
                 }
 
-                return View();
+                return View(registerVM);
             }
 
-            return RedirectToAction(nameof(Login));
+            string token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+
+            string link = Url.Action(nameof(ConfirmEmail), "Account", new { userId = user.Id, token },
+                Request.Scheme, Request.Host.ToString());
+
+            string path = "wwwroot/assets/templates/verify.html";
+            string body = string.Empty;
+            string subject = "Confirm Email";
+
+            body = _fileService.ReadFile(path, body);
+
+            body = body.Replace("{{link}}", link);
+            body = body.Replace("{{name}}", user.Name);
+            body = body.Replace("{{surname}}", user.Surname);
+
+            _emailService.Send(user.Email, subject, body);
+
+            return RedirectToAction(nameof(VerifyEmail));
+        }
+
+        public IActionResult VerifyEmail()
+        {
+            return View();
+        }
+
+        public async Task<IActionResult> ConfirmEmail(string userId, string token)
+        {
+            if (userId is null || token is null) return BadRequest();
+
+            AppUser user = await _userManager.FindByIdAsync(userId);
+
+            if (user is null) return NotFound();
+
+            await _userManager.ConfirmEmailAsync(user, token);
+            await _signInManager.SignInAsync(user, false);
+
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpGet]
@@ -94,6 +144,85 @@ namespace Online_Shop___BackEnd.Controllers
             }
 
             return RedirectToAction("Index", "Home");
+        }
+
+        [HttpGet]
+        public IActionResult ForgetPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ForgetPassword(ForgetPasswordVM forgetPasswordVM)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(forgetPasswordVM);
+            }
+
+            AppUser existUser = await _userManager.FindByEmailAsync(forgetPasswordVM.Email);
+
+            if (existUser is null)
+            {
+                ModelState.AddModelError("Email", "User not found!");
+
+                return View();
+            }
+
+            string token = await _userManager.GeneratePasswordResetTokenAsync(existUser);
+
+            string link = Url.Action(nameof(ResetPassword), "Account", new { userId = existUser.Id, token },
+                Request.Scheme, Request.Host.ToString());
+
+            string path = "wwwroot/assets/templates/verify.html";
+            string body = string.Empty;
+            string subject = "Confirm Email for reset Password";
+
+            body = _fileService.ReadFile(path, body);
+
+            body = body.Replace("{{link}}", link);
+            body = body.Replace("{{name}}", existUser.Name);
+            body = body.Replace("{{surname}}", existUser.Surname);
+
+            _emailService.Send(existUser.Email, subject, body);
+
+            return RedirectToAction(nameof(VerifyEmail));
+        }
+
+        [HttpGet]
+        public IActionResult ResetPassword(string userId, string token)
+        {
+            return View(new ResetPasswordVM { Token = token, UserId = userId });
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ResetPassword(ResetPasswordVM resetPasswordVM)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(resetPasswordVM);
+            }
+
+            AppUser existUser = await _userManager.FindByIdAsync(resetPasswordVM.UserId);
+
+            if (existUser is null)
+            {
+                return NotFound();
+            }
+
+            if (await _userManager.CheckPasswordAsync(existUser, resetPasswordVM.Password))
+            {
+                ModelState.AddModelError("", "This password already exist!");
+
+                return View(resetPasswordVM);
+            }
+
+
+            await _userManager.ResetPasswordAsync(existUser, resetPasswordVM.Token, resetPasswordVM.Password);
+
+            return RedirectToAction(nameof(Login));
         }
 
         public async Task<IActionResult> Logout()

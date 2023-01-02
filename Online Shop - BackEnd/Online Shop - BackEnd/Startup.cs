@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Online_Shop___BackEnd.Data;
 using Online_Shop___BackEnd.Models;
 using Online_Shop___BackEnd.Services;
+using Online_Shop___BackEnd.Services.Interfaces;
 using System;
 
 namespace Online_Shop___BackEnd
@@ -43,12 +44,16 @@ namespace Online_Shop___BackEnd
 
                 option.User.RequireUniqueEmail = true;
 
+                option.SignIn.RequireConfirmedEmail = true;
+
                 option.Lockout.MaxFailedAccessAttempts = 3;
                 option.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
                 option.Lockout.AllowedForNewUsers = true;
             });
 
             services.AddScoped<LayoutService>();
+            services.AddScoped<IEmailService, EmailService>();
+            services.AddScoped<IFileService, FileService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,13 +1,8 @@
-﻿using MailKit.Security;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using MimeKit.Text;
-using MimeKit;
 using Online_Shop___BackEnd.Models;
 using Online_Shop___BackEnd.ViewModels.AccountViewModels;
 using System.Threading.Tasks;
-using MailKit.Net.Smtp;
-using System.IO;
 using Online_Shop___BackEnd.Services.Interfaces;
 
 namespace Online_Shop___BackEnd.Controllers

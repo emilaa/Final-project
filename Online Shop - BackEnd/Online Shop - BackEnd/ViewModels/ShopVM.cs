@@ -5,7 +5,7 @@ namespace Online_Shop___BackEnd.ViewModels
 {
     public class ShopVM
     {
-        public IEnumerable<Banner> Banners { get; set; }
+        public IEnumerable<PageHeader> PageHeaders { get; set; }
         public IEnumerable<Product> Products { get; set; }
         public Product Product { get; set; }
         public SubCategory SubCategory { get; set; }

@@ -22,7 +22,7 @@ namespace Online_Shop___BackEnd.Controllers
         {
             ViewBag.count = await _context.Products.Where(m => !m.IsDeleted).CountAsync();
 
-            IEnumerable<Banner> banners = await _context.Banners.Where(m => !m.IsDeleted).ToListAsync();
+            IEnumerable<PageHeader> pageHeaders = await _context.PageHeaders.Where(m => !m.IsDeleted).ToListAsync();
             IEnumerable<Product> products = await _context.Products
                 .Where(m => !m.IsDeleted)
                 .Include(m => m.ProductImages)
@@ -36,7 +36,7 @@ namespace Online_Shop___BackEnd.Controllers
 
             ShopVM model = new ShopVM
             {
-                Banners = banners,
+                PageHeaders = pageHeaders,
                 Products = products,
                 SubCategories = subCategories,
             };

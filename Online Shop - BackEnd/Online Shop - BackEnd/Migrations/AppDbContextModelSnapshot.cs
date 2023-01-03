@@ -447,6 +447,27 @@ namespace Online_Shop___BackEnd.Migrations
                     b.ToTable("Favorites");
                 });
 
+            modelBuilder.Entity("Online_Shop___BackEnd.Models.HomeCategory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("HomeCategories");
+                });
+
             modelBuilder.Entity("Online_Shop___BackEnd.Models.Login_Register", b =>
                 {
                     b.Property<int>("Id")

@@ -28,8 +28,8 @@
                     <div class="row">
                         <div class="col-12 col-sm-12 col-md-12 col-lg-12">
                             <div class="banner-detail">
-                                <h1>@banner.Title</h1>
-                                <button><a href="shop.html">Shop Now</a></button>
+                                <h1>@Html.Raw(banner.Title)</h1>
+                                <button><a asp-controller="Shop" asp-action="Index">Shop Now</a></button>
                             </div>
                         </div>
                     </div>
@@ -41,24 +41,15 @@
     <section id="category">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-12 col-sm-12">
-                    <div class="categories">
-                        <img src="./assets/images/home/bg-2.jpg.webp" alt="" />
-                        <a href="">MEN</a>
+                @foreach (var banner in Model.HomeCategories)
+                {
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="categories">
+                            <img src="./assets/images/home/@banner.Image" alt="" />
+                            <a href="">@Html.Raw(banner.Title)</a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-12 col-sm-12">
-                    <div class="categories">
-                        <img src="./assets/images/home/bg-3.jpg.webp" alt="" />
-                        <a href="">WOMEN</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-12 col-sm-12">
-                    <div class="categories">
-                        <img src="./assets/images/home/bg-4.jpg.webp" alt="" />
-                        <a href="">ACCESSORIES</a>
-                    </div>
-                </div>
+                }
             </div>
         </div>
     </section>
@@ -76,8 +67,8 @@
                   background-image: url(./assets/images/home/@banner.Image);
                 ">
                                 <div class="global-sale-detail">
-                                    <h1>@banner.Title</h1>
-                                    <button><a href="shop.html">Shop Now</a></button>
+                                    <h1>@Html.Raw(banner.Title)</h1>
+                                    <button><a asp-controller="Shop" asp-action="Index">Shop Now</a></button>
                                 </div>
                             </div>
                         }

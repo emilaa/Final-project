@@ -29,5 +29,6 @@ namespace Online_Shop___BackEnd.Data
         public DbSet<BlogImage> BlogImages { get; set; }
         public DbSet<BlogSubCategory> BlogSubCategories { get; set; }
         public DbSet<ContactUs> ContactUs { get; set; }
+        public DbSet<HomeCategory> HomeCategories { get; set; }
     }
 }

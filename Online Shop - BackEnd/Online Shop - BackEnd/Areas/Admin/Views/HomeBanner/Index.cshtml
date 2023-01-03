@@ -10,9 +10,7 @@
             <div class="card-body">
                 <h4 class="card-title">Home Banner</h4>
                 <div class="table-responsive pt-3">
-                    <div class="create-btn">
-                        <button style="color: white;" type="button" class="btn btn-success"><i class="mdi mdi-folder-plus"></i></button>
-                    </div>
+                    <a asp-area="Admin" asp-controller="HomeBanner" asp-action="Create" style="color: white;" type="button" class="btn btn-success"><i class="mdi mdi-folder-plus"></i></a>
                     <table class="table table-bordered my-3">
                         <thead>
                             <tr>
@@ -43,12 +41,14 @@
                                         <img style="width: 498.7px; height: 200px; border-radius: 10px;" src="~/assets/images/home/@banner.Image" alt="banner" />
                                     </td>
                                     <td style="font-size: 30px;">
-                                        @banner.Title
+                                        @Html.Raw(banner.Title)
                                     </td>
-                                    <td style="width: 250px;">
-                                        <button type="button" class="btn btn-info"><i class="mdi mdi-information"></i></button>
-                                        <button style="color: white;" type="button" class="btn btn-primary"><i class="mdi mdi-table-edit"></i></button>
-                                        <button style="color: white;" type="button" class="btn btn-danger"><i class="mdi mdi-delete"></i></button>
+                                    <td style="display: flex; gap: 10px; padding-top: 100px; justify-content: center">
+                                        <a asp-action="Detail" asp-route-id="@banner.Id" class="btn btn-info"><i class="mdi mdi-information"></i></a>
+                                        <a asp-action="Update" asp-route-id="@banner.Id" style="color: white;" class="btn btn-primary"><i class="mdi mdi-table-edit"></i></a>
+                                        <form asp-action="Delete" asp-route-id="@banner.Id">
+                                            <button style="color: white;" type="submit" class="btn btn-danger"><i class="mdi mdi-delete"></i></button>
+                                        </form>
                                     </td>
                                 </tr>
                             }

@@ -23,6 +23,7 @@ namespace Online_Shop___BackEnd.Controllers
         public async Task<IActionResult> Index()
         {
             IEnumerable<Banner> banners = await _context.Banners.Where(m => !m.IsDeleted).ToListAsync();
+            IEnumerable<HomeCategory> homeCategories = await _context.HomeCategories.Where(m => !m.IsDeleted).ToListAsync();
             IEnumerable<Product> products = await _context.Products
                 .Where(m => !m.IsDeleted)
                 .Include(m => m.ProductImages)
@@ -34,6 +35,7 @@ namespace Online_Shop___BackEnd.Controllers
             HomeVM model = new HomeVM
             {
                 Banners = banners,
+                HomeCategories = homeCategories,
                 Products = products
             };
 

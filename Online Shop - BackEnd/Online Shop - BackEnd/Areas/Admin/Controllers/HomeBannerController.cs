@@ -17,7 +17,7 @@ namespace Online_Shop___BackEnd.Areas.Admin.Controllers
     {
         private readonly AppDbContext _context;
         private readonly IWebHostEnvironment _environment;
-
+         
         public HomeBannerController(AppDbContext context, IWebHostEnvironment environment)
         {
             _context = context;

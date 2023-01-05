@@ -27,14 +27,17 @@ namespace Online_Shop___BackEnd.Controllers
                 .ThenInclude(m => m.SubCategory)
                 .FirstOrDefaultAsync();
 
+
             IEnumerable<SubCategory> subCategories = await _context.SubCategories
                 .Where(m => !m.IsDeleted)
                 .ToListAsync();
 
-            SubCategory subCategory = await _context.SubCategories
-                .Where(m => !m.IsDeleted)
-                .FirstOrDefaultAsync();
 
+            ProductSubCategory productSubCategory = await _context.ProductSubCategories
+                .Where(n => n.ProductId == id && n.SubCategory.CategoryId == 2)
+                .Include(n => n.SubCategory)
+                .FirstOrDefaultAsync();
+            SubCategory subCategory = productSubCategory.SubCategory;
 
             ShopVM model = new ShopVM
             {

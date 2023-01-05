@@ -26,8 +26,15 @@ using Online_Shop___BackEnd.Helpers;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\Emil Abdullayev\Desktop\Final project\Online Shop - BackEnd\Online Shop - BackEnd\Areas\Admin\Views\_ViewImports.cshtml"
+using Online_Shop___BackEnd.ViewModels.CategoryViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"195e8f430b5e1e9cb1f846f6a4ff6026125a0484", @"/Areas/Admin/Views/HomeBanner/Detail.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"53b4d3ec24aab54a6c9f9243b341d7cf17047bc4", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"85cb9471f7986b56923fb593461fc02428081036", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_Admin_Views_HomeBanner_Detail : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Banner>
     #nullable disable
@@ -86,7 +93,7 @@ using Online_Shop___BackEnd.Helpers;
                                 <tr>
                                     <td style=""width: 500px;"">
                                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "195e8f430b5e1e9cb1f846f6a4ff6026125a04846477", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "195e8f430b5e1e9cb1f846f6a4ff6026125a04846746", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -119,7 +126,7 @@ AddHtmlAttributeValue("", 978, Model.Image, 978, 12, false);
 #line hidden
 #nullable disable
             WriteLiteral("\r\n                                    </td>\r\n                                </tr>\r\n                        </tbody>\r\n                    </table>\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "195e8f430b5e1e9cb1f846f6a4ff6026125a04848822", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "195e8f430b5e1e9cb1f846f6a4ff6026125a04849091", async() => {
                 WriteLiteral("Back");
             }
             );

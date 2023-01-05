@@ -31,19 +31,17 @@
                 </div>
 
                 <div class="col-lg-6 col-md-12 col-sm-12 detail">
-                    @if (Model.SubCategory.CategoryId == 2)
-                    {
-                        <h6>@Model.SubCategory.Name</h6>
-                    }
+                    <h6>@Model.SubCategory.Name</h6>
                     <h3 class="">@Model.Product.Name</h3>
                     <h2>$@Model.Product.Price.ToString("N2")</h2>
                     <select class="my-3">
                         <option>Select Size</option>
-                        @foreach (var size in Model.SubCategories)
+                        @foreach (var productSubCategory in Model.Product.ProductSubCategories)
                         {
-                            if (size.CategoryId == 1)
+                            if(productSubCategory.SubCategory.CategoryId == 1)
                             {
-                                <option>@size.Name</option>
+                                <option>@productSubCategory.SubCategory.Name</option>
+
                             }
                         }
                     </select>

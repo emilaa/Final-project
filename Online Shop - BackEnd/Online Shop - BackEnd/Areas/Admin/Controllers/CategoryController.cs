@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Online_Shop___BackEnd.Data;
 using Online_Shop___BackEnd.Helpers;
@@ -67,6 +68,15 @@ namespace Online_Shop___BackEnd.Areas.Admin.Controllers
             }
 
             return categoryList;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Create()
+        {
+            IEnumerable<Category> categories = await _context.Categories.Where(m => !m.IsDeleted).ToListAsync();
+            ViewBag.categories = new SelectList(categories, "Id", "Name");
+
+            return View();
         }
     }
 }

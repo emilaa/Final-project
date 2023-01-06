@@ -14,5 +14,20 @@ namespace Online_Shop___BackEnd.Helpers
             CurrentPage = currentPage;
             TotalPage = totalPage;
         }
+
+        public bool Previous
+        {
+            get
+            {
+                return CurrentPage > 1;
+            }
+        }
+        public bool Next
+        {
+            get
+            {
+                return CurrentPage < TotalPage;
+            }
+        }
     }
 }

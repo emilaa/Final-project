@@ -33,8 +33,15 @@ using Online_Shop___BackEnd.ViewModels.CategoryViewModels;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "C:\Users\Emil Abdullayev\Desktop\Final project\Online Shop - BackEnd\Online Shop - BackEnd\Areas\Admin\Views\_ViewImports.cshtml"
+using Online_Shop___BackEnd.ViewModels.SubCategoryViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4f7c78b39d4b50a60feba95d2b31c92429505005", @"/Areas/Admin/Views/HomeCategory/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"85cb9471f7986b56923fb593461fc02428081036", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1c7a49204f910eb92a18fdad943f59433b545def", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_Admin_Views_HomeCategory_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<HomeCategory>>
     #nullable disable
@@ -96,7 +103,7 @@ using Online_Shop___BackEnd.ViewModels.CategoryViewModels;
                 <h4 class=""card-title"">Home Banner</h4>
                 <div class=""table-responsive pt-3"">
                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4f7c78b39d4b50a60feba95d2b31c924295050058978", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4f7c78b39d4b50a60feba95d2b31c924295050059250", async() => {
                 WriteLiteral("<i class=\"mdi mdi-folder-plus\"></i>");
             }
             );
@@ -157,7 +164,7 @@ using Online_Shop___BackEnd.ViewModels.CategoryViewModels;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n                                    </td>\r\n                                    <td style=\"width: 300px;\">\r\n                                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "4f7c78b39d4b50a60feba95d2b31c9242950500512492", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "4f7c78b39d4b50a60feba95d2b31c9242950500512764", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -190,7 +197,7 @@ AddHtmlAttributeValue("", 1720, category.Image, 1720, 15, false);
 #line hidden
 #nullable disable
             WriteLiteral("\r\n                                    </td>\r\n                                    <td style=\"display: flex; gap: 10px; padding-top: 100px; justify-content: center\">\r\n                                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4f7c78b39d4b50a60feba95d2b31c9242950500514895", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4f7c78b39d4b50a60feba95d2b31c9242950500515167", async() => {
                 WriteLiteral("<i class=\"mdi mdi-information\"></i>");
             }
             );
@@ -222,7 +229,7 @@ AddHtmlAttributeValue("", 1720, category.Image, 1720, 15, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4f7c78b39d4b50a60feba95d2b31c9242950500517284", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4f7c78b39d4b50a60feba95d2b31c9242950500517556", async() => {
                 WriteLiteral("<i class=\"mdi mdi-table-edit\"></i>");
             }
             );
@@ -255,7 +262,7 @@ AddHtmlAttributeValue("", 1720, category.Image, 1720, 15, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4f7c78b39d4b50a60feba95d2b31c9242950500519758", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4f7c78b39d4b50a60feba95d2b31c9242950500520030", async() => {
                 WriteLiteral("\r\n                                            <button style=\"color: white;\" type=\"submit\" class=\"btn btn-danger\"><i class=\"mdi mdi-delete\"></i></button>\r\n                                        ");
             }
             );

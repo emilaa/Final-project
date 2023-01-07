@@ -5,7 +5,6 @@ namespace Online_Shop___BackEnd.ViewModels.CategoryViewModels
     public class CategoryCreateVM
     {
         [Required]
-        public string SubCategory { get; set; }
-        public int CategoryId { get; set; }
+        public string Name { get; set; }
     }
 }

@@ -38,10 +38,9 @@
                         <option>Select Size</option>
                         @foreach (var productSubCategory in Model.Product.ProductSubCategories)
                         {
-                            if(productSubCategory.SubCategory.CategoryId == 1)
+                            if (productSubCategory.SubCategory.CategoryId == 1)
                             {
                                 <option>@productSubCategory.SubCategory.Name</option>
-
                             }
                         }
                     </select>

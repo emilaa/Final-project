@@ -11008,6 +11008,86 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\home\men\shoes\shoes-66.webp))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\home\products\07aa79db-0a99-464b-848a-6e8362df19f2_IMG-20220305-WA0003.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Online Shop - BackEnd</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Online Shop - BackEnd</BasePath>
+      <RelativePath>assets\images\home\products\07aa79db-0a99-464b-848a-6e8362df19f2_IMG-20220305-WA0003.jpg</RelativePath>
+      <AssetKind></AssetKind>
+      <AssetMode></AssetMode>
+      <AssetRole></AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\home\products\07aa79db-0a99-464b-848a-6e8362df19f2_IMG-20220305-WA0003.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\home\products\08d8b6e7-3c9c-4929-90f8-0f12487fef79_WhatsApp Image 2022-12-24 at 17.03.30.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Online Shop - BackEnd</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Online Shop - BackEnd</BasePath>
+      <RelativePath>assets\images\home\products\08d8b6e7-3c9c-4929-90f8-0f12487fef79_WhatsApp Image 2022-12-24 at 17.03.30.jpg</RelativePath>
+      <AssetKind></AssetKind>
+      <AssetMode></AssetMode>
+      <AssetRole></AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\home\products\08d8b6e7-3c9c-4929-90f8-0f12487fef79_WhatsApp Image 2022-12-24 at 17.03.30.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\home\products\09e79202-b757-41fe-85de-e01cadf70a66_WhatsApp Image 2022-12-24 at 17.03.30.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Online Shop - BackEnd</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Online Shop - BackEnd</BasePath>
+      <RelativePath>assets\images\home\products\09e79202-b757-41fe-85de-e01cadf70a66_WhatsApp Image 2022-12-24 at 17.03.30.jpg</RelativePath>
+      <AssetKind></AssetKind>
+      <AssetMode></AssetMode>
+      <AssetRole></AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\home\products\09e79202-b757-41fe-85de-e01cadf70a66_WhatsApp Image 2022-12-24 at 17.03.30.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\home\products\999ffdae-291a-423f-928c-0681c090a618_WhatsApp Image 2022-12-24 at 17.03.30.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Online Shop - BackEnd</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Online Shop - BackEnd</BasePath>
+      <RelativePath>assets\images\home\products\999ffdae-291a-423f-928c-0681c090a618_WhatsApp Image 2022-12-24 at 17.03.30.jpg</RelativePath>
+      <AssetKind></AssetKind>
+      <AssetMode></AssetMode>
+      <AssetRole></AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\home\products\999ffdae-291a-423f-928c-0681c090a618_WhatsApp Image 2022-12-24 at 17.03.30.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\home\products\a3a66bdf-32fc-4b3f-a1b6-32137ff5263c_WhatsApp Image 2022-12-24 at 17.03.30.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Online Shop - BackEnd</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Online Shop - BackEnd</BasePath>
+      <RelativePath>assets\images\home\products\a3a66bdf-32fc-4b3f-a1b6-32137ff5263c_WhatsApp Image 2022-12-24 at 17.03.30.jpg</RelativePath>
+      <AssetKind></AssetKind>
+      <AssetMode></AssetMode>
+      <AssetRole></AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\home\products\a3a66bdf-32fc-4b3f-a1b6-32137ff5263c_WhatsApp Image 2022-12-24 at 17.03.30.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\home\products\acs-1.1.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Online Shop - BackEnd</SourceId>
@@ -11391,6 +11471,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\home\products\acss-3.4.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\home\products\f01f631f-bde2-421a-a778-7ef2b1755f2b_IMG-20220305-WA0003.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Online Shop - BackEnd</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Online Shop - BackEnd</BasePath>
+      <RelativePath>assets\images\home\products\f01f631f-bde2-421a-a778-7ef2b1755f2b_IMG-20220305-WA0003.jpg</RelativePath>
+      <AssetKind></AssetKind>
+      <AssetMode></AssetMode>
+      <AssetRole></AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\home\products\f01f631f-bde2-421a-a778-7ef2b1755f2b_IMG-20220305-WA0003.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\home\products\men-1.1.webp))">
       <SourceType>Package</SourceType>

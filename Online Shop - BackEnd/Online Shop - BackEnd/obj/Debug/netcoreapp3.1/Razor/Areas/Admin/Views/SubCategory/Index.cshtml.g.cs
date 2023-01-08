@@ -40,8 +40,15 @@ using Online_Shop___BackEnd.ViewModels.SubCategoryViewModels;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 5 "C:\Users\Emil Abdullayev\Desktop\Final project\Online Shop - BackEnd\Online Shop - BackEnd\Areas\Admin\Views\_ViewImports.cshtml"
+using Online_Shop___BackEnd.ViewModels.ProductViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"951a3f96eea0145f99548008e1d7db8ea21622b9", @"/Areas/Admin/Views/SubCategory/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1c7a49204f910eb92a18fdad943f59433b545def", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0197ed9875a8a335fccc96f072123a3d50b98a15", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_Admin_Views_SubCategory_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Paginate<SubCategoryListVM>>
     #nullable disable
@@ -102,7 +109,7 @@ using Online_Shop___BackEnd.ViewModels.SubCategoryViewModels;
                 <h4 class=""card-title"">Sub category</h4>
                 <div class=""table-responsive pt-3"">
                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "951a3f96eea0145f99548008e1d7db8ea21622b99099", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "951a3f96eea0145f99548008e1d7db8ea21622b99367", async() => {
                 WriteLiteral("<i class=\"mdi mdi-folder-plus\"></i>");
             }
             );
@@ -175,7 +182,7 @@ using Online_Shop___BackEnd.ViewModels.SubCategoryViewModels;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n                                    </td>\r\n                                    <td style=\"display: flex; gap: 10px; padding-top: 100px; justify-content: center\">\r\n                                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "951a3f96eea0145f99548008e1d7db8ea21622b913236", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "951a3f96eea0145f99548008e1d7db8ea21622b913504", async() => {
                 WriteLiteral("<i class=\"mdi mdi-information\"></i>");
             }
             );
@@ -207,7 +214,7 @@ using Online_Shop___BackEnd.ViewModels.SubCategoryViewModels;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "951a3f96eea0145f99548008e1d7db8ea21622b915624", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "951a3f96eea0145f99548008e1d7db8ea21622b915892", async() => {
                 WriteLiteral("<i class=\"mdi mdi-table-edit\"></i>");
             }
             );
@@ -240,7 +247,7 @@ using Online_Shop___BackEnd.ViewModels.SubCategoryViewModels;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "951a3f96eea0145f99548008e1d7db8ea21622b918094", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "951a3f96eea0145f99548008e1d7db8ea21622b918362", async() => {
                 WriteLiteral("\r\n                                            <button style=\"color: white;\" type=\"submit\" class=\"btn btn-danger\"><i class=\"mdi mdi-delete\"></i></button>\r\n                                        ");
             }
             );
@@ -300,7 +307,7 @@ WriteAttributeValue(" ", 3002, Model.Previous == false ? "disabled" : "", 3003, 
 #nullable disable
             EndWriteAttribute();
             WriteLiteral(">\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "951a3f96eea0145f99548008e1d7db8ea21622b921974", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "951a3f96eea0145f99548008e1d7db8ea21622b922242", async() => {
                 WriteLiteral("\r\n                    <span aria-hidden=\"true\">&laquo;</span>\r\n                ");
             }
             );
@@ -353,7 +360,7 @@ WriteAttributeValue(" ", 3383, i == Model.CurrentPage ? "disabled" : "", 3384, 4
 #nullable disable
             EndWriteAttribute();
             WriteLiteral(">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "951a3f96eea0145f99548008e1d7db8ea21622b925331", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "951a3f96eea0145f99548008e1d7db8ea21622b925599", async() => {
 #nullable restore
 #line 70 "C:\Users\Emil Abdullayev\Desktop\Final project\Online Shop - BackEnd\Online Shop - BackEnd\Areas\Admin\Views\SubCategory\Index.cshtml"
                                                                                                                                          Write(i);
@@ -410,7 +417,7 @@ WriteAttributeValue(" ", 3549, Model.Next == true ? "" : "disabled", 3550, 39, f
 #nullable disable
             EndWriteAttribute();
             WriteLiteral(">\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "951a3f96eea0145f99548008e1d7db8ea21622b928831", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "951a3f96eea0145f99548008e1d7db8ea21622b929099", async() => {
                 WriteLiteral("\r\n                    <span aria-hidden=\"true\">&raquo;</span>\r\n                ");
             }
             );

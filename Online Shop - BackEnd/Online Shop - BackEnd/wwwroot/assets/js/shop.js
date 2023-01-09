@@ -133,6 +133,19 @@ $(function () {
             }
         });
     });
+
+    $(document).on("keyup", "#search-box", function () {
+        let inputVal = $(this).val().trim();
+
+        $("#search-list-product li").slice(0).remove();
+        $.ajax({
+            url: `/shop/search?search+=${inputVal}`,
+            type: "Get",
+            success: function (response) {
+                $("#search-list-product").append(response);
+            }
+        })
+    })
 });
 
 const rangeInput = document.querySelectorAll(".range-input input"),

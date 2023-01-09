@@ -47,8 +47,15 @@ using Online_Shop___BackEnd.ViewModels.ProductViewModels;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 6 "C:\Users\Emil Abdullayev\Desktop\Final project\Online Shop - BackEnd\Online Shop - BackEnd\Areas\Admin\Views\_ViewImports.cshtml"
+using Online_Shop___BackEnd.ViewModels.BlogViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1fcb1d084ba6a2fdfba807e39be59d1800b5be0e", @"/Areas/Admin/Views/Product/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0197ed9875a8a335fccc96f072123a3d50b98a15", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"cea1d8282a6d2505ebdd2f9369418d2ee70e1d86", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_Admin_Views_Product_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Paginate<ProductListVM>>
     #nullable disable
@@ -112,7 +119,7 @@ using Online_Shop___BackEnd.ViewModels.ProductViewModels;
                 <h4 class=""card-title"">Products</h4>
                 <div class=""table-responsive pt-3"">
                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1fcb1d084ba6a2fdfba807e39be59d1800b5be0e10228", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1fcb1d084ba6a2fdfba807e39be59d1800b5be0e10493", async() => {
                 WriteLiteral("<i class=\"mdi mdi-folder-plus\"></i>");
             }
             );
@@ -175,7 +182,7 @@ using Online_Shop___BackEnd.ViewModels.ProductViewModels;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n                                    </td>\r\n                                    <td>\r\n                                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "1fcb1d084ba6a2fdfba807e39be59d1800b5be0e13553", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "1fcb1d084ba6a2fdfba807e39be59d1800b5be0e13818", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -224,7 +231,7 @@ AddHtmlAttributeValue("", 1905, product.MainImage, 1905, 18, false);
 #line hidden
 #nullable disable
             WriteLiteral("$\r\n                                    </td>\r\n                                    <td style=\"display: flex; gap: 10px; padding-top: 100px; justify-content: center\">\r\n                                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1fcb1d084ba6a2fdfba807e39be59d1800b5be0e16892", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1fcb1d084ba6a2fdfba807e39be59d1800b5be0e17157", async() => {
                 WriteLiteral("<i class=\"mdi mdi-information\"></i>");
             }
             );
@@ -256,7 +263,7 @@ AddHtmlAttributeValue("", 1905, product.MainImage, 1905, 18, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1fcb1d084ba6a2fdfba807e39be59d1800b5be0e19275", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1fcb1d084ba6a2fdfba807e39be59d1800b5be0e19540", async() => {
                 WriteLiteral("<i class=\"mdi mdi-table-edit\"></i>");
             }
             );
@@ -289,7 +296,7 @@ AddHtmlAttributeValue("", 1905, product.MainImage, 1905, 18, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1fcb1d084ba6a2fdfba807e39be59d1800b5be0e21740", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1fcb1d084ba6a2fdfba807e39be59d1800b5be0e22005", async() => {
                 WriteLiteral("\r\n                                            <button style=\"color: white;\" type=\"submit\" class=\"btn btn-danger\"><i class=\"mdi mdi-delete\"></i></button>\r\n                                        ");
             }
             );
@@ -349,7 +356,7 @@ WriteAttributeValue(" ", 3644, Model.Previous == false ? "disabled" : "", 3645, 
 #nullable disable
             EndWriteAttribute();
             WriteLiteral(">\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1fcb1d084ba6a2fdfba807e39be59d1800b5be0e25609", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1fcb1d084ba6a2fdfba807e39be59d1800b5be0e25874", async() => {
                 WriteLiteral("\r\n                    <span aria-hidden=\"true\">&laquo;</span>\r\n                ");
             }
             );
@@ -402,7 +409,7 @@ WriteAttributeValue(" ", 4025, i == Model.CurrentPage ? "disabled" : "", 4026, 4
 #nullable disable
             EndWriteAttribute();
             WriteLiteral(">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1fcb1d084ba6a2fdfba807e39be59d1800b5be0e28956", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1fcb1d084ba6a2fdfba807e39be59d1800b5be0e29221", async() => {
 #nullable restore
 #line 82 "C:\Users\Emil Abdullayev\Desktop\Final project\Online Shop - BackEnd\Online Shop - BackEnd\Areas\Admin\Views\Product\Index.cshtml"
                                                                                                                                          Write(i);
@@ -459,7 +466,7 @@ WriteAttributeValue(" ", 4191, Model.Next == true ? "" : "disabled", 4192, 39, f
 #nullable disable
             EndWriteAttribute();
             WriteLiteral(">\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1fcb1d084ba6a2fdfba807e39be59d1800b5be0e32442", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1fcb1d084ba6a2fdfba807e39be59d1800b5be0e32707", async() => {
                 WriteLiteral("\r\n                    <span aria-hidden=\"true\">&raquo;</span>\r\n                ");
             }
             );

@@ -30,17 +30,23 @@
 
         <div>
             <label class="my-3" asp-for="CategoryId">Category</label>
-            <select class="form-control" asp-for="CategoryId" asp-items="@ViewBag.categories"></select>
+            <select class="form-control" asp-for="CategoryId" asp-items="@ViewBag.categories">
+                <option value="CategoryId"></option>
+            </select>
         </div>
 
         <div>
             <label class="my-3" asp-for="BrandId">Brand</label>
-            <select class="form-control" asp-for="BrandId" asp-items="@ViewBag.brands"></select>
+            <select class="form-control" asp-for="BrandId" asp-items="@ViewBag.brands">
+                <option value="BrandId"></option>
+            </select>
         </div>
 
         <div>
             <label class="my-3" asp-for="SizeId">Size</label>
-            <select class="form-control" asp-for="SizeId" asp-items="@ViewBag.size"></select>
+            <select class="form-control" asp-for="SizeId" asp-items="@ViewBag.size">
+                <option value="SizeId"></option>
+            </select>
         </div>
 
         <a class="btn btn-danger my-3" style="color: white;" asp-controller="Product" asp-action="Index">Back</a>

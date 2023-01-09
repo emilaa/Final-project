@@ -47,8 +47,15 @@ using Online_Shop___BackEnd.ViewModels.ProductViewModels;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 6 "C:\Users\Emil Abdullayev\Desktop\Final project\Online Shop - BackEnd\Online Shop - BackEnd\Areas\Admin\Views\_ViewImports.cshtml"
+using Online_Shop___BackEnd.ViewModels.BlogViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"bc6418e88478249da94616b4d966824340e0f3aa", @"/Areas/Admin/Views/SubCategory/Detail.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0197ed9875a8a335fccc96f072123a3d50b98a15", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"cea1d8282a6d2505ebdd2f9369418d2ee70e1d86", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_Admin_Views_SubCategory_Detail : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<SubCategoryListVM>
     #nullable disable
@@ -120,7 +127,7 @@ using Online_Shop___BackEnd.ViewModels.ProductViewModels;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n                                </td>\r\n                            </tr>\r\n                        </tbody>\r\n                    </table>\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bc6418e88478249da94616b4d966824340e0f3aa7357", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bc6418e88478249da94616b4d966824340e0f3aa7622", async() => {
                 WriteLiteral("Back");
             }
             );

@@ -204,3 +204,6 @@ C:\Users\Emil Abdullayev\Desktop\Final project\Online Shop - BackEnd\Online Shop
 C:\Users\Emil Abdullayev\Desktop\Final project\Online Shop - BackEnd\Online Shop - BackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Product\Index.cshtml.g.cs
 C:\Users\Emil Abdullayev\Desktop\Final project\Online Shop - BackEnd\Online Shop - BackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Product\Detail.cshtml.g.cs
 C:\Users\Emil Abdullayev\Desktop\Final project\Online Shop - BackEnd\Online Shop - BackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Product\Create.cshtml.g.cs
+C:\Users\Emil Abdullayev\Desktop\Final project\Online Shop - BackEnd\Online Shop - BackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Blog\Index.cshtml.g.cs
+C:\Users\Emil Abdullayev\Desktop\Final project\Online Shop - BackEnd\Online Shop - BackEnd\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Blog\Detail.cshtml.g.cs
+C:\Users\Emil Abdullayev\Desktop\Final project\Online Shop - BackEnd\Online Shop - BackEnd\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_SearchProductPartial.cshtml.g.cs

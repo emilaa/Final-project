@@ -11,7 +11,6 @@ using Online_Shop___BackEnd.Helpers;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
-using Online_Shop___BackEnd.ViewModels.CategoryViewModels;
 
 namespace Online_Shop___BackEnd.Areas.Admin.Controllers
 {
@@ -125,16 +124,12 @@ namespace Online_Shop___BackEnd.Areas.Admin.Controllers
 
             images.FirstOrDefault().IsMain = true;
 
-            IEnumerable<ProductSubCategory> categories = await _context.ProductSubCategories
-                .Where(m => !m.IsDeleted && m.SubCategory.CategoryId == 5)
-                .ToListAsync();
-
             Product newProduct = new Product
             {
                 ProductImages = images,
                 Name = product.Name,
                 Description = product.Description,
-                Price = product.Price
+                Price = product.Price,
             };
 
             await _context.Products.AddAsync(newProduct);

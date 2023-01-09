@@ -11056,6 +11056,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\home\products\09e79202-b757-41fe-85de-e01cadf70a66_WhatsApp Image 2022-12-24 at 17.03.30.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\home\products\430b897a-c051-43e9-b9c7-3e625d0711ac_WhatsApp Image 2022-12-24 at 17.03.30.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Online Shop - BackEnd</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Online Shop - BackEnd</BasePath>
+      <RelativePath>assets\images\home\products\430b897a-c051-43e9-b9c7-3e625d0711ac_WhatsApp Image 2022-12-24 at 17.03.30.jpg</RelativePath>
+      <AssetKind></AssetKind>
+      <AssetMode></AssetMode>
+      <AssetRole></AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\home\products\430b897a-c051-43e9-b9c7-3e625d0711ac_WhatsApp Image 2022-12-24 at 17.03.30.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\home\products\999ffdae-291a-423f-928c-0681c090a618_WhatsApp Image 2022-12-24 at 17.03.30.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Online Shop - BackEnd</SourceId>

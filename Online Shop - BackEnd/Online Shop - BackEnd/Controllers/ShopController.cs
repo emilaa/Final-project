@@ -62,5 +62,11 @@ namespace Online_Shop___BackEnd.Controllers
 
             return PartialView("_ProductsPartial", model);
         }
+
+        public IActionResult Search(string search)
+        {
+            List<Product> searchProduct = _context.Products.Where(m => m.Name.ToLower().Contains(search.ToLower()) && !m.IsDeleted).ToList();
+            return PartialView("_SearchProductPartial", searchProduct);
+        }
     }
 }

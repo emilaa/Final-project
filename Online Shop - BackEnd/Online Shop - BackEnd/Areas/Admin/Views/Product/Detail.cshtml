@@ -75,7 +75,7 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    @foreach (var image in Model.Images.Where(m => !m.IsMain))
+                                    @foreach (var image in Model.Images)
                                     {
                                         <img style="border-radius: 5px; width: 150px; height: 200px;" src="~/assets/images/home/products/@image.Name" alt="product">
                                     }

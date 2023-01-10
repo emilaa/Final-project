@@ -4,6 +4,8 @@ using Online_Shop___BackEnd.Models;
 using Online_Shop___BackEnd.ViewModels.AccountViewModels;
 using System.Threading.Tasks;
 using Online_Shop___BackEnd.Services.Interfaces;
+using System;
+using Online_Shop___BackEnd.Helpers.Enums;
 
 namespace Online_Shop___BackEnd.Controllers
 {
@@ -11,17 +13,20 @@ namespace Online_Shop___BackEnd.Controllers
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IEmailService _emailService;
         private readonly IFileService _fileService;
 
         public AccountController
             (UserManager<AppUser> userManager,
             SignInManager<AppUser> signInManager,
+            RoleManager<IdentityRole> roleManager,
             IEmailService emailService,
             IFileService fileService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _roleManager = roleManager;
             _emailService = emailService;
             _fileService = fileService;
         }
@@ -225,6 +230,17 @@ namespace Online_Shop___BackEnd.Controllers
             await _signInManager.SignOutAsync();
 
             return RedirectToAction("Index", "Home");
+        }
+
+        public async Task CreateRoles()
+        {
+            foreach (var role in Enum.GetValues(typeof(Roles)))
+            {
+                if (!await _roleManager.RoleExistsAsync(role.ToString()))
+                {
+                    await _roleManager.CreateAsync(new IdentityRole { Name = role.ToString() });
+                }
+            }
         }
     }
 }

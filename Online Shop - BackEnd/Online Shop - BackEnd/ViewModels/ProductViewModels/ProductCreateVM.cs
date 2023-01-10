@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Online_Shop___BackEnd.Models;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -15,6 +16,7 @@ namespace Online_Shop___BackEnd.ViewModels.ProductViewModels
         public int CategoryId { get; set; }
         public int BrandId { get; set; }
         public int SizeId { get; set; }
+        public List<SubCategory> Size { get; set; }
         [Required]
         public List<IFormFile> Photos{ get; set; }
     }

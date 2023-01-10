@@ -1,5 +1,11 @@
 ﻿@model ProductCreateVM
 
+@{
+    List<SubCategory> categories = (List<SubCategory>)ViewBag.categories;
+    List<SubCategory> brands = (List<SubCategory>)ViewBag.brands;
+
+}
+
 <div class="container-fluid mx-5 my-3">
     <h3>Product - Create</h3>
     <form asp-action="Create" method="post" enctype="multipart/form-data">
@@ -30,23 +36,38 @@
 
         <div>
             <label class="my-3" asp-for="CategoryId">Category</label>
-            <select class="form-control" asp-for="CategoryId" asp-items="@ViewBag.categories">
-                <option value="CategoryId"></option>
+            <select class="form-control" asp-for="CategoryId">
+                @foreach (var category in categories)
+                {
+                    <option value="@category.Id">@category.Name</option>
+                }
             </select>
         </div>
 
         <div>
             <label class="my-3" asp-for="BrandId">Brand</label>
-            <select class="form-control" asp-for="BrandId" asp-items="@ViewBag.brands">
-                <option value="BrandId"></option>
+            <select class="form-control" asp-for="BrandId">
+                @foreach (var brand in brands)
+                {
+                    <option value="@brand.Id">@brand.Name</option>
+                }
             </select>
         </div>
 
         <div>
-            <label class="my-3" asp-for="SizeId">Size</label>
-            <select class="form-control" asp-for="SizeId" asp-items="@ViewBag.size">
-                <option value="SizeId"></option>
-            </select>
+            @for (int i = 0; i < Model.Size.Count; i++)
+            {
+                <tr>
+                    <td>
+                        <label>@Model.Size[i].Name</label>
+                        <input type="hidden" asp-for="@Model.Size[i].CategoryId" value="@Model.Size[i].CategoryId" />
+                        <input type="hidden" asp-for="@Model.Size[i].Name" />
+                        <input type="hidden" asp-for="@Model.Size[i]" />
+                        <input type="checkbox" asp-for="@Model.Size[i].IsSelected" />
+                        <input type="hidden" asp-for="@Model.Size[i].Id" />
+                    </td>
+                </tr>
+            }
         </div>
 
         <a class="btn btn-danger my-3" style="color: white;" asp-controller="Product" asp-action="Index">Back</a>

@@ -116,8 +116,6 @@ $(function () {
 
         let productCount = $("#product-count").val();
 
-        console.log(productCount);
-
         $.ajax({
             url: `/shop/showmore?skip=${skipCount}`,
             type: "Get",
@@ -139,13 +137,13 @@ $(function () {
 
         $("#search-list-product li").slice(0).remove();
         $.ajax({
-            url: `/shop/search?search+=${inputVal}`,
-            type: "Get",
+            url: "/shop/search?search=" + inputVal,
+            method: "Get",
             success: function (response) {
                 $("#search-list-product").append(response);
             }
-        })
-    })
+        });
+    });
 });
 
 const rangeInput = document.querySelectorAll(".range-input input"),

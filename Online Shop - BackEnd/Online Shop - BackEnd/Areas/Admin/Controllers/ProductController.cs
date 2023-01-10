@@ -78,9 +78,14 @@ namespace Online_Shop___BackEnd.Areas.Admin.Controllers
         {
             ViewBag.categories = await GetCategoriesAsync();
             ViewBag.brands = await GetBrandsAsync();
-            ViewBag.size = await GetSizeAsync();
+            var data = await GetSizeAsync();
 
-            return View();
+            ProductCreateVM product = new ProductCreateVM()
+            {
+                Size = data
+            };
+
+            return View(product);
         }
 
         [HttpPost]
@@ -97,9 +102,13 @@ namespace Online_Shop___BackEnd.Areas.Admin.Controllers
                     return View(product);
                 }
 
-                if (!photo.CheckFileSize(200))
+                if (!photo.CheckFileSize(1000))
                 {
                     ModelState.AddModelError("Photo", "Please, choose correct image size");
+                    ViewBag.categories = await GetCategoriesAsync();
+                    ViewBag.brands = await GetBrandsAsync();
+                    var data = await GetSizeAsync();
+
                     return View(product);
                 }
             }
@@ -129,10 +138,46 @@ namespace Online_Shop___BackEnd.Areas.Admin.Controllers
                 ProductImages = images,
                 Name = product.Name,
                 Description = product.Description,
-                Price = product.Price,
+                Price = product.Price
             };
 
+            await _context.ProductImages.AddRangeAsync(images);
             await _context.Products.AddAsync(newProduct);
+            await _context.SaveChangesAsync();
+
+            foreach (var size in product.Size.Where(m => m.IsSelected && m.CategoryId == 1))
+            {
+                ProductSubCategory sizes = new ProductSubCategory
+                {
+                    ProductId = newProduct.Id,
+                    SubCategoryId = size.Id
+                };
+
+                await _context.ProductSubCategories.AddAsync(sizes);
+            }
+
+            ProductSubCategory productCategory = new ProductSubCategory()
+            {
+                ProductId = newProduct.Id,
+                SubCategoryId = product.CategoryId
+            };
+            await _context.ProductSubCategories.AddAsync(productCategory);
+
+            ProductSubCategory productBrand = new ProductSubCategory()
+            {
+                ProductId = newProduct.Id,
+                SubCategoryId = product.BrandId
+            };
+            await _context.ProductSubCategories.AddAsync(productBrand);
+
+            //ProductSubCategory productSize = new ProductSubCategory()
+            //{
+            //    ProductId = newProduct.Id,
+            //    SubCategoryId = product.SizeId
+            //};
+
+            //await _context.ProductSubCategories.AddAsync(productSize);
+
             await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(Index));
@@ -181,25 +226,45 @@ namespace Online_Shop___BackEnd.Areas.Admin.Controllers
             return View(productDetail);
         }
 
-        private async Task<SelectList> GetCategoriesAsync()
+        private async Task<List<SubCategory>> GetCategoriesAsync()
         {
-            IEnumerable<SubCategory> categories = await _context.SubCategories.Where(m => !m.IsDeleted && m.CategoryId == 5).ToListAsync();
+            List<SubCategory> categories = await _context.SubCategories.Where(m => !m.IsDeleted && m.CategoryId == 5).ToListAsync();
 
-            return new SelectList(categories, "Id", "Name");
+            return categories;
         }
 
-        private async Task<SelectList> GetBrandsAsync()
+        private async Task<List<SubCategory>> GetBrandsAsync()
         {
-            IEnumerable<SubCategory> brands = await _context.SubCategories.Where(m => !m.IsDeleted && m.CategoryId == 2).ToListAsync();
+            List<SubCategory> brands = await _context.SubCategories.Where(m => !m.IsDeleted && m.CategoryId == 2).ToListAsync();
 
-            return new SelectList(brands, "Id", "Name");
+            return brands;
         }
 
-        private async Task<SelectList> GetSizeAsync()
+        private async Task<List<SubCategory>> GetSizeAsync()
         {
-            IEnumerable<SubCategory> size = await _context.SubCategories.Where(m => !m.IsDeleted && m.CategoryId == 1).ToListAsync();
+            List<SubCategory> sizes = await _context.SubCategories.Where(m => !m.IsDeleted && m.CategoryId == 1).ToListAsync();
 
-            return new SelectList(size, "Id", "Name");
+            return sizes;
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(int? id)
+        {
+            Product product = await _context.Products
+                .Where(m => !m.IsDeleted && m.Id == id)
+                .FirstOrDefaultAsync();
+
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            product.IsDeleted = true;
+
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
         }
     }
 }

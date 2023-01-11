@@ -15,7 +15,6 @@ namespace Online_Shop___BackEnd.ViewModels.ProductViewModels
         public decimal Price { get; set; }
         public int CategoryId { get; set; }
         public int BrandId { get; set; }
-        public int SizeId { get; set; }
         public List<SubCategory> Size { get; set; }
         [Required]
         public List<IFormFile> Photos{ get; set; }

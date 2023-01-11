@@ -90,7 +90,7 @@
                         <div class="search">
                             <input id="search-box" type="text" placeholder="Search" />
                         </div>
-                        <ul id="search-list-product" class="d-block`">
+                        <ul id="search-list-product" class="d-block ">
                         </ul>
                         <h5>Price</h5>
                         <div class="input-price">
@@ -214,12 +214,15 @@
 </main>
 
 @section Scripts{
-    <script>
+@*    <script>
         $(".btn").on("click", function () {
             $(".input").toggleClass("inclicked");
             $(".btn").toggleClass("close");
         });
-    </script>
+    </script>*@
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.3.1/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="~/assets/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
         crossorigin="anonymous"
         referrerpolicy="no-referrer"></script>
@@ -229,5 +232,6 @@
         crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/b39b112ecb.js"
         crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
     <script src="~/assets/js/shop.js"></script>
 }

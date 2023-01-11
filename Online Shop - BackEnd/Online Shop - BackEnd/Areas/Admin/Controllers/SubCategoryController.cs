@@ -149,7 +149,7 @@ namespace Online_Shop___BackEnd.Areas.Admin.Controllers
             {
                 Id = dbSubCategory.Id,
                 SubCategory = dbSubCategory.Name,
-                CategoryId = dbSubCategory.Category.Id
+                CategoryId = dbSubCategory.CategoryId
             };
 
             return View(updateSubCategory);

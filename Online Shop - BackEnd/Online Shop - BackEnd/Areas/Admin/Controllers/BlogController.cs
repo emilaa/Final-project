@@ -71,6 +71,79 @@ namespace Online_Shop___BackEnd.Areas.Admin.Controllers
         }
 
         [HttpGet]
+        public async Task<IActionResult> Create()
+        {
+            ViewBag.categories = await GetCategoriesAsync();
+
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(BlogCreateVM blog)
+        {
+            if (!ModelState.IsValid) return View(blog);
+
+            foreach (var photo in blog.Photos)
+            {
+                if (!photo.CheckFileType("image/"))
+                {
+                    ModelState.AddModelError("Photo", "Please, choose correct image type");
+                    return View(blog);
+                }
+
+                if (!photo.CheckFileSize(1000))
+                {
+                    ModelState.AddModelError("Photo", "Please, choose correct image size");
+
+                    ViewBag.categories = await GetCategoriesAsync();
+
+                    return View(blog);
+                }
+            }
+
+            List<BlogImage> images = new List<BlogImage>();
+
+            foreach (var photo in blog.Photos)
+            {
+                string fileName = Guid.NewGuid().ToString() + "_" + photo.FileName;
+
+                string path = Helper.GetFilePath(_environment.WebRootPath, "assets/images/blog", fileName);
+
+                await Helper.SaveFile(path, photo);
+
+                BlogImage image = new BlogImage
+                {
+                    Name = fileName
+                };
+
+                images.Add(image);
+            }
+
+            Blog newBlog = new Blog
+            {
+                BlogImages = images,
+                Title = blog.Title,
+                Description = blog.Description,
+            };
+
+            await _context.BlogImages.AddRangeAsync(images);
+            await _context.Blogs.AddAsync(newBlog);
+            await _context.SaveChangesAsync();
+
+            BlogSubCategory blogCategory = new BlogSubCategory()
+            {
+                BlogId = newBlog.Id,
+                SubCategoryId = blog.CategoryId
+            };
+
+            await _context.BlogSubCategories.AddAsync(blogCategory);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        [HttpGet]
         public async Task<IActionResult> Detail(int? id)
         {
             if (id == null) return BadRequest();
@@ -99,6 +172,155 @@ namespace Online_Shop___BackEnd.Areas.Admin.Controllers
             };
 
             return View(blogDetail);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Update(int? id)
+        {
+            if (id == null) return BadRequest();
+
+            Blog dbBlog = await GetByIdAsync((int)id);
+
+            BlogSubCategory category = await _context.BlogSubCategories
+                .Where(m => m.BlogId == id && m.SubCategory.CategoryId == 6)
+                .FirstOrDefaultAsync();
+
+            ViewBag.categories = await GetCategoriesAsync();
+
+            BlogUpdateVM updatedBlog = new BlogUpdateVM()
+            {
+                Id = dbBlog.Id,
+                Images = dbBlog.BlogImages,
+                Title = dbBlog.Title,
+                Description = dbBlog.Description,
+                CategoryName = category.SubCategory.Name,
+            };
+
+            BlogSubCategory blogCategory = new BlogSubCategory()
+            {
+                BlogId = dbBlog.Id,
+                SubCategoryId = updatedBlog.CategoryId
+            };
+
+            await _context.BlogSubCategories.AddAsync(blogCategory);
+
+            return View(updatedBlog);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Update(int id, BlogUpdateVM updatedBlog)
+        {
+            ViewBag.categories = await GetCategoriesAsync();
+
+            if (!ModelState.IsValid) return View(updatedBlog);
+
+            Blog dbBlog = await GetByIdAsync(id);
+
+            if (updatedBlog.Photos != null)
+            {
+                foreach (var photo in updatedBlog.Photos)
+                {
+                    if (!photo.CheckFileType("image/"))
+                    {
+                        ModelState.AddModelError("Photo", "Please, choose correct image type");
+                        return View(updatedBlog);
+                    }
+
+                    if (!photo.CheckFileSize(1000))
+                    {
+                        ModelState.AddModelError("Photo", "Please, choose correct image size");
+
+                        ViewBag.categories = await GetCategoriesAsync();
+
+                        return View(updatedBlog);
+                    }
+                }
+
+                foreach (var image in dbBlog.BlogImages)
+                {
+                    string path = Helper.GetFilePath(_environment.WebRootPath, "assets/images/blog", image.Name);
+                    Helper.DeleteFile(path);
+                }
+
+                List<BlogImage> images = new List<BlogImage>();
+
+                foreach (var photo in updatedBlog.Photos)
+                {
+                    string fileName = Guid.NewGuid().ToString() + "_" + photo.FileName;
+
+                    string path = Helper.GetFilePath(_environment.WebRootPath, "assets/images/blog", fileName);
+
+                    await Helper.SaveFile(path, photo);
+
+                    BlogImage image = new BlogImage
+                    {
+                        Name = fileName
+                    };
+
+                    images.Add(image);
+                }
+
+                ViewBag.categories = await GetCategoriesAsync();
+
+                dbBlog.BlogImages = images;
+            }
+
+            dbBlog.Title = updatedBlog.Title;
+            dbBlog.Description = updatedBlog.Description;
+
+            BlogSubCategory blogCategory = new BlogSubCategory()
+            {
+                BlogId = updatedBlog.Id,
+                SubCategoryId = updatedBlog.CategoryId
+            };
+
+            await _context.BlogSubCategories.AddAsync(blogCategory);
+
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(int? id)
+        {
+            Blog blog = await _context.Blogs
+                .Where(m => !m.IsDeleted && m.Id == id)
+                .Include(m => m.BlogImages)
+                .FirstOrDefaultAsync();
+
+            if (blog == null) return NotFound();
+
+            foreach (var image in blog.BlogImages)
+            {
+                string path = Helper.GetFilePath(_environment.WebRootPath, "assets/images/blog", image.Name);
+                Helper.DeleteFile(path);
+            }
+
+            blog.IsDeleted = true;
+
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        private async Task<Blog> GetByIdAsync(int id)
+        {
+            return await _context.Blogs
+                .Where(m => !m.IsDeleted && m.Id == id)
+                .Include(m => m.BlogImages)
+                .Include(m => m.BlogSubCategories)
+                .ThenInclude(m => m.SubCategory)
+                .FirstOrDefaultAsync();
+        }
+
+        private async Task<List<SubCategory>> GetCategoriesAsync()
+        {
+            List<SubCategory> categories = await _context.SubCategories.Where(m => !m.IsDeleted && m.CategoryId == 6).ToListAsync();
+
+            return categories;
         }
     }
 }

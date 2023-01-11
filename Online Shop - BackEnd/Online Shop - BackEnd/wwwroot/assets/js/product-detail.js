@@ -39,5 +39,23 @@ $(function () {
       count += heart.count;
     }
     return count;
-  }
+    }
+
+    $(document).on("click", ".detail .add-btn", function () {
+
+        let productId = parseInt($($(this).closest("#product-detail")[0]).attr('product-id'));
+
+        let data = { id: productId };
+
+        $.ajax({
+            url: "/productdetail/addbasket",
+            type: "Post",
+            data: data,
+            contentType: "application/x-www-form-urlencoded",
+            success: function (res) {
+
+            }
+        })
+
+    });
 });

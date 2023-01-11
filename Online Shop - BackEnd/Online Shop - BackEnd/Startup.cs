@@ -27,6 +27,11 @@ namespace Online_Shop___BackEnd
         {
             services.AddControllersWithViews();
 
+            services.AddSession(option =>
+            {
+                option.IdleTimeout = TimeSpan.FromSeconds(25);
+            });
+
             services.AddDbContext<AppDbContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));

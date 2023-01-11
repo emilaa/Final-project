@@ -18,6 +18,24 @@ $(function () {
         }
     }
 
+    $(document).on("click", ".price button", function () {
+
+        let productId = parseInt($($(this).closest(".product-item")[0]).attr('product-id'));
+
+        let data = { id: productId };
+
+        $.ajax({
+            url: "/shop/addbasket",
+            type: "Post",
+            data: data,
+            contentType: "application/x-www-form-urlencoded",
+            success: function (res) {
+                
+            }
+        })
+
+    });
+
     $(document).on('click', '.categories', function (e) {
         e.preventDefault();
         $(this).next().next().slideToggle();
@@ -137,10 +155,15 @@ $(function () {
 
         $("#search-list-product li").slice(0).remove();
         $.ajax({
-            url: "/shop/search?search=" + inputVal,
-            method: "Get",
-            success: function (response) {
-                $("#search-list-product").append(response);
+            url: "shop/search",
+            type: "Get",
+            contentType: "application/x-www-form-urlencoded",
+            data: {
+                search: inputVal
+            },
+
+            success: function (res) {
+                $("#search-list-product").append(res);
             }
         });
     });

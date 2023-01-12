@@ -90,7 +90,7 @@
                         <div class="search">
                             <input id="search-box" type="text" placeholder="Search" />
                         </div>
-                        <ul id="search-list-product" class="d-block ">
+                        <ul style="padding: 0;" id="search-list-product" class="d-block ">
                         </ul>
                         <h5>Price</h5>
                         <div class="input-price">
@@ -152,7 +152,6 @@
                                         <p>@brand.Name</p>
                                         <div class="tick-mark"></div>
                                     </label>
-
                                     <br />
                                 }
                             }
@@ -214,7 +213,7 @@
 </main>
 
 @section Scripts{
-@*    <script>
+    @*    <script>
         $(".btn").on("click", function () {
             $(".input").toggleClass("inclicked");
             $(".btn").toggleClass("close");

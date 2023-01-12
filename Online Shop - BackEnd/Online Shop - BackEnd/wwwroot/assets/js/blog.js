@@ -58,5 +58,23 @@ $(function () {
       count += heart.count;
     }
     return count;
-  }
+    }
+
+    $(document).on("keyup", "#search-box", function () {
+        let inputVal = $(this).val().trim();
+
+        $("#search-list-blog li").slice(0).remove();
+        $.ajax({
+            url: "blog/search",
+            type: "Get",
+            contentType: "application/x-www-form-urlencoded",
+            data: {
+                search: inputVal
+            },
+
+            success: function (res) {
+                $("#search-list-blog").append(res);
+            }
+        });
+    });
 });

@@ -50,5 +50,15 @@ namespace Online_Shop___BackEnd.Controllers
 
             return View(model);
         }
+        public IActionResult Search(string search)
+        {
+            List<Blog> searchBlog = _context.Blogs.Include(m => m.BlogImages).Include(m => m.BlogSubCategories).ThenInclude(m => m.SubCategory).Where(m => m.Title.ToLower().Contains(search.ToLower()) && !m.IsDeleted).ToList();
+            BlogVM model = new BlogVM
+            {
+                Blogs = searchBlog,
+            };
+            return PartialView("_SearchBlogPartial", model);
+        }
+
     }
 }

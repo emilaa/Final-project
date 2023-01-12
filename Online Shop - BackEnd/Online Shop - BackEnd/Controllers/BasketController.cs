@@ -19,7 +19,6 @@ namespace Online_Shop___BackEnd.Controllers
             _context = context;
         }
 
-
         public async Task<IActionResult> Index()
         {
             List<BasketVM> basketItems = JsonConvert.DeserializeObject<List<BasketVM>>(Request.Cookies["basket"]);

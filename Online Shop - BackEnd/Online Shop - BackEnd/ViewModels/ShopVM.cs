@@ -10,6 +10,7 @@ namespace Online_Shop___BackEnd.ViewModels
         public Product Product { get; set; }
         public SubCategory SubCategory { get; set; }
         public IEnumerable<ProductImage> ProductImages { get; set; }
+        public IEnumerable<ProductSubCategory> ProductSubCategories { get; set; }
         public IEnumerable<SubCategory> SubCategories { get; set; }
     }
 }
